@@ -5,11 +5,16 @@
 
 package hu.todo.fragment;
 
+import java.util.List;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import hu.todo.adapter.TodoAdapter_;
+import hu.todo.service.TaskRestInterface_;
+import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -21,6 +26,7 @@ public final class AllFragment_
 
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private View contentView_;
+    private Handler handler_ = new Handler(Looper.getMainLooper());
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -44,6 +50,7 @@ public final class AllFragment_
     }
 
     private void init_(Bundle savedInstanceState) {
+        taskManager = new TaskRestInterface_();
         adapter = TodoAdapter_.getInstance_(getActivity());
         OnViewChangedNotifier.registerOnViewChangedListener(this);
     }
@@ -61,6 +68,38 @@ public final class AllFragment_
     @Override
     public void onViewChanged(HasViews hasViews) {
         binddAdapter();
+    }
+
+    @Override
+    public void showResult(final List<hu.todo.entity.Task> tasks) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                AllFragment_.super.showResult(tasks);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void getItemsInBackground() {
+        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
+
+
+            @Override
+            public void execute() {
+                try {
+                    AllFragment_.super.getItemsInBackground();
+                } catch (Throwable e) {
+                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+                }
+            }
+
+        }
+        );
     }
 
     public static class FragmentBuilder_ {

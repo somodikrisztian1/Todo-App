@@ -68,10 +68,10 @@ public final class TodoItemView_
     @Override
     public void onViewChanged(HasViews hasViews) {
         txtDate2ndRow = ((TextView) hasViews.findViewById(id.txtDate2ndRow));
-        txtContent2ndRow = ((TextView) hasViews.findViewById(id.txtContent2ndRow));
-        todoCheckbox = ((CheckBox) hasViews.findViewById(id.todoCheckbox));
         txtDate1stRow = ((TextView) hasViews.findViewById(id.txtDate1stRow));
         txtContent1stRow = ((TextView) hasViews.findViewById(id.txtContent1stRow));
+        todoCheckbox = ((CheckBox) hasViews.findViewById(id.todoCheckbox));
+        txtContent2ndRow = ((TextView) hasViews.findViewById(id.txtContent2ndRow));
     }
 
 }

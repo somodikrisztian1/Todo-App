@@ -1,6 +1,5 @@
 package hu.todo.entity;
 
-import java.util.Date;
 
 public class Task {
 	
@@ -8,21 +7,9 @@ public class Task {
 	private int user_id;
 	private String title;
 	private String description;
-	private Date date;
-	private Date created_at;
-	private Date updated_at;
-	
-	public Task(int id, int user_id, String title, String description,
-			Date date, Date created_at, Date updated_at) {
-		super();
-		this.id = id;
-		this.user_id = user_id;
-		this.title = title;
-		this.description = description;
-		this.date = date;
-		this.created_at = created_at;
-		this.updated_at = updated_at;
-	}
+	private String date;
+	private String created_at;
+	private String updated_at;
 
 	public int getId() {
 		return id;
@@ -56,28 +43,36 @@ public class Task {
 		this.description = description;
 	}
 
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 
-	public Date getCreated_at() {
+	public String getCreated_at() {
 		return created_at;
 	}
 
-	public void setCreated_at(Date created_at) {
+	public void setCreated_at(String created_at) {
 		this.created_at = created_at;
 	}
 
-	public Date getUpdated_at() {
+	public String getUpdated_at() {
 		return updated_at;
 	}
 
-	public void setUpdated_at(Date updated_at) {
+	public void setUpdated_at(String updated_at) {
 		this.updated_at = updated_at;
+	}
+
+	@Override
+	public String toString() {
+		return "Task [id=" + id + ", user_id=" + user_id + ", title=" + title
+				+ ", description=" + description + ", date=" + date
+				+ ", created_at=" + created_at + ", updated_at=" + updated_at
+				+ "]";
 	}
 	
 }
