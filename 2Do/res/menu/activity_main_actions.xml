@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+     
+    <!-- Frissítés -->
+    <item android:id="@+id/action_refresh"
+          android:icon="@drawable/ic_action_refresh"
+          android:title="@string/action_refresh"
+          android:showAsAction="always" />
+    
+    <!-- Hozzáadás -->
+    <item android:id="@+id/action_new"
+          android:icon="@drawable/ic_action_new"
+          android:title="@string/action_new"
+          android:showAsAction="always"/>
+    
+    <!-- Help -->
+    <item android:id="@+id/action_help"
+          android:icon="@drawable/abc_tab_selected_holo"
+          android:title="menu 1"
+          android:showAsAction="never"/>
+     
+    <!-- Check updates -->
+    <item android:id="@+id/action_check_updates"
+          android:icon="@drawable/ic_action_refresh"
+          android:title="menu 2"
+          android:showAsAction="never" />
+
+</menu>
