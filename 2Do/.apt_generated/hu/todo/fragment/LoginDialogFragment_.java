@@ -6,10 +6,14 @@
 package hu.todo.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import hu.todo.R.layout;
+import hu.todo.entity.User;
+import hu.todo.rest.TaskRestInterface_;
+import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
@@ -20,6 +24,7 @@ public final class LoginDialogFragment_
 
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private View contentView_;
+    private Handler handler_ = new Handler(Looper.getMainLooper());
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,13 +44,11 @@ public final class LoginDialogFragment_
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         contentView_ = super.onCreateView(inflater, container, savedInstanceState);
-        if (contentView_ == null) {
-            contentView_ = inflater.inflate(layout.fragment_login_dialog, container, false);
-        }
         return contentView_;
     }
 
     private void init_(Bundle savedInstanceState) {
+        taskManager = new TaskRestInterface_();
     }
 
     @Override
@@ -56,6 +59,38 @@ public final class LoginDialogFragment_
 
     public static LoginDialogFragment_.FragmentBuilder_ builder() {
         return new LoginDialogFragment_.FragmentBuilder_();
+    }
+
+    @Override
+    public void showResult(final User loggedUser) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                LoginDialogFragment_.super.showResult(loggedUser);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void getItemsInBackground() {
+        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
+
+
+            @Override
+            public void execute() {
+                try {
+                    LoginDialogFragment_.super.getItemsInBackground();
+                } catch (Throwable e) {
+                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+                }
+            }
+
+        }
+        );
     }
 
     public static class FragmentBuilder_ {

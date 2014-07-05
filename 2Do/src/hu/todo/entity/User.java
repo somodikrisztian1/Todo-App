@@ -1,28 +1,23 @@
 package hu.todo.entity;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.util.Calendar;
 
-public class User {
+import org.codehaus.jackson.annotate.JsonProperty;
 
-	private int id;
-	private String name;
-	private String token;
-	private String email;
-	private String password;
-	private Date created_at;
-	private Date updated_at;
+@SuppressWarnings("serial")
+public class User implements Serializable{
 	
-	public User(int id, String name, String token, String email,
-			String password, Date created_at, Date updated_at) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.token = token;
-		this.email = email;
-		this.password = password;
-		this.created_at = created_at;
-		this.updated_at = updated_at;
-	}
+	@JsonProperty("id")
+	int id;
+	String name;
+	String token;
+	String email;
+	String password;
+	Calendar created_at;
+	Calendar updated_at;
+	
+	
 
 	public int getId() {
 		return id;
@@ -64,19 +59,19 @@ public class User {
 		this.password = password;
 	}
 
-	public Date getCreated_at() {
+	public Calendar getCreated_at() {
 		return created_at;
 	}
 
-	public void setCreated_at(Date created_at) {
+	public void setCreated_at(Calendar created_at) {
 		this.created_at = created_at;
 	}
 
-	public Date getUpdated_at() {
+	public Calendar getUpdated_at() {
 		return updated_at;
 	}
 
-	public void setUpdated_at(Date updated_at) {
+	public void setUpdated_at(Calendar updated_at) {
 		this.updated_at = updated_at;
 	}
 	 

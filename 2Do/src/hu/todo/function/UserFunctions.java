@@ -1,27 +1,26 @@
 package hu.todo.function;
 
-import hu.todo.entity.LoggedUser;
 import hu.todo.entity.User;
 
 public class UserFunctions {
-	private LoggedUser loggedInUser;
+	private User loggedUser;
 	
 	public boolean getLoginStatus() {
-		return loggedInUser == null ? false : true;
+		return loggedUser == null ? false : true;
 	}
 
-	public void setLoggedInUser(LoggedUser loggedInUser) {
-		this.loggedInUser = loggedInUser;
+	public void setLoggedUser(User loggedInUser) {
+		this.loggedUser = loggedInUser;
 	}
 
-	public User getLoggedInUser()
+	public User getLoggedUser()
 	{
-		return loggedInUser;
+		return loggedUser;
 	}
 
 	public void logout()
 	{
-		loggedInUser = null;
+		loggedUser = null;
 	}
 
 }

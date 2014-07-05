@@ -1,10 +1,16 @@
 package hu.todo.entity;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
+import org.codehaus.jackson.annotate.JsonProperty;
 
-public class Task {
+
+//to convert the JSON _id property to our id bean property.
+@SuppressWarnings("serial")
+public class Task implements Serializable {
 	
+	@JsonProperty("id")
 	private int id;
 	private int user_id;
 	private String title;

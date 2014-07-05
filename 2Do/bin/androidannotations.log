@@ -1812,3 +1812,1140 @@
 18:01:42.584 [Worker-8] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
 18:01:42.587 [Worker-8] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 59 ms], [Extract Annotations = 21 ms], [Find R Classes = 15 ms], [Validate Annotations = 8 ms], [Generate Sources = 5 ms], [Extract Manifest = 4 ms], [Process Annotations = 3 ms], 
 18:01:42.588 [Worker-8] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+19:10:59.8 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+19:10:59.588 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 16 annotations on 24 elements
+19:11:00.272 [Worker-3] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+19:11:00.278 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+19:11:00.280 [Worker-3] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+19:11:00.395 [Worker-3] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+19:11:00.511 [Worker-3] INFO  o.a.p.ModelValidator:42 - Validating elements
+19:11:00.511 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.MainActivity]
+19:11:00.517 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+19:11:00.526 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+19:11:00.527 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+19:11:00.530 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [txtDate1stRow, viewPager, txtListTitle, txtContent1stRow, titleView, txtContent2ndRow, txtDate2ndRow, txtListSize]
+19:11:00.542 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.service.TaskRestInterface]
+19:11:00.758 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+19:11:00.760 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.MainActivity]
+19:11:00.763 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [refreshMenuItem]
+19:11:00.766 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void menuRefresh(android.view.MenuItem) ]
+19:11:00.770 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+19:11:00.780 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with RootContextHanlder: [context, context]
+19:11:00.786 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter, adapter, adapter]
+19:11:00.788 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void init() , void binddAdapter() , void binddAdapter() ]
+19:11:00.789 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void onPostExecute() , void onPreExecute() , void showResult(List<hu.todo.entity.Task>) ]
+19:11:00.790 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() , void refresh() ]
+19:11:00.811 [Worker-3] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+19:11:00.812 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.MainActivity]
+19:11:00.893 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+19:11:00.903 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+19:11:00.906 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+19:11:00.941 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.service.TaskRestInterface]
+19:11:00.950 [Worker-3] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+19:11:00.987 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 11
+19:11:00.991 [Worker-3] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+19:11:01.23 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TitleNavigationAdapter_
+19:11:01.55 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TodoAdapter_
+19:11:01.59 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.MainActivity_
+19:11:01.69 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.service.java.util.List_Task
+19:11:01.70 [Worker-3] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.service.java.util.List_Task
+19:11:01.84 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavListItemView_
+19:11:01.118 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavTitleItemView_
+19:11:01.122 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.TodoItemView_
+19:11:01.128 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.service.TaskRestInterface_
+19:11:01.140 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+19:11:01.150 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.GroupedByUserFragment_
+19:11:01.162 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+19:11:01.171 [Worker-3] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 1583 ms], [Extract Annotations = 648 ms], [Validate Annotations = 281 ms], [Find R Classes = 214 ms], [Process Annotations = 196 ms], [Generate Sources = 183 ms], [Extract Manifest = 9 ms], 
+19:11:01.172 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+19:11:18.866 [Worker-7] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+19:11:18.869 [Worker-7] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 16 annotations on 24 elements
+19:11:18.929 [Worker-7] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+19:11:18.935 [Worker-7] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+19:11:18.937 [Worker-7] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+19:11:18.952 [Worker-7] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+19:11:18.972 [Worker-7] INFO  o.a.p.ModelValidator:42 - Validating elements
+19:11:18.972 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.MainActivity]
+19:11:18.974 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+19:11:18.975 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+19:11:18.976 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+19:11:18.979 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [txtListSize, viewPager, txtContent2ndRow, txtDate2ndRow, txtContent1stRow, txtDate1stRow, txtListTitle, titleView]
+19:11:18.982 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.service.TaskRestInterface]
+19:11:18.991 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+19:11:18.993 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.MainActivity]
+19:11:18.997 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [refreshMenuItem]
+19:11:19.0 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void menuRefresh(android.view.MenuItem) ]
+19:11:19.3 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+19:11:19.4 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with RootContextHanlder: [context, context]
+19:11:19.5 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter, adapter, adapter]
+19:11:19.6 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void init() , void binddAdapter() , void binddAdapter() ]
+19:11:19.8 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void onPostExecute() , void onPreExecute() , void showResult(List<hu.todo.entity.Task>) ]
+19:11:19.9 [Worker-7] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void refresh() , void getItemsInBackground() ]
+19:11:19.10 [Worker-7] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+19:11:19.11 [Worker-7] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.MainActivity]
+19:11:19.15 [Worker-7] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+19:11:19.17 [Worker-7] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+19:11:19.19 [Worker-7] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+19:11:19.21 [Worker-7] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.service.TaskRestInterface]
+19:11:19.22 [Worker-7] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+19:11:19.27 [Worker-7] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 11
+19:11:19.27 [Worker-7] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+19:11:19.28 [Worker-7] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TitleNavigationAdapter_
+19:11:19.32 [Worker-7] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TodoAdapter_
+19:11:19.36 [Worker-7] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.MainActivity_
+19:11:19.51 [Worker-7] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.service.java.util.List_Task
+19:11:19.52 [Worker-7] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.service.java.util.List_Task
+19:11:19.58 [Worker-7] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavListItemView_
+19:11:19.64 [Worker-7] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavTitleItemView_
+19:11:19.68 [Worker-7] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.TodoItemView_
+19:11:19.73 [Worker-7] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.service.TaskRestInterface_
+19:11:19.77 [Worker-7] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+19:11:19.89 [Worker-7] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.GroupedByUserFragment_
+19:11:19.93 [Worker-7] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+19:11:19.96 [Worker-7] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 227 ms], [Generate Sources = 69 ms], [Extract Annotations = 48 ms], [Validate Annotations = 39 ms], [Find R Classes = 34 ms], [Process Annotations = 17 ms], [Extract Manifest = 6 ms], 
+19:11:19.97 [Worker-7] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+19:11:43.129 [Worker-6] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+19:11:47.846 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+19:11:47.848 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 16 annotations on 24 elements
+19:11:47.890 [Worker-5] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+19:11:47.893 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+19:11:47.894 [Worker-5] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+19:11:47.902 [Worker-5] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+19:11:47.915 [Worker-5] INFO  o.a.p.ModelValidator:42 - Validating elements
+19:11:47.916 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.MainActivity]
+19:11:47.917 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+19:11:47.920 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+19:11:47.921 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+19:11:47.922 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [txtListTitle, txtListSize, titleView, txtDate1stRow, txtDate2ndRow, txtContent1stRow, viewPager, txtContent2ndRow]
+19:11:47.924 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.service.TaskRestInterface]
+19:11:47.930 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+19:11:47.931 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.MainActivity]
+19:11:47.932 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [refreshMenuItem]
+19:11:47.933 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void menuRefresh(android.view.MenuItem) ]
+19:11:47.934 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+19:11:47.939 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with RootContextHanlder: [context, context]
+19:11:47.940 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter, adapter, adapter]
+19:11:47.941 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void init() , void binddAdapter() , void binddAdapter() ]
+19:11:47.944 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void onPostExecute() , void showResult(List<hu.todo.entity.Task>) , void onPreExecute() ]
+19:11:47.947 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void refresh() , void getItemsInBackground() ]
+19:11:47.948 [Worker-5] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+19:11:47.949 [Worker-5] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.MainActivity]
+19:11:47.954 [Worker-5] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+19:11:47.957 [Worker-5] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+19:11:47.959 [Worker-5] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+19:11:47.961 [Worker-5] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.service.TaskRestInterface]
+19:11:47.994 [Worker-5] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+19:11:48.2 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 11
+19:11:48.4 [Worker-5] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+19:11:48.5 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TitleNavigationAdapter_
+19:11:48.12 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TodoAdapter_
+19:11:48.14 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.MainActivity_
+19:11:48.20 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.service.java.util.List_Task
+19:11:48.21 [Worker-5] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.service.java.util.List_Task
+19:11:48.25 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavListItemView_
+19:11:48.31 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavTitleItemView_
+19:11:48.36 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.TodoItemView_
+19:11:48.39 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.service.TaskRestInterface_
+19:11:48.43 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+19:11:48.47 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.GroupedByUserFragment_
+19:11:48.50 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+19:11:48.64 [Worker-5] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 216 ms], [Generate Sources = 62 ms], [Process Annotations = 54 ms], [Extract Annotations = 41 ms], [Validate Annotations = 33 ms], [Find R Classes = 21 ms], [Extract Manifest = 3 ms], 
+19:11:48.66 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:05:01.538 [Worker-4] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:05:02.186 [Worker-4] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 16 annotations on 24 elements
+20:05:02.799 [Worker-4] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:05:02.804 [Worker-4] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:05:02.807 [Worker-4] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:05:02.906 [Worker-4] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:05:03.51 [Worker-4] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:05:03.52 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.MainActivity]
+20:05:03.58 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+20:05:03.62 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+20:05:03.63 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+20:05:03.66 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [txtListSize, txtDate2ndRow, txtContent1stRow, viewPager, titleView, txtContent2ndRow, txtListTitle, txtDate1stRow]
+20:05:03.72 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.service.TaskRestInterface]
+20:05:03.269 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+20:05:03.271 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.MainActivity]
+20:05:03.274 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [refreshMenuItem]
+20:05:03.277 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void menuRefresh(android.view.MenuItem) ]
+20:05:03.280 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:05:03.281 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with RootContextHanlder: [context, context]
+20:05:03.285 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter, adapter, adapter]
+20:05:03.286 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() , void binddAdapter() , void init() ]
+20:05:03.287 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void onPreExecute() , void onPostExecute() , void showResult(List<hu.todo.entity.Task>) ]
+20:05:03.289 [Worker-4] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void refresh() , void getItemsInBackground() ]
+20:05:03.312 [Worker-4] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:05:03.313 [Worker-4] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.MainActivity]
+20:05:03.365 [Worker-4] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+20:05:03.370 [Worker-4] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+20:05:03.373 [Worker-4] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+20:05:03.397 [Worker-4] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.service.TaskRestInterface]
+20:05:03.404 [Worker-4] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:05:03.429 [Worker-4] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 11
+20:05:03.433 [Worker-4] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:05:03.467 [Worker-4] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TitleNavigationAdapter_
+20:05:03.487 [Worker-4] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TodoAdapter_
+20:05:03.491 [Worker-4] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.MainActivity_
+20:05:03.505 [Worker-4] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.service.java.util.List_Task
+20:05:03.506 [Worker-4] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.service.java.util.List_Task
+20:05:03.510 [Worker-4] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavListItemView_
+20:05:03.523 [Worker-4] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavTitleItemView_
+20:05:03.528 [Worker-4] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.TodoItemView_
+20:05:03.532 [Worker-4] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.service.TaskRestInterface_
+20:05:03.536 [Worker-4] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:05:03.542 [Worker-4] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.GroupedByUserFragment_
+20:05:03.545 [Worker-4] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:05:03.548 [Worker-4] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 1362 ms], [Extract Annotations = 609 ms], [Validate Annotations = 240 ms], [Find R Classes = 228 ms], [Process Annotations = 139 ms], [Generate Sources = 119 ms], [Extract Manifest = 8 ms], 
+20:05:03.549 [Worker-4] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:05:24.247 [Worker-0] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:05:24.257 [Worker-0] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 16 annotations on 24 elements
+20:05:24.323 [Worker-0] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:05:24.339 [Worker-0] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:05:24.340 [Worker-0] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:05:24.365 [Worker-0] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:05:24.381 [Worker-0] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:05:24.382 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.MainActivity]
+20:05:24.383 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+20:05:24.384 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+20:05:24.398 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+20:05:24.401 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [txtDate2ndRow, titleView, txtDate1stRow, txtListSize, txtContent2ndRow, txtListTitle, txtContent1stRow, viewPager]
+20:05:24.404 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.service.TaskRestInterface]
+20:05:24.423 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+20:05:24.424 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.MainActivity]
+20:05:24.426 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [refreshMenuItem]
+20:05:24.427 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void menuRefresh(android.view.MenuItem) ]
+20:05:24.429 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:05:24.430 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with RootContextHanlder: [context, context]
+20:05:24.431 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter, adapter, adapter]
+20:05:24.432 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() , void init() , void binddAdapter() ]
+20:05:24.433 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void onPreExecute() , void onPostExecute() , void showResult(List<hu.todo.entity.Task>) ]
+20:05:24.447 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void refresh() , void getItemsInBackground() ]
+20:05:24.479 [Worker-0] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:05:24.480 [Worker-0] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.MainActivity]
+20:05:24.490 [Worker-0] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+20:05:24.500 [Worker-0] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+20:05:24.501 [Worker-0] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+20:05:24.508 [Worker-0] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.service.TaskRestInterface]
+20:05:24.511 [Worker-0] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:05:24.521 [Worker-0] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 11
+20:05:24.522 [Worker-0] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:05:24.523 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TitleNavigationAdapter_
+20:05:24.529 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TodoAdapter_
+20:05:24.533 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.MainActivity_
+20:05:24.540 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.service.java.util.List_Task
+20:05:24.540 [Worker-0] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.service.java.util.List_Task
+20:05:24.548 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavListItemView_
+20:05:24.556 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavTitleItemView_
+20:05:24.561 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.TodoItemView_
+20:05:24.567 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.service.TaskRestInterface_
+20:05:24.579 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:05:24.591 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.GroupedByUserFragment_
+20:05:24.594 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:05:24.598 [Worker-0] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 341 ms], [Validate Annotations = 98 ms], [Generate Sources = 77 ms], [Extract Annotations = 64 ms], [Process Annotations = 42 ms], [Find R Classes = 41 ms], [Extract Manifest = 17 ms], 
+20:05:24.598 [Worker-0] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:05:48.463 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:05:51.926 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:05:51.928 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 16 annotations on 24 elements
+20:05:51.957 [Worker-5] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:05:51.959 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:05:51.960 [Worker-5] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:05:51.970 [Worker-5] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:05:51.977 [Worker-5] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:05:51.977 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.MainActivity]
+20:05:51.978 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+20:05:51.980 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+20:05:51.980 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+20:05:51.982 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [txtListSize, txtContent1stRow, txtContent2ndRow, txtDate2ndRow, viewPager, titleView, txtDate1stRow, txtListTitle]
+20:05:51.985 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.service.TaskRestInterface]
+20:05:51.991 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+20:05:51.992 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.MainActivity]
+20:05:51.993 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [refreshMenuItem]
+20:05:51.993 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void menuRefresh(android.view.MenuItem) ]
+20:05:51.994 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:05:51.995 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with RootContextHanlder: [context, context]
+20:05:51.996 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter, adapter, adapter]
+20:05:51.996 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() , void binddAdapter() , void init() ]
+20:05:51.997 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void onPreExecute() , void showResult(List<hu.todo.entity.Task>) , void onPostExecute() ]
+20:05:51.998 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() , void refresh() ]
+20:05:51.999 [Worker-5] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:05:52.0 [Worker-5] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.MainActivity]
+20:05:52.4 [Worker-5] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+20:05:52.7 [Worker-5] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+20:05:52.8 [Worker-5] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+20:05:52.11 [Worker-5] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.service.TaskRestInterface]
+20:05:52.12 [Worker-5] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:05:52.18 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 11
+20:05:52.18 [Worker-5] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:05:52.19 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TitleNavigationAdapter_
+20:05:52.23 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TodoAdapter_
+20:05:52.25 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.MainActivity_
+20:05:52.30 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.service.java.util.List_Task
+20:05:52.31 [Worker-5] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.service.java.util.List_Task
+20:05:52.34 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavListItemView_
+20:05:52.38 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavTitleItemView_
+20:05:52.40 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.TodoItemView_
+20:05:52.43 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.service.TaskRestInterface_
+20:05:52.46 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:05:52.50 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.GroupedByUserFragment_
+20:05:52.53 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:05:52.57 [Worker-5] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 129 ms], [Generate Sources = 39 ms], [Extract Annotations = 29 ms], [Validate Annotations = 22 ms], [Process Annotations = 19 ms], [Find R Classes = 16 ms], [Extract Manifest = 2 ms], 
+20:05:52.58 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:07:08.303 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:07:08.305 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 1 annotations on 1 elements
+20:07:08.315 [Worker-5] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:07:08.318 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:07:08.319 [Worker-5] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:07:08.322 [Worker-5] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:07:08.329 [Worker-5] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:07:08.330 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:07:08.331 [Worker-5] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:07:08.332 [Worker-5] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:07:08.333 [Worker-5] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:07:08.334 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:07:08.335 [Worker-5] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:07:08.335 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:07:08.373 [Worker-5] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 68 ms], [Generate Sources = 39 ms], [Find R Classes = 11 ms], [Extract Annotations = 9 ms], [Extract Manifest = 3 ms], [Process Annotations = 3 ms], [Validate Annotations = 2 ms], 
+20:07:08.374 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:08:14.787 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:08:14.789 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 1 annotations on 1 elements
+20:08:14.801 [Worker-5] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:08:14.804 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:08:14.805 [Worker-5] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:08:14.808 [Worker-5] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:08:14.817 [Worker-5] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:08:14.818 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:08:14.820 [Worker-5] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:08:14.820 [Worker-5] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:08:14.821 [Worker-5] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:08:14.822 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:08:14.823 [Worker-5] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:08:14.823 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:08:14.825 [Worker-5] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 36 ms], [Find R Classes = 13 ms], [Extract Annotations = 11 ms], [Extract Manifest = 3 ms], [Process Annotations = 3 ms], [Generate Sources = 3 ms], [Validate Annotations = 2 ms], 
+20:08:14.826 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:10:13.931 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:10:13.970 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 2 elements
+20:10:13.987 [Worker-3] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:10:13.989 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:10:13.990 [Worker-3] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:10:13.993 [Worker-3] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:10:14.0 [Worker-3] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:10:14.1 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:10:14.2 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:10:14.3 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:10:14.4 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:10:14.4 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) ]
+20:10:14.5 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:10:14.6 [Worker-3] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:10:14.7 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:10:14.8 [Worker-3] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:10:14.9 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:10:14.9 [Worker-3] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:10:14.10 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:10:14.13 [Worker-3] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 42 ms], [Extract Annotations = 15 ms], [Find R Classes = 10 ms], [Validate Annotations = 6 ms], [Extract Manifest = 3 ms], [Process Annotations = 3 ms], [Generate Sources = 3 ms], 
+20:10:14.13 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:12:44.194 [Worker-2] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:13:17.174 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:13:28.209 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:13:28.211 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 1 annotations on 3 elements
+20:13:28.221 [Worker-5] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:13:28.225 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:13:28.226 [Worker-5] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:13:28.234 [Worker-5] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:13:28.239 [Worker-5] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:13:28.240 [Worker-5] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:13:28.241 [Worker-5] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:13:28.242 [Worker-5] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:13:28.243 [Worker-5] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:13:28.243 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:13:28.244 [Worker-5] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:13:28.244 [Worker-5] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:13:28.249 [Worker-5] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 38 ms], [Find R Classes = 13 ms], [Extract Annotations = 9 ms], [Generate Sources = 6 ms], [Extract Manifest = 4 ms], [Validate Annotations = 2 ms], [Process Annotations = 2 ms], 
+20:13:28.249 [Worker-5] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:13:32.848 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:13:32.850 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 1 annotations on 1 elements
+20:13:32.859 [Worker-3] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:13:32.862 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:13:32.863 [Worker-3] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:13:32.866 [Worker-3] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:13:32.875 [Worker-3] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:13:32.876 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:13:32.878 [Worker-3] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:13:32.878 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:13:32.880 [Worker-3] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:13:32.880 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:13:32.881 [Worker-3] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:13:32.881 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:13:32.884 [Worker-3] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 33 ms], [Find R Classes = 13 ms], [Extract Annotations = 9 ms], [Extract Manifest = 3 ms], [Process Annotations = 3 ms], [Generate Sources = 3 ms], [Validate Annotations = 2 ms], 
+20:13:32.884 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:14:01.283 [Worker-0] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:14:01.286 [Worker-0] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 8 annotations on 4 elements
+20:14:01.299 [Worker-0] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:14:01.303 [Worker-0] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:14:01.303 [Worker-0] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:14:01.307 [Worker-0] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:14:01.316 [Worker-0] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:14:01.317 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:14:01.319 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.rest.TaskRestInterface]
+20:14:01.409 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+20:14:01.410 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:14:01.411 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:14:01.412 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:14:01.413 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) ]
+20:14:01.413 [Worker-0] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:14:01.414 [Worker-0] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:14:01.415 [Worker-0] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:14:01.418 [Worker-0] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.rest.TaskRestInterface]
+20:14:01.419 [Worker-0] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:14:01.441 [Worker-0] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with RestServiceHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1a999ce]
+20:14:01.442 [Worker-0] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with BeanHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@e41b03]
+20:14:01.443 [Worker-0] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with AfterViewsHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1153f1c]
+20:14:01.452 [Worker-0] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with UiThreadHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@44bd3d]
+20:14:01.454 [Worker-0] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with BackgroundHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1e25528]
+20:14:01.455 [Worker-0] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 3
+20:14:01.466 [Worker-0] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:14:01.466 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.TaskRestInterface_
+20:14:01.483 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_Task
+20:14:01.484 [Worker-0] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_Task
+20:14:01.493 [Worker-0] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:14:01.509 [Worker-0] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 223 ms], [Validate Annotations = 98 ms], [Generate Sources = 54 ms], [Process Annotations = 41 ms], [Find R Classes = 13 ms], [Extract Annotations = 12 ms], [Extract Manifest = 4 ms], 
+20:14:01.510 [Worker-0] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:15:47.353 [Worker-2] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:15:47.354 [Worker-2] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 1 elements
+20:15:47.366 [Worker-2] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:15:47.369 [Worker-2] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:15:47.370 [Worker-2] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:15:47.373 [Worker-2] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:15:47.380 [Worker-2] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:15:47.381 [Worker-2] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:15:47.382 [Worker-2] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:15:47.383 [Worker-2] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:15:47.384 [Worker-2] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:15:47.385 [Worker-2] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) ]
+20:15:47.386 [Worker-2] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:15:47.387 [Worker-2] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:15:47.387 [Worker-2] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:15:47.388 [Worker-2] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:15:47.389 [Worker-2] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:15:47.389 [Worker-2] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:15:47.390 [Worker-2] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:15:47.392 [Worker-2] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 38 ms], [Extract Annotations = 11 ms], [Find R Classes = 10 ms], [Validate Annotations = 6 ms], [Extract Manifest = 3 ms], [Process Annotations = 3 ms], [Generate Sources = 3 ms], 
+20:15:47.393 [Worker-2] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:15:55.593 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:15:55.595 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 1 elements
+20:15:55.607 [Worker-3] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:15:55.610 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:15:55.611 [Worker-3] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:15:55.614 [Worker-3] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:15:55.622 [Worker-3] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:15:55.622 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:15:55.624 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:15:55.625 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:15:55.626 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:15:55.626 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) ]
+20:15:55.627 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:15:55.628 [Worker-3] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:15:55.628 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:15:55.629 [Worker-3] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:15:55.631 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:15:55.631 [Worker-3] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:15:55.632 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:15:55.634 [Worker-3] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 39 ms], [Find R Classes = 12 ms], [Extract Annotations = 11 ms], [Validate Annotations = 5 ms], [Process Annotations = 4 ms], [Extract Manifest = 3 ms], [Generate Sources = 3 ms], 
+20:15:55.635 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:18:31.668 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:18:31.670 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 2 annotations on 1 elements
+20:18:31.671 [Worker-11] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:18:31.674 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:18:31.674 [Worker-11] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:18:31.680 [Worker-11] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:18:31.688 [Worker-11] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:18:31.689 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.rest.TaskRestInterface]
+20:18:31.695 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+20:18:31.696 [Worker-11] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:18:31.697 [Worker-11] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.rest.TaskRestInterface]
+20:18:31.698 [Worker-11] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:18:31.700 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 2
+20:18:31.700 [Worker-11] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:18:31.701 [Worker-11] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.TaskRestInterface_
+20:18:31.703 [Worker-11] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_Task
+20:18:31.704 [Worker-11] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_Task
+20:18:31.706 [Worker-11] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 36 ms], [Find R Classes = 13 ms], [Validate Annotations = 8 ms], [Generate Sources = 5 ms], [Process Annotations = 4 ms], [Extract Manifest = 3 ms], [Extract Annotations = 0 ms], 
+20:18:31.706 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:23:38.270 [Worker-20] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:23:38.296 [Worker-20] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 8 annotations on 6 elements
+20:23:38.310 [Worker-20] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:23:38.316 [Worker-20] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:23:38.317 [Worker-20] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:23:38.320 [Worker-20] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:23:38.328 [Worker-20] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:23:38.328 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:23:38.330 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.rest.TaskRestInterface]
+20:23:38.336 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+20:23:38.337 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:23:38.337 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:23:38.338 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:23:38.339 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) ]
+20:23:38.340 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:23:38.341 [Worker-20] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:23:38.341 [Worker-20] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:23:38.342 [Worker-20] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.rest.TaskRestInterface]
+20:23:38.343 [Worker-20] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:23:38.344 [Worker-20] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with RestServiceHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1aa6411]
+20:23:38.345 [Worker-20] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with BeanHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@10b404c]
+20:23:38.345 [Worker-20] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with AfterViewsHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1ff0f1d]
+20:23:38.346 [Worker-20] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with UiThreadHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@190ea5f]
+20:23:38.347 [Worker-20] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with BackgroundHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@3962f9]
+20:23:38.347 [Worker-20] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 3
+20:23:38.348 [Worker-20] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:23:38.348 [Worker-20] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.TaskRestInterface_
+20:23:38.350 [Worker-20] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_Task
+20:23:38.351 [Worker-20] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_Task
+20:23:38.352 [Worker-20] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:23:38.354 [Worker-20] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 58 ms], [Extract Annotations = 13 ms], [Validate Annotations = 13 ms], [Find R Classes = 10 ms], [Generate Sources = 7 ms], [Extract Manifest = 6 ms], [Process Annotations = 6 ms], 
+20:23:38.355 [Worker-20] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:24:26.977 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:26:25.172 [Worker-18] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:26:25.192 [Worker-18] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 3 elements
+20:26:25.205 [Worker-18] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:26:25.209 [Worker-18] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:26:25.210 [Worker-18] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:26:25.217 [Worker-18] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:26:25.251 [Worker-18] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:26:25.252 [Worker-18] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:26:25.253 [Worker-18] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:26:25.254 [Worker-18] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:26:25.256 [Worker-18] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:26:25.259 [Worker-18] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) ]
+20:26:25.260 [Worker-18] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:26:25.262 [Worker-18] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:26:25.262 [Worker-18] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:26:25.263 [Worker-18] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:26:25.264 [Worker-18] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:26:25.265 [Worker-18] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:26:25.266 [Worker-18] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:26:25.268 [Worker-18] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 77 ms], [Find R Classes = 41 ms], [Extract Annotations = 13 ms], [Validate Annotations = 10 ms], [Extract Manifest = 4 ms], [Generate Sources = 4 ms], [Process Annotations = 3 ms], 
+20:26:25.269 [Worker-18] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:26:34.592 [Worker-20] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:29:28.196 [Worker-18] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:29:28.201 [Worker-18] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 3 annotations on 1 elements
+20:29:28.202 [Worker-18] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:29:28.204 [Worker-18] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:29:28.206 [Worker-18] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:29:28.210 [Worker-18] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:29:28.218 [Worker-18] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:29:28.219 [Worker-18] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.rest.TaskRestInterface]
+20:29:28.232 [Worker-18] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+20:29:28.235 [Worker-18] DEBUG o.a.p.ModelValidator:62 - Validating with PostHandler: [public abstract hu.todo.entity.LoggedUser login(java.lang.String, java.lang.String) ]
+20:29:28.236 [Worker-18] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:29:28.237 [Worker-18] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.rest.TaskRestInterface]
+20:29:28.238 [Worker-18] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:29:28.240 [Worker-18] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 2
+20:29:28.241 [Worker-18] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:29:28.241 [Worker-18] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.TaskRestInterface_
+20:29:28.265 [Worker-18] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_Task
+20:29:28.266 [Worker-18] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_Task
+20:29:28.267 [Worker-18] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 66 ms], [Generate Sources = 27 ms], [Validate Annotations = 18 ms], [Find R Classes = 13 ms], [Process Annotations = 4 ms], [Extract Manifest = 3 ms], [Extract Annotations = 0 ms], 
+20:29:28.268 [Worker-18] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:32:09.287 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:32:09.290 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 2 annotations on 1 elements
+20:32:09.302 [Worker-23] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:32:09.312 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:32:09.313 [Worker-23] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:32:09.318 [Worker-23] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:32:09.327 [Worker-23] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:32:09.329 [Worker-23] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:32:09.331 [Worker-23] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:32:09.332 [Worker-23] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:32:09.333 [Worker-23] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:32:09.333 [Worker-23] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:32:09.334 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:32:09.335 [Worker-23] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:32:09.335 [Worker-23] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:32:09.358 [Worker-23] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 68 ms], [Generate Sources = 24 ms], [Find R Classes = 15 ms], [Extract Annotations = 11 ms], [Extract Manifest = 11 ms], [Validate Annotations = 5 ms], [Process Annotations = 2 ms], 
+20:32:09.358 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:32:34.389 [Worker-26] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:32:34.391 [Worker-26] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 1 elements
+20:32:34.405 [Worker-26] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:32:34.407 [Worker-26] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:32:34.408 [Worker-26] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:32:34.413 [Worker-26] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:32:34.421 [Worker-26] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:32:34.422 [Worker-26] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:32:34.423 [Worker-26] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [public void onCreate(android.os.Bundle) ]
+20:32:35.479 [Worker-26] ERROR o.a.AndroidAnnotationProcessor:269 - Something went wront : Unexpected error in AndroidAnnotations 3.0.1!
+You should check if there is already an issue about it on https://github.com/excilys/androidannotations/search?q=java.lang.NullPointerException&type=Issues
+If none exists, please open a new one with the following content and tell us if you can reproduce it or not. Don't forget to give us as much information as you can (like parts of your code in failure).
+Java version: javac 1.7.0_21
+Javac processors options: phase=BUILD
+Stacktrace: java.lang.NullPointerException
+	at org.androidannotations.helper.ValidatorHelper.elementHasAnnotationSafe(ValidatorHelper.java:348)
+	at org.androidannotations.helper.ValidatorHelper.typeHasAnnotation(ValidatorHelper.java:326)
+	at org.androidannotations.helper.ValidatorHelper.typeHasAnnotation(ValidatorHelper.java:321)
+	at org.androidannotations.handler.rest.RestServiceHandler.validate(RestServiceHandler.java:46)
+	at org.androidannotations.handler.BaseAnnotationHandler.validate(BaseAnnotationHandler.java:109)
+	at org.androidannotations.process.ModelValidator.validateThrowing(ModelValidator.java:79)
+	at org.androidannotations.process.ModelValidator.validate(ModelValidator.java:66)
+	at org.androidannotations.AndroidAnnotationProcessor.validateAnnotations(AndroidAnnotationProcessor.java:235)
+	at org.androidannotations.AndroidAnnotationProcessor.processThrowing(AndroidAnnotationProcessor.java:184)
+	at org.androidannotations.AndroidAnnotationProcessor.process(AndroidAnnotationProcessor.java:114)
+	at org.eclipse.jdt.internal.compiler.apt.dispatch.RoundDispatcher.handleProcessor(RoundDispatcher.java:139)
+	at org.eclipse.jdt.internal.compiler.apt.dispatch.RoundDispatcher.round(RoundDispatcher.java:121)
+	at org.eclipse.jdt.internal.compiler.apt.dispatch.BaseAnnotationProcessorManager.processAnnotations(BaseAnnotationProcessorManager.java:159)
+	at org.eclipse.jdt.internal.apt.pluggable.core.dispatch.IdeAnnotationProcessorManager.processAnnotations(IdeAnnotationProcessorManager.java:134)
+	at org.eclipse.jdt.internal.compiler.Compiler.processAnnotations(Compiler.java:820)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:434)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:365)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.compile(IncrementalImageBuilder.java:329)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:302)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.build(IncrementalImageBuilder.java:134)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildDeltas(JavaBuilder.java:265)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:193)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:726)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:199)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:239)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:292)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:295)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:351)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:374)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Thrown from: hu.todo.fragment.AllFragment
+Element (ExecutableElementImpl): public void onCreate(android.os.Bundle) 
+
+
+20:32:35.480 [Worker-26] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 1089 ms], [Extract Annotations = 12 ms], [Find R Classes = 12 ms], [Extract Manifest = 3 ms], 
+20:32:35.481 [Worker-26] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:32:54.539 [Worker-25] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:32:54.541 [Worker-25] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 3 elements
+20:32:54.552 [Worker-25] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:32:54.554 [Worker-25] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:32:54.554 [Worker-25] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:32:54.562 [Worker-25] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:32:54.593 [Worker-25] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:32:54.593 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:32:54.594 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:32:54.595 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:32:54.596 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:32:54.597 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) ]
+20:32:54.598 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:32:54.599 [Worker-25] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:32:54.599 [Worker-25] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:32:54.600 [Worker-25] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:32:54.601 [Worker-25] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:32:54.602 [Worker-25] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:32:54.603 [Worker-25] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:32:54.606 [Worker-25] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 65 ms], [Find R Classes = 38 ms], [Extract Annotations = 10 ms], [Validate Annotations = 5 ms], [Generate Sources = 5 ms], [Extract Manifest = 3 ms], [Process Annotations = 3 ms], 
+20:32:54.606 [Worker-25] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:34:13.190 [Worker-26] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:34:13.192 [Worker-26] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 2 annotations on 1 elements
+20:34:13.203 [Worker-26] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:34:13.206 [Worker-26] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:34:13.207 [Worker-26] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:34:13.211 [Worker-26] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:34:13.219 [Worker-26] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:34:13.219 [Worker-26] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:34:13.224 [Worker-26] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:34:13.226 [Worker-26] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:34:13.226 [Worker-26] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:34:13.229 [Worker-26] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:34:13.230 [Worker-26] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:34:13.231 [Worker-26] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:34:13.231 [Worker-26] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:34:13.234 [Worker-26] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 42 ms], [Find R Classes = 13 ms], [Extract Annotations = 11 ms], [Validate Annotations = 6 ms], [Process Annotations = 5 ms], [Generate Sources = 4 ms], [Extract Manifest = 3 ms], 
+20:34:13.235 [Worker-26] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:37:54.402 [Worker-24] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:37:54.404 [Worker-24] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 4 annotations on 1 elements
+20:37:54.417 [Worker-24] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:37:54.420 [Worker-24] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:37:54.421 [Worker-24] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:37:54.425 [Worker-24] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:37:54.435 [Worker-24] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:37:54.436 [Worker-24] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:37:54.438 [Worker-24] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:37:54.439 [Worker-24] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.LoggedUser) ]
+20:37:54.439 [Worker-24] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:37:54.440 [Worker-24] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:37:54.440 [Worker-24] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:37:54.441 [Worker-24] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:37:54.443 [Worker-24] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:37:54.444 [Worker-24] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:37:54.444 [Worker-24] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:37:54.470 [Worker-24] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 66 ms], [Generate Sources = 27 ms], [Find R Classes = 15 ms], [Extract Annotations = 12 ms], [Validate Annotations = 5 ms], [Extract Manifest = 3 ms], [Process Annotations = 3 ms], 
+20:37:54.473 [Worker-24] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:40:28.358 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:41:25.209 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:41:25.234 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 3 elements
+20:41:25.249 [Worker-11] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:41:25.252 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:41:25.253 [Worker-11] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:41:25.257 [Worker-11] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:41:25.265 [Worker-11] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:41:25.266 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:41:25.267 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:41:25.268 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:41:25.269 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:41:25.270 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) ]
+20:41:25.270 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:41:25.271 [Worker-11] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:41:25.271 [Worker-11] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:41:25.272 [Worker-11] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:41:25.273 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:41:25.274 [Worker-11] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:41:25.274 [Worker-11] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:41:25.277 [Worker-11] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 43 ms], [Extract Annotations = 14 ms], [Find R Classes = 13 ms], [Validate Annotations = 6 ms], [Generate Sources = 4 ms], [Extract Manifest = 3 ms], [Process Annotations = 2 ms], 
+20:41:25.278 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:41:43.114 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:41:43.201 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 7 annotations on 5 elements
+20:41:43.210 [Worker-29] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:41:43.212 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:41:43.213 [Worker-29] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:41:43.216 [Worker-29] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:41:43.223 [Worker-29] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:41:43.223 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:41:43.225 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.rest.TaskRestInterface]
+20:41:43.229 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+20:41:43.230 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with PostHandler: [public abstract hu.todo.entity.LoggedUser login(java.lang.String, java.lang.String) ]
+20:41:43.231 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:41:43.231 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.LoggedUser) ]
+20:41:43.232 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:41:43.233 [Worker-29] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:41:43.233 [Worker-29] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:41:43.234 [Worker-29] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.rest.TaskRestInterface]
+20:41:43.235 [Worker-29] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:41:43.237 [Worker-29] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with RestServiceHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1b6077e]
+20:41:43.237 [Worker-29] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with UiThreadHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@175822f]
+20:41:43.238 [Worker-29] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with BackgroundHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@734400]
+20:41:43.239 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 3
+20:41:43.239 [Worker-29] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:41:43.240 [Worker-29] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.TaskRestInterface_
+20:41:43.243 [Worker-29] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_Task
+20:41:43.247 [Worker-29] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_Task
+20:41:43.253 [Worker-29] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:41:43.256 [Worker-29] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 55 ms], [Generate Sources = 17 ms], [Find R Classes = 10 ms], [Validate Annotations = 10 ms], [Extract Annotations = 8 ms], [Process Annotations = 6 ms], [Extract Manifest = 2 ms], 
+20:41:43.257 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:41:58.482 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:42:08.531 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:43:26.177 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:43:26.307 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 7 annotations on 5 elements
+20:43:26.319 [Worker-19] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:43:26.321 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:43:26.322 [Worker-19] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:43:26.326 [Worker-19] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:43:26.334 [Worker-19] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:43:26.335 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:43:26.337 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.rest.TaskRestInterface]
+20:43:26.342 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+20:43:26.343 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with PostHandler: [public abstract hu.todo.entity.LoggedUser login(java.lang.String, java.lang.String) ]
+20:43:26.344 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:43:26.344 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.LoggedUser) ]
+20:43:26.346 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:43:26.347 [Worker-19] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:43:26.348 [Worker-19] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:43:26.350 [Worker-19] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.rest.TaskRestInterface]
+20:43:26.351 [Worker-19] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:43:26.353 [Worker-19] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with RestServiceHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1293148]
+20:43:26.354 [Worker-19] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with UiThreadHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@12b7182]
+20:43:26.355 [Worker-19] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with BackgroundHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@690e53]
+20:43:26.356 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 3
+20:43:26.357 [Worker-19] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:43:26.358 [Worker-19] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.TaskRestInterface_
+20:43:26.360 [Worker-19] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_Task
+20:43:26.361 [Worker-19] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_Task
+20:43:26.362 [Worker-19] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:43:26.366 [Worker-19] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 58 ms], [Validate Annotations = 13 ms], [Find R Classes = 12 ms], [Extract Annotations = 11 ms], [Process Annotations = 9 ms], [Generate Sources = 9 ms], [Extract Manifest = 2 ms], 
+20:43:26.366 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:43:41.847 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:43:41.871 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 7 annotations on 5 elements
+20:43:41.882 [Worker-29] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:43:41.885 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:43:41.886 [Worker-29] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:43:41.890 [Worker-29] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:43:41.897 [Worker-29] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:43:41.898 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:43:41.899 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.rest.TaskRestInterface]
+20:43:41.904 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+20:43:41.906 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with PostHandler: [public abstract hu.todo.entity.LoggedUser login(java.lang.String, java.lang.String) ]
+20:43:41.906 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:43:41.907 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.LoggedUser) ]
+20:43:41.908 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:43:41.909 [Worker-29] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:43:41.909 [Worker-29] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:43:41.910 [Worker-29] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.rest.TaskRestInterface]
+20:43:41.911 [Worker-29] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:43:41.914 [Worker-29] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with RestServiceHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@2ec873]
+20:43:41.915 [Worker-29] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with UiThreadHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@26d033]
+20:43:41.916 [Worker-29] DEBUG o.a.p.ModelProcessor:116 - Processing enclosed elements with BackgroundHandler: [org.androidannotations.model.AnnotationElements$AnnotatedAndRootElements@1fe2cab]
+20:43:41.917 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 3
+20:43:41.918 [Worker-29] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:43:41.918 [Worker-29] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.TaskRestInterface_
+20:43:41.921 [Worker-29] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_Task
+20:43:41.922 [Worker-29] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_Task
+20:43:41.923 [Worker-29] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:43:41.926 [Worker-29] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 55 ms], [Find R Classes = 11 ms], [Validate Annotations = 11 ms], [Extract Annotations = 10 ms], [Process Annotations = 9 ms], [Generate Sources = 9 ms], [Extract Manifest = 3 ms], 
+20:43:41.927 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:45:15.648 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:45:32.302 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:45:32.325 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 3 elements
+20:45:32.339 [Worker-29] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:45:32.346 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:45:32.347 [Worker-29] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:45:32.351 [Worker-29] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:45:32.358 [Worker-29] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:45:32.359 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:45:32.379 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:45:32.380 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:45:32.382 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:45:32.383 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) ]
+20:45:32.383 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:45:32.385 [Worker-29] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:45:32.385 [Worker-29] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:45:32.387 [Worker-29] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:45:32.388 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:45:32.389 [Worker-29] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:45:32.389 [Worker-29] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:45:32.392 [Worker-29] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 67 ms], [Validate Annotations = 26 ms], [Extract Annotations = 13 ms], [Find R Classes = 11 ms], [Extract Manifest = 8 ms], [Generate Sources = 4 ms], [Process Annotations = 3 ms], 
+20:45:32.393 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:45:39.698 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:45:39.821 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 3 elements
+20:45:39.836 [Worker-31] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:45:39.839 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:45:39.840 [Worker-31] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:45:39.844 [Worker-31] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:45:39.851 [Worker-31] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:45:39.852 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:45:39.853 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:45:39.854 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:45:39.855 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:45:39.856 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) ]
+20:45:39.856 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:45:39.857 [Worker-31] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:45:39.858 [Worker-31] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:45:39.858 [Worker-31] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:45:39.860 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:45:39.860 [Worker-31] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:45:39.860 [Worker-31] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:45:39.863 [Worker-31] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 42 ms], [Extract Annotations = 13 ms], [Find R Classes = 12 ms], [Validate Annotations = 6 ms], [Generate Sources = 4 ms], [Extract Manifest = 3 ms], [Process Annotations = 2 ms], 
+20:45:39.863 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:45:42.705 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:45:53.409 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:45:53.429 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 3 elements
+20:45:53.443 [Worker-30] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:45:53.445 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:45:53.446 [Worker-30] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:45:53.450 [Worker-30] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:45:53.458 [Worker-30] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:45:53.458 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:45:53.459 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:45:53.461 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:45:53.461 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:45:53.462 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) ]
+20:45:53.463 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:45:53.463 [Worker-30] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:45:53.464 [Worker-30] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:45:53.464 [Worker-30] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:45:53.466 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:45:53.466 [Worker-30] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:45:53.467 [Worker-30] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:45:53.469 [Worker-30] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 40 ms], [Extract Annotations = 12 ms], [Find R Classes = 11 ms], [Validate Annotations = 5 ms], [Extract Manifest = 3 ms], [Process Annotations = 3 ms], [Generate Sources = 3 ms], 
+20:45:53.469 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:46:07.89 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:46:24.854 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:46:24.855 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 3 annotations on 1 elements
+20:46:24.856 [Worker-19] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:46:24.859 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:46:24.860 [Worker-19] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:46:24.864 [Worker-19] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:46:24.871 [Worker-19] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:46:24.872 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.rest.TaskRestInterface]
+20:46:24.878 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+20:46:24.879 [Worker-19] DEBUG o.a.p.ModelValidator:62 - Validating with PostHandler: [public abstract User login(java.lang.String, java.lang.String) ]
+20:46:24.896 [Worker-19] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:46:24.897 [Worker-19] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.rest.TaskRestInterface]
+20:46:24.898 [Worker-19] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:46:24.903 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 2
+20:46:24.904 [Worker-19] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:46:24.905 [Worker-19] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.TaskRestInterface_
+20:46:24.913 [Worker-19] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_Task
+20:46:24.914 [Worker-19] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_Task
+20:46:24.915 [Worker-19] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 60 ms], [Validate Annotations = 25 ms], [Find R Classes = 12 ms], [Generate Sources = 12 ms], [Process Annotations = 7 ms], [Extract Manifest = 3 ms], [Extract Annotations = 0 ms], 
+20:46:24.916 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:46:28.731 [Worker-19] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:46:30.225 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:46:30.227 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 3 annotations on 3 elements
+20:46:30.229 [Worker-11] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:46:30.231 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:46:30.231 [Worker-11] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:46:30.240 [Worker-11] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:46:30.246 [Worker-11] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:46:30.247 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.rest.TaskRestInterface]
+20:46:30.251 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> fetchAllTasks(java.lang.String) ]
+20:46:30.252 [Worker-11] DEBUG o.a.p.ModelValidator:62 - Validating with PostHandler: [public abstract hu.todo.entity.User login(java.lang.String, java.lang.String) ]
+20:46:30.253 [Worker-11] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:46:30.253 [Worker-11] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.rest.TaskRestInterface]
+20:46:30.254 [Worker-11] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:46:30.256 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 2
+20:46:30.256 [Worker-11] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:46:30.256 [Worker-11] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.TaskRestInterface_
+20:46:30.278 [Worker-11] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_Task
+20:46:30.278 [Worker-11] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_Task
+20:46:30.279 [Worker-11] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 52 ms], [Generate Sources = 24 ms], [Find R Classes = 15 ms], [Validate Annotations = 7 ms], [Extract Manifest = 2 ms], [Process Annotations = 2 ms], [Extract Annotations = 0 ms], 
+20:46:30.280 [Worker-11] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:46:41.742 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:46:41.743 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 4 annotations on 3 elements
+20:46:41.759 [Worker-31] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:46:41.761 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:46:41.762 [Worker-31] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:46:41.770 [Worker-31] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:46:41.780 [Worker-31] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:46:41.780 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:46:41.782 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:46:41.783 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.LoggedUser) ]
+20:46:41.784 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:46:41.785 [Worker-31] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:46:41.786 [Worker-31] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:46:41.787 [Worker-31] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:46:41.788 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:46:41.789 [Worker-31] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:46:41.789 [Worker-31] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:46:41.792 [Worker-31] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 49 ms], [Extract Annotations = 15 ms], [Find R Classes = 13 ms], [Validate Annotations = 4 ms], [Process Annotations = 4 ms], [Generate Sources = 4 ms], [Extract Manifest = 2 ms], 
+20:46:41.792 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:46:44.346 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:46:44.347 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 4 annotations on 3 elements
+20:46:44.358 [Worker-23] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:46:44.360 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:46:44.361 [Worker-23] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:46:44.368 [Worker-23] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:46:44.373 [Worker-23] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:46:44.374 [Worker-23] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:46:44.375 [Worker-23] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:46:44.376 [Worker-23] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.LoggedUser) ]
+20:46:44.377 [Worker-23] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:46:44.378 [Worker-23] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:46:44.378 [Worker-23] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:46:44.379 [Worker-23] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:46:44.380 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:46:44.380 [Worker-23] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:46:44.381 [Worker-23] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:46:44.383 [Worker-23] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 36 ms], [Find R Classes = 12 ms], [Extract Annotations = 10 ms], [Validate Annotations = 5 ms], [Generate Sources = 3 ms], [Extract Manifest = 2 ms], [Process Annotations = 2 ms], 
+20:46:44.383 [Worker-23] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:46:48.958 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:46:48.960 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 4 annotations on 3 elements
+20:46:48.971 [Worker-30] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:46:48.973 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:46:48.973 [Worker-30] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:46:48.982 [Worker-30] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:46:48.988 [Worker-30] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:46:48.989 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:46:48.990 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:46:48.992 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.User) ]
+20:46:48.992 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:46:48.993 [Worker-30] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:46:48.994 [Worker-30] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:46:48.995 [Worker-30] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:46:48.997 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:46:48.998 [Worker-30] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:46:48.998 [Worker-30] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:46:49.30 [Worker-30] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 70 ms], [Generate Sources = 33 ms], [Find R Classes = 15 ms], [Extract Annotations = 10 ms], [Validate Annotations = 5 ms], [Process Annotations = 4 ms], [Extract Manifest = 3 ms], 
+20:46:49.31 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:48:09.716 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:48:09.725 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 4 annotations on 2 elements
+20:48:09.751 [Worker-30] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:48:09.753 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:48:09.758 [Worker-30] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:48:09.766 [Worker-30] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:48:09.793 [Worker-30] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:48:09.794 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:48:09.795 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:48:09.796 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.User) ]
+20:48:09.796 [Worker-30] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:48:09.800 [Worker-30] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:48:09.801 [Worker-30] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:48:09.802 [Worker-30] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:48:09.828 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:48:09.828 [Worker-30] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:48:09.829 [Worker-30] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:48:09.841 [Worker-30] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 116 ms], [Process Annotations = 31 ms], [Find R Classes = 30 ms], [Extract Annotations = 24 ms], [Generate Sources = 13 ms], [Validate Annotations = 4 ms], [Extract Manifest = 2 ms], 
+20:48:09.846 [Worker-30] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:48:23.552 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:48:23.553 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 4 annotations on 1 elements
+20:48:23.564 [Worker-32] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:48:23.566 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:48:23.567 [Worker-32] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:48:23.570 [Worker-32] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:48:23.578 [Worker-32] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:48:23.579 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:48:23.580 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:48:23.581 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.User) ]
+20:48:23.582 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:48:23.583 [Worker-32] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:48:23.583 [Worker-32] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:48:23.584 [Worker-32] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:48:23.585 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:48:23.585 [Worker-32] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:48:23.586 [Worker-32] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:48:23.588 [Worker-32] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 35 ms], [Find R Classes = 11 ms], [Extract Annotations = 10 ms], [Validate Annotations = 4 ms], [Process Annotations = 3 ms], [Generate Sources = 3 ms], [Extract Manifest = 2 ms], 
+20:48:23.589 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:48:40.941 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:48:41.1 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 2 elements
+20:48:41.30 [Worker-29] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:48:41.39 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:48:41.40 [Worker-29] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:48:41.45 [Worker-29] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:48:41.61 [Worker-29] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:48:41.62 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:48:41.63 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:48:41.64 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:48:41.65 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:48:41.67 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) ]
+20:48:41.68 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:48:41.69 [Worker-29] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:48:41.74 [Worker-29] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:48:41.75 [Worker-29] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:48:41.77 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:48:41.77 [Worker-29] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:48:41.78 [Worker-29] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:48:41.80 [Worker-29] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 79 ms], [Extract Annotations = 28 ms], [Find R Classes = 21 ms], [Extract Manifest = 9 ms], [Validate Annotations = 8 ms], [Process Annotations = 7 ms], [Generate Sources = 4 ms], 
+20:48:41.81 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:50:07.167 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:50:07.169 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 4 annotations on 1 elements
+20:50:07.181 [Worker-32] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:50:07.184 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:50:07.185 [Worker-32] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:50:07.191 [Worker-32] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:50:07.199 [Worker-32] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:50:07.199 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:50:07.200 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:50:07.201 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.User) ]
+20:50:07.202 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:50:07.203 [Worker-32] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:50:07.204 [Worker-32] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:50:07.205 [Worker-32] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:50:07.206 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:50:07.207 [Worker-32] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:50:07.207 [Worker-32] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:50:07.209 [Worker-32] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 40 ms], [Find R Classes = 14 ms], [Extract Annotations = 11 ms], [Validate Annotations = 4 ms], [Extract Manifest = 3 ms], [Process Annotations = 3 ms], [Generate Sources = 3 ms], 
+20:50:07.210 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:50:21.845 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:50:21.968 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 3 elements
+20:50:21.980 [Worker-31] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:50:21.982 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:50:21.983 [Worker-31] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:50:21.987 [Worker-31] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:50:21.994 [Worker-31] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:50:21.994 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.LoginDialogFragment]
+20:50:21.995 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager, taskManager]
+20:50:21.997 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:50:21.998 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:50:21.998 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.User) , void showResult(List<hu.todo.entity.Task>) ]
+20:50:21.999 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() , void getItemsInBackground() ]
+20:50:21.999 [Worker-31] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:50:22.0 [Worker-31] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.LoginDialogFragment]
+20:50:22.1 [Worker-31] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:50:22.3 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 2
+20:50:22.3 [Worker-31] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:50:22.4 [Worker-31] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:50:22.6 [Worker-31] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:50:22.8 [Worker-31] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 40 ms], [Extract Annotations = 11 ms], [Find R Classes = 11 ms], [Validate Annotations = 5 ms], [Generate Sources = 5 ms], [Process Annotations = 4 ms], [Extract Manifest = 2 ms], 
+20:50:22.8 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:50:40.919 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:50:40.988 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 3 elements
+20:50:41.0 [Worker-31] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:50:41.3 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:50:41.4 [Worker-31] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:50:41.7 [Worker-31] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:50:41.14 [Worker-31] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:50:41.15 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.LoginDialogFragment]
+20:50:41.16 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager, taskManager]
+20:50:41.17 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:50:41.18 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:50:41.19 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.User) , void showResult(List<hu.todo.entity.Task>) ]
+20:50:41.19 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() , void getItemsInBackground() ]
+20:50:41.20 [Worker-31] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:50:41.20 [Worker-31] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.LoginDialogFragment]
+20:50:41.21 [Worker-31] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:50:41.22 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 2
+20:50:41.23 [Worker-31] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:50:41.23 [Worker-31] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:50:41.25 [Worker-31] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:50:41.27 [Worker-31] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 39 ms], [Extract Annotations = 11 ms], [Find R Classes = 10 ms], [Validate Annotations = 6 ms], [Generate Sources = 5 ms], [Extract Manifest = 3 ms], [Process Annotations = 2 ms], 
+20:50:41.28 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:50:48.110 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:50:48.112 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 6 annotations on 3 elements
+20:50:48.149 [Worker-29] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:50:48.151 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:50:48.151 [Worker-29] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:50:48.159 [Worker-29] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:50:48.164 [Worker-29] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:50:48.164 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:50:48.165 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:50:48.166 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter]
+20:50:48.167 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() ]
+20:50:48.168 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) ]
+20:50:48.168 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:50:48.169 [Worker-29] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:50:48.169 [Worker-29] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment]
+20:50:48.170 [Worker-29] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:50:48.171 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:50:48.173 [Worker-29] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:50:48.174 [Worker-29] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:50:48.177 [Worker-29] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 65 ms], [Extract Annotations = 37 ms], [Find R Classes = 13 ms], [Generate Sources = 6 ms], [Validate Annotations = 5 ms], [Extract Manifest = 2 ms], [Process Annotations = 2 ms], 
+20:50:48.177 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:51:05.311 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:51:05.313 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 4 annotations on 3 elements
+20:51:05.322 [Worker-29] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:51:05.324 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:51:05.325 [Worker-29] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:51:05.333 [Worker-29] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:51:05.338 [Worker-29] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:51:05.339 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:51:05.340 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:51:05.341 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.User) ]
+20:51:05.342 [Worker-29] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:51:05.343 [Worker-29] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:51:05.343 [Worker-29] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:51:05.344 [Worker-29] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:51:05.346 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:51:05.346 [Worker-29] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:51:05.347 [Worker-29] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:51:05.349 [Worker-29] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 36 ms], [Find R Classes = 13 ms], [Extract Annotations = 9 ms], [Validate Annotations = 5 ms], [Process Annotations = 3 ms], [Generate Sources = 3 ms], [Extract Manifest = 2 ms], 
+20:51:05.350 [Worker-29] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:51:45.282 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:51:45.284 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 4 annotations on 1 elements
+20:51:45.295 [Worker-31] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:51:45.298 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:51:45.299 [Worker-31] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:51:45.303 [Worker-31] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:51:45.311 [Worker-31] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:51:45.312 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:51:45.314 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:51:45.315 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.User) ]
+20:51:45.316 [Worker-31] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:51:45.317 [Worker-31] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:51:45.318 [Worker-31] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:51:45.319 [Worker-31] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:51:45.320 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:51:45.320 [Worker-31] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:51:45.321 [Worker-31] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:51:45.323 [Worker-31] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 39 ms], [Find R Classes = 12 ms], [Extract Annotations = 11 ms], [Validate Annotations = 5 ms], [Process Annotations = 4 ms], [Extract Manifest = 3 ms], [Generate Sources = 3 ms], 
+20:51:45.324 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:52:06.357 [Worker-33] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:52:06.358 [Worker-33] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 4 annotations on 1 elements
+20:52:06.370 [Worker-33] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:52:06.373 [Worker-33] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_], permissionQualifiedNames=[android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:52:06.374 [Worker-33] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:52:06.378 [Worker-33] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:52:06.386 [Worker-33] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:52:06.387 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:52:06.388 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:52:06.389 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(hu.todo.entity.User) ]
+20:52:06.390 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() ]
+20:52:06.391 [Worker-33] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:52:06.392 [Worker-33] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.LoginDialogFragment]
+20:52:06.394 [Worker-33] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:52:06.395 [Worker-33] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:52:06.396 [Worker-33] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:52:06.396 [Worker-33] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:52:06.400 [Worker-33] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 42 ms], [Find R Classes = 13 ms], [Extract Annotations = 11 ms], [Validate Annotations = 5 ms], [Generate Sources = 5 ms], [Process Annotations = 4 ms], [Extract Manifest = 3 ms], 
+20:52:06.400 [Worker-33] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing

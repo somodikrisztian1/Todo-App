@@ -13,7 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import hu.todo.adapter.TodoAdapter_;
-import hu.todo.service.TaskRestInterface_;
+import hu.todo.rest.TaskRestInterface_;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;

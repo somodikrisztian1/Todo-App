@@ -4,7 +4,7 @@ import hu.todo.adapter.TodoAdapter;
 import hu.todo.entity.Task;
 import hu.todo.function.ApplicationFunctions;
 import hu.todo.item.TodoItem;
-import hu.todo.service.TaskRestInterface;
+import hu.todo.rest.TaskRestInterface;
 import hu.todo.toast.Toaster;
 
 import java.util.ArrayList;
@@ -22,7 +22,6 @@ import org.androidannotations.annotations.rest.RestService;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 
 // megjeleníti az összes teendőt időrendben
 @EFragment
@@ -38,7 +37,6 @@ public class AllFragment extends ListFragment {
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 	        setRetainInstance(true);
-	        Log.d("lol", "oncre");
 	        if(ApplicationFunctions.getInstance().getUserFunctions().getLoginStatus()) {
 	        	getItemsInBackground();
 	        }
@@ -58,7 +56,7 @@ public class AllFragment extends ListFragment {
 	
 	@Background
     void getItemsInBackground() {
-		String token = ApplicationFunctions.getInstance().getUserFunctions().getLoggedInUser().getToken();
+		String token = ApplicationFunctions.getInstance().getUserFunctions().getLoggedUser().getToken();
         List<Task> tasks = taskManager.fetchAllTasks(token); // itt is kell majd ellenőrizni pl mivan ha elavult a session id
         showResult(tasks);
     }

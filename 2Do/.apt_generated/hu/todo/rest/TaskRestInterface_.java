@@ -3,14 +3,15 @@
 //
 
 
-package hu.todo.service;
+package hu.todo.rest;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import hu.todo.entity.Task;
-import hu.todo.service.java.util.List_Task;
+import hu.todo.entity.User;
+import hu.todo.rest.java.util.List_Task;
 import org.androidannotations.api.rest.RestErrorHandler;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -51,6 +52,26 @@ public final class TaskRestInterface_
         urlVariables.put("token", token);
         try {
             return restTemplate.exchange("http://37.139.18.133/tasks/?token={token}", HttpMethod.GET, requestEntity, List_Task.class, urlVariables).getBody();
+        } catch (RestClientException e) {
+            if (restErrorHandler!= null) {
+                restErrorHandler.onRestClientExceptionThrown(e);
+                return null;
+            } else {
+                throw e;
+            }
+        }
+    }
+
+    @Override
+    public User login(String email, String password) {
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
+        HttpEntity<Object> requestEntity = new HttpEntity<Object>(httpHeaders);
+        HashMap<String, Object> urlVariables = new HashMap<String, Object>();
+        urlVariables.put("email", email);
+        urlVariables.put("password", password);
+        try {
+            return restTemplate.exchange("http://37.139.18.133/sessions/?email={email}&password={password}", HttpMethod.POST, requestEntity, User.class, urlVariables).getBody();
         } catch (RestClientException e) {
             if (restErrorHandler!= null) {
                 restErrorHandler.onRestClientExceptionThrown(e);

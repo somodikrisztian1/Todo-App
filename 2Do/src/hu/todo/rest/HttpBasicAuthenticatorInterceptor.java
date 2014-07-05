@@ -1,4 +1,4 @@
-package hu.todo.service;
+package hu.todo.rest;
 
 import java.io.IOException;
 
