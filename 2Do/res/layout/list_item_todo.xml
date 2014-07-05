@@ -5,43 +5,54 @@
     android:orientation="horizontal"
     android:padding="@dimen/padding_listitem" >
      
-    <CheckBox android:id="@+id/todoCheckbox"
+    <ImageView android:id="@+id/todoImage"
 	 android:layout_width="wrap_content"
 	 android:layout_height="wrap_content"
-	 android:button="@drawable/selector_checkbox"
-	 android:layout_gravity="center" />
+	 android:layout_gravity="center"
+	 android:src="@drawable/local_mode_icon" 
+	 android:contentDescription="hol van tarolva"/>
     
     <LinearLayout 
 	    android:layout_width="wrap_content"
 	    android:layout_height="wrap_content"
-	    android:orientation="vertical" >
+	    android:orientation="vertical" 
+	    android:layout_marginLeft ="5dp"
+        android:layout_marginRight="5dp">
 	    
-	    <TextView android:id="@+id/txtContent1stRow"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:gravity="center"/>
-	    
-	    <TextView android:id="@+id/txtContent2ndRow"
+        <TextView android:id="@+id/txtDate1stRow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"/>
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:singleLine="true"/>
+        
+        <TextView android:id="@+id/txtDate2ndRow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:singleLine="true"/>
+        
+	    
 	    
     </LinearLayout>
     
      <LinearLayout 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:layout_marginLeft ="5dp"
+        android:layout_marginRight="5dp" >
         
-        <TextView android:id="@+id/txtDate1stRow"
+        <TextView android:id="@+id/txtContent1stRow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"/>
+            android:textStyle="bold"
+            android:singleLine="true"/>
         
-        <TextView android:id="@+id/txtDate2ndRow"
+        <TextView android:id="@+id/txtContent2ndRow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"/>
+            android:singleLine="true"/>
         
     </LinearLayout>
  

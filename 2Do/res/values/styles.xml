@@ -17,5 +17,71 @@
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 
+
+    <!-- ListView -->
+  
+    <style name="ListView" parent="@android:style/Widget.ListView">
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:scrollingCache">false</item> 
+        <item name="android:listSelector">@drawable/listitem_selector</item>
+    </style>
+    
+    <style name="ListView.BackgroundSet">
+        <item name="android:background">@drawable/background</item>
+    </style>
+
+    <!-- List item -->
+    
+    <style name="ListItem">
+        <item name="android:background">@drawable/listitem_background</item>
+    </style>
+
+    <!-- EditText -->
+    
+    <style name="EditText" parent="@android:style/Widget.EditText">
+        <item name="android:background">@drawable/edittext_background</item>
+        <item name="android:textColor">@color/black_almost</item>
+    </style>
+    
+    <!-- Button -->
+    
+    <style name="Button" parent="@android:style/Widget.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textSize">@dimen/text_normal_size</item>
+        <item name="android:textColor">@color/blue_dark</item>
+    </style>
+    
+    <!-- Action Bar -->
+
+    <style name="ActionBar" parent="@style/Widget.AppCompat.ActionBar">
+        <item name="titleTextStyle">@style/TitleText</item>
+        <item name="background">@color/blue_verylight</item>
+    </style>
+
+    <style name="TitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/gray_dark</item>
+    </style>
+
+    <style name="ActionBarTab" parent="Widget.AppCompat.ActionBar.TabView">
+        <item name="android:background">@drawable/tab_background</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingRight">0dp</item>
+    </style>
+
+    <style name="ActionBarTabBar" parent="Widget.AppCompat.ActionBar.TabBar">
+        <item name="divider">@null</item>
+        <item name="showDividers">none</item>
+    </style>
+
+    <style name="ActionBarTabText" parent="Widget.AppCompat.ActionBar.TabText">
+        <item name="textAllCaps">false</item>
+        <item name="android:textColor">@color/black_almost</item>
+    </style>
+    
+    <style name="CustomAutoCompleteTextView" parent="@android:style/Widget.AutoCompleteTextView">
+        <item name="android:background">@drawable/edittext_background</item>
+        <item name="android:textColor">@color/black_almost</item>
+        <item name="android:divider">@color/blue_light</item>
+    </style>  
     
 </resources>

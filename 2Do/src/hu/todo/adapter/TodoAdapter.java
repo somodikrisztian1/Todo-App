@@ -20,17 +20,16 @@ import android.widget.CheckBox;
 public class TodoAdapter extends BaseAdapter {
 	
 	ArrayList<TodoItem> items;
+	
 	@RootContext
 	Context context;
+	
+	public ArrayList<TodoItem> getItems() {
+		return items;
+	}
 	 
     public TodoAdapter(Context context) {
     	items = new ArrayList<TodoItem>();
-    	CheckBox cb1 = new CheckBox(context);
-    	cb1.setChecked(true);
-    	CheckBox cb2 = new CheckBox(context);
-    	cb1.setChecked(false);
-    	items.add(new TodoItem(cb1, "1content1stRow", "1content2ndRow", "1date1stRow", "1date2ndRow"));
-    	items.add(new TodoItem(cb2, "2content1stRow", "2content2ndRow", "2date1stRow", "2date2ndRow"));
     }
 	
 	@Override

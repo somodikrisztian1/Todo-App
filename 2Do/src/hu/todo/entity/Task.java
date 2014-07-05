@@ -1,5 +1,7 @@
 package hu.todo.entity;
 
+import java.util.Calendar;
+
 
 public class Task {
 	
@@ -7,9 +9,9 @@ public class Task {
 	private int user_id;
 	private String title;
 	private String description;
-	private String date;
-	private String created_at;
-	private String updated_at;
+	private Calendar date;
+	private Calendar created_at;
+	private Calendar updated_at;
 
 	public int getId() {
 		return id;
@@ -43,27 +45,27 @@ public class Task {
 		this.description = description;
 	}
 
-	public String getDate() {
+	public Calendar getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Calendar date) {
 		this.date = date;
 	}
 
-	public String getCreated_at() {
+	public Calendar getCreated_at() {
 		return created_at;
 	}
 
-	public void setCreated_at(String created_at) {
+	public void setCreated_at(Calendar created_at) {
 		this.created_at = created_at;
 	}
 
-	public String getUpdated_at() {
+	public Calendar getUpdated_at() {
 		return updated_at;
 	}
 
-	public void setUpdated_at(String updated_at) {
+	public void setUpdated_at(Calendar updated_at) {
 		this.updated_at = updated_at;
 	}
 

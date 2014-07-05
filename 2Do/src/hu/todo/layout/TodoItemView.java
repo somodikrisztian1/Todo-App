@@ -14,9 +14,6 @@ import android.widget.TextView;
 // a teendőt leíró nézet
 @EViewGroup(R.layout.list_item_todo)
 public class TodoItemView extends LinearLayout {
-
-	@ViewById
-	CheckBox todoCheckbox;
 	
 	@ViewById
 	TextView txtContent1stRow;
@@ -35,7 +32,6 @@ public class TodoItemView extends LinearLayout {
 	}
 
 	public void bind(TodoItem todoItem) {
-		todoCheckbox.setChecked(todoItem.getCheckbox().isChecked());
 		txtContent1stRow.setText(todoItem.getContent1stRow());
 		txtContent2ndRow.setText(todoItem.getContent2ndRow());
 		txtDate1stRow.setText(todoItem.getDate1stRow());

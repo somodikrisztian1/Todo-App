@@ -858,10 +858,21 @@ containing a value of this type.
         public static final int abc_split_action_bar_is_narrow=0x7f060002;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f070003;
+        public static final int abc_search_url_text_holo=0x7f07000e;
         public static final int abc_search_url_text_normal=0x7f070000;
         public static final int abc_search_url_text_pressed=0x7f070002;
         public static final int abc_search_url_text_selected=0x7f070001;
+        public static final int black_almost=0x7f07000c;
+        public static final int blue=0x7f070006;
+        public static final int blue_dark=0x7f070007;
+        public static final int blue_light=0x7f070005;
+        public static final int blue_verylight=0x7f070004;
+        public static final int gray=0x7f07000a;
+        public static final int gray_dark=0x7f07000b;
+        public static final int gray_light=0x7f070009;
+        public static final int gray_verylight=0x7f070008;
+        public static final int orange=0x7f07000d;
+        public static final int white=0x7f070003;
     }
     public static final class dimen {
         /**  Default height of an action bar. 
@@ -981,6 +992,7 @@ containing a value of this type.
         public static final int dialog_fixed_width_minor=0x7f080012;
         public static final int font_size=0x7f080016;
         public static final int padding_listitem=0x7f080015;
+        public static final int text_normal_size=0x7f080017;
     }
     public static final class drawable {
         public static final int abc_ab_bottom_solid_dark_holo=0x7f020000;
@@ -1070,14 +1082,27 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int btn_check_buttonless_off=0x7f020057;
-        public static final int btn_check_buttonless_on=0x7f020058;
-        public static final int btn_check_on_disabled_holo_dark=0x7f020059;
-        public static final int ic_action_new=0x7f02005a;
-        public static final int ic_action_refresh=0x7f02005b;
-        public static final int ic_action_search=0x7f02005c;
-        public static final int ic_launcher=0x7f02005d;
-        public static final int selector_checkbox=0x7f02005e;
+        public static final int background=0x7f020057;
+        public static final int background_pattern=0x7f020058;
+        public static final int btn_check_buttonless_off=0x7f020059;
+        public static final int btn_check_buttonless_on=0x7f02005a;
+        public static final int btn_check_on_disabled_holo_dark=0x7f02005b;
+        public static final int button_background=0x7f02005c;
+        public static final int button_highlight=0x7f02005d;
+        public static final int button_normal=0x7f02005e;
+        public static final int circuitboard=0x7f02005f;
+        public static final int edittext_background=0x7f020060;
+        public static final int ic_action_new=0x7f020061;
+        public static final int ic_action_refresh=0x7f020062;
+        public static final int ic_action_search=0x7f020063;
+        public static final int ic_launcher=0x7f020064;
+        public static final int listitem_background=0x7f020065;
+        public static final int listitem_selector=0x7f020066;
+        public static final int local_mode_icon=0x7f020067;
+        public static final int selector_checkbox=0x7f020068;
+        public static final int tab_background=0x7f020069;
+        public static final int textfield_focused=0x7f02006a;
+        public static final int textfield_normal=0x7f02006b;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1087,14 +1112,14 @@ containing a value of this type.
         public static final int action_bar_root=0x7f05001a;
         public static final int action_bar_subtitle=0x7f050023;
         public static final int action_bar_title=0x7f050022;
-        public static final int action_check_updates=0x7f05004a;
+        public static final int action_check_updates=0x7f05004d;
         public static final int action_context_bar=0x7f05001d;
-        public static final int action_help=0x7f050049;
+        public static final int action_help=0x7f05004c;
         public static final int action_menu_divider=0x7f050016;
         public static final int action_menu_presenter=0x7f050017;
         public static final int action_mode_close_button=0x7f050024;
-        public static final int action_new=0x7f050048;
-        public static final int action_refresh=0x7f050047;
+        public static final int action_new=0x7f05004b;
+        public static final int action_refresh=0x7f05004a;
         public static final int activity_chooser_view_content=0x7f050025;
         public static final int always=0x7f05000b;
         public static final int beginning=0x7f050011;
@@ -1105,6 +1130,7 @@ containing a value of this type.
         public static final int disableHome=0x7f050008;
         public static final int dropdown=0x7f05000f;
         public static final int edit_query=0x7f050030;
+        public static final int email=0x7f050040;
         public static final int end=0x7f050013;
         public static final int expand_activities_button=0x7f050026;
         public static final int expanded_menu=0x7f05002c;
@@ -1116,6 +1142,7 @@ containing a value of this type.
         public static final int listMode=0x7f050001;
         public static final int list_item=0x7f050029;
         public static final int lista=0x7f05003e;
+        public static final int login=0x7f05003f;
         public static final int middle=0x7f050012;
         public static final int never=0x7f050009;
         public static final int none=0x7f050010;
@@ -1143,15 +1170,16 @@ containing a value of this type.
         public static final int submit_area=0x7f050039;
         public static final int tabMode=0x7f050002;
         public static final int title=0x7f05002b;
-        public static final int todoCheckbox=0x7f050042;
+        public static final int todoImage=0x7f050045;
         public static final int top_action_bar=0x7f050020;
-        public static final int txtContent1stRow=0x7f050043;
-        public static final int txtContent2ndRow=0x7f050044;
-        public static final int txtDate1stRow=0x7f050045;
-        public static final int txtDate2ndRow=0x7f050046;
-        public static final int txtListSize=0x7f050040;
-        public static final int txtListTitle=0x7f05003f;
-        public static final int txtTitle=0x7f050041;
+        public static final int txtContent1stRow=0x7f050048;
+        public static final int txtContent2ndRow=0x7f050049;
+        public static final int txtDate1stRow=0x7f050046;
+        public static final int txtDate2ndRow=0x7f050047;
+        public static final int txtListSize=0x7f050043;
+        public static final int txtListTitle=0x7f050042;
+        public static final int txtTitle=0x7f050044;
+        public static final int txt_your_name=0x7f050041;
         public static final int up=0x7f050021;
         public static final int useLogo=0x7f050003;
         public static final int withText=0x7f05000c;
@@ -1210,11 +1238,12 @@ containing a value of this type.
         public static final int activity_main=0x7f030019;
         public static final int fragment_all=0x7f03001a;
         public static final int fragment_calendar=0x7f03001b;
-        public static final int fragment_mobile_list=0x7f03001c;
-        public static final int list_item_navigation=0x7f03001d;
-        public static final int list_item_title_navigation=0x7f03001e;
-        public static final int list_item_todo=0x7f03001f;
-        public static final int support_simple_spinner_dropdown_item=0x7f030020;
+        public static final int fragment_login_dialog=0x7f03001c;
+        public static final int fragment_mobile_list=0x7f03001d;
+        public static final int list_item_navigation=0x7f03001e;
+        public static final int list_item_title_navigation=0x7f03001f;
+        public static final int list_item_todo=0x7f030020;
+        public static final int support_simple_spinner_dropdown_item=0x7f030021;
     }
     public static final class menu {
         public static final int activity_main_actions=0x7f0c0000;
@@ -1267,6 +1296,12 @@ containing a value of this type.
         public static final int title_activity_main=0x7f0a0010;
     }
     public static final class style {
+        /**  Action Bar 
+         */
+        public static final int ActionBar=0x7f0b0092;
+        public static final int ActionBarTab=0x7f0b0094;
+        public static final int ActionBarTabBar=0x7f0b0095;
+        public static final int ActionBarTabText=0x7f0b0096;
         /** 
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
@@ -1293,6 +1328,20 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f0b008c;
+        /**  Button 
+         */
+        public static final int Button=0x7f0b0091;
+        public static final int CustomAutoCompleteTextView=0x7f0b0097;
+        /**  EditText 
+         */
+        public static final int EditText=0x7f0b0090;
+        /**  List item 
+         */
+        public static final int ListItem=0x7f0b008f;
+        /**  ListView 
+         */
+        public static final int ListView=0x7f0b008d;
+        public static final int ListView_BackgroundSet=0x7f0b008e;
         /**  Mimic text appearance in select_dialog_item.xml 
          */
         public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0b0063;
@@ -1401,6 +1450,7 @@ containing a value of this type.
         /**  Base platform-dependent theme providing a light-themed activity. 
          */
         public static final int Theme_Base_Light=0x7f0b007f;
+        public static final int TitleText=0x7f0b0093;
         /**  Styles in here can be extended for customisation in your application. Each utilises
          one of the Base styles. If Holo themes are available on the current platform version
          they will be used instead of the compat styles. 

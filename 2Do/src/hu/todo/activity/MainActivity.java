@@ -20,6 +20,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 // a fő activity, amely egy viewpagert tartalmaz
 @EActivity(R.layout.activity_main)
@@ -41,8 +42,8 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 	}
 	 
     ActionBar actionBar;
-
-    @AfterViews
+    
+	@AfterViews
     void init() {
     	actionBar = getActionBar();
     	TabsPagerAdapter mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
