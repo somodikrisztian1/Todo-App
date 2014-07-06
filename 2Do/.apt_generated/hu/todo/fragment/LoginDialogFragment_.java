@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import hu.todo.rest.TaskRestInterface_;
+import hu.todo.sharedprefs.MyPrefs_;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedNotifier;
@@ -44,6 +45,7 @@ public final class LoginDialogFragment_
     }
 
     private void init_(Bundle savedInstanceState) {
+        myPrefs = new MyPrefs_(getActivity());
         taskManager = new TaskRestInterface_();
     }
 

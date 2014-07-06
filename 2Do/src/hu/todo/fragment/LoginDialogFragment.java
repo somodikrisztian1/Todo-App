@@ -5,10 +5,12 @@ import hu.todo.activity.MainActivity;
 import hu.todo.entity.User;
 import hu.todo.function.ApplicationFunctions;
 import hu.todo.rest.TaskRestInterface;
+import hu.todo.sharedprefs.MyPrefs_;
 
 import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.rest.RestService;
+import org.androidannotations.annotations.sharedpreferences.Pref;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -24,6 +26,9 @@ import android.view.View;
 public class LoginDialogFragment extends DialogFragment implements DialogInterface.OnClickListener {
 	
 	AllFragment fragment;
+	
+	@Pref
+	MyPrefs_ myPrefs;
 	
 	@RestService
     TaskRestInterface taskManager;
@@ -69,13 +74,14 @@ public class LoginDialogFragment extends DialogFragment implements DialogInterfa
 	@Override
 	public void onClick(DialogInterface dialog, int which) {
 		this.which = which;
+		if(fragment == null)
+			fragment = (AllFragment) activity.getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.pager + ":" + activity.viewPager.getCurrentItem());
 		if(which == Dialog.BUTTON_POSITIVE) {
 			login();
 		}
 		else {
 			// negativ gombnal nem fut le az oncancel
-			if(fragment == null)
-			fragment = (AllFragment) activity.getSupportFragmentManager().findFragmentByTag("android:switcher:" + R.id.pager + ":" + activity.viewPager.getCurrentItem());
+			
 			shouldRe = true;
 		}
 
@@ -114,11 +120,17 @@ public class LoginDialogFragment extends DialogFragment implements DialogInterfa
 			loggedUser = taskManager.login("somodikrisztian1@gmail.com", "letmein");
 		}catch (Exception e) {
 			e.printStackTrace();
+			
+			// ha már nem érvényes a token
+			myPrefs.clear();
+			
 			activity.getSupportFragmentManager().popBackStack();  // nem szükséges ?!
 			show(activity.getSupportFragmentManager(), "dialog_login");
 		}
 		if(loggedUser != null) {
 			ApplicationFunctions.getInstance().getUserFunctions().setLoggedUser(loggedUser);
+			String token = ApplicationFunctions.getInstance().getUserFunctions().getLoggedUser().getToken();
+			myPrefs.token().put(token);
 			fragment.getItemsInBackground();
 		}
     }

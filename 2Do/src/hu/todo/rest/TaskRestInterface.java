@@ -25,8 +25,12 @@ public interface TaskRestInterface extends RestClientErrorHandling {
 	
 	 
 	 @Get("/tasks/?token={token}")  
-	 List<Task> fetchAllTasks(String token);
+	 List<Task> getAllTask(String token);
 	 
 	 @Post("/sessions/?email={email}&password={password}")
 	 User login(String email, String password);
+	 
+	 @Get("/users/?token={token}")
+	 List<User> getAllUser(String token);
+	 
 }

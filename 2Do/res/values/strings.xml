@@ -6,5 +6,22 @@
     <string name="action_refresh">Frissítés</string>
     <string name="title_activity_main">2Do</string>
     <string name="hello_world">Hello world!</string>
+    <string name ="title_activity_add_task">Teendő létrehozása</string>
 
+    <string name="title">Cím</string>
+    <string name="description">Leírás</string>
+    <string name="date">Határidő</string>
+    <string name="created_at">Létrehozva</string>
+    <string name="updated_at">Frissítve</string>
+    <string name="create">Létrehozás</string>
+    <string name="_date">határidő</string>
+    <string name="_created_at">létrehozva</string>
+    <string name="_updated_at">frissítve</string>
+    
+    <string name="in_charge">Felelős személy</string>
+    <string name="user_hint">felelős személy</string>
+    <string name="description_hint">a feladat leírása</string>
+    
+    <string name="dates">határidő, létrehozva, frissítve</string>
+    
 </resources>

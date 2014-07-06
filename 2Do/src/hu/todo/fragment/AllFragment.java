@@ -2,6 +2,7 @@ package hu.todo.fragment;
 
 import hu.todo.adapter.TodoAdapter;
 import hu.todo.entity.Task;
+import hu.todo.entity.User;
 import hu.todo.function.ApplicationFunctions;
 import hu.todo.item.TodoItem;
 import hu.todo.rest.TaskRestInterface;
@@ -22,6 +23,7 @@ import org.androidannotations.annotations.rest.RestService;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ListFragment;
+import android.util.Log;
 
 // megjeleníti az összes teendőt időrendben
 @EFragment
@@ -42,9 +44,9 @@ public class AllFragment extends ListFragment {
 	        }
 	        else {
 	        	Toaster.loginWarning(getActivity()); // setretaininstance miatt a dialog sem fog ujraindulni
-	        	        FragmentManager fm = getActivity().getSupportFragmentManager();
-	        	        LoginDialogFragment_ editNameDialog = new LoginDialogFragment_();
-	        	        editNameDialog.show(fm, "dialog_login");
+    	        FragmentManager fm = getActivity().getSupportFragmentManager();
+    	        LoginDialogFragment_ editNameDialog = new LoginDialogFragment_();
+    	        editNameDialog.show(fm, "dialog_login");
 	        }
 	    }
 	 
@@ -57,7 +59,7 @@ public class AllFragment extends ListFragment {
 	@Background
     void getItemsInBackground() {
 		String token = ApplicationFunctions.getInstance().getUserFunctions().getLoggedUser().getToken();
-        List<Task> tasks = taskManager.fetchAllTasks(token); // itt is kell majd ellenőrizni pl mivan ha elavult a session id
+        List<Task> tasks = taskManager.getAllTask(token); // itt is kell majd ellenőrizni pl mivan ha elavult a session id
         showResult(tasks);
     }
  

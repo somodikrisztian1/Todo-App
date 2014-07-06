@@ -12,6 +12,7 @@ import java.util.List;
 import hu.todo.entity.Task;
 import hu.todo.entity.User;
 import hu.todo.rest.java.util.List_Task;
+import hu.todo.rest.java.util.List_User;
 import org.androidannotations.api.rest.RestErrorHandler;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -54,7 +55,7 @@ public final class TaskRestInterface_
     }
 
     @Override
-    public List<Task> fetchAllTasks(String token) {
+    public List<Task> getAllTask(String token) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
         HttpEntity<Object> requestEntity = new HttpEntity<Object>(httpHeaders);
@@ -62,6 +63,25 @@ public final class TaskRestInterface_
         urlVariables.put("token", token);
         try {
             return restTemplate.exchange(rootUrl.concat("/tasks/?token={token}"), HttpMethod.GET, requestEntity, List_Task.class, urlVariables).getBody();
+        } catch (RestClientException e) {
+            if (restErrorHandler!= null) {
+                restErrorHandler.onRestClientExceptionThrown(e);
+                return null;
+            } else {
+                throw e;
+            }
+        }
+    }
+
+    @Override
+    public List<User> getAllUser(String token) {
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
+        HttpEntity<Object> requestEntity = new HttpEntity<Object>(httpHeaders);
+        HashMap<String, Object> urlVariables = new HashMap<String, Object>();
+        urlVariables.put("token", token);
+        try {
+            return restTemplate.exchange(rootUrl.concat("/users/?token={token}"), HttpMethod.GET, requestEntity, List_User.class, urlVariables).getBody();
         } catch (RestClientException e) {
             if (restErrorHandler!= null) {
                 restErrorHandler.onRestClientExceptionThrown(e);
