@@ -44,7 +44,7 @@ public class AllFragment extends ListFragment {
 	        	Toaster.loginWarning(getActivity()); // setretaininstance miatt a dialog sem fog ujraindulni
 	        	        FragmentManager fm = getActivity().getSupportFragmentManager();
 	        	        LoginDialogFragment_ editNameDialog = new LoginDialogFragment_();
-	        	        editNameDialog.show(fm, "fragment_edit_name");
+	        	        editNameDialog.show(fm, "dialog_login");
 	        }
 	    }
 	 

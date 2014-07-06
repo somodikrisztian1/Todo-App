@@ -28,7 +28,7 @@ import android.widget.Toast;
 public class MainActivity extends FragmentActivity implements OnNavigationListener, OnPageChangeListener {
 
 	@ViewById(R.id.pager)
-	ViewPager viewPager;
+	public ViewPager viewPager;
 
 	@Bean
 	TitleNavigationAdapter adapter;

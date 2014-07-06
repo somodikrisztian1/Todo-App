@@ -6,12 +6,9 @@
 package hu.todo.fragment;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import hu.todo.entity.User;
 import hu.todo.rest.TaskRestInterface_;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
@@ -24,7 +21,6 @@ public final class LoginDialogFragment_
 
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private View contentView_;
-    private Handler handler_ = new Handler(Looper.getMainLooper());
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,28 +58,14 @@ public final class LoginDialogFragment_
     }
 
     @Override
-    public void showResult(final User loggedUser) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                LoginDialogFragment_.super.showResult(loggedUser);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void getItemsInBackground() {
+    public void login() {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    LoginDialogFragment_.super.getItemsInBackground();
+                    LoginDialogFragment_.super.login();
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

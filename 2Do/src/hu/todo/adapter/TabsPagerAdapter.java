@@ -18,10 +18,8 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
  
         switch (index) {
         case 0: 
-            // Top Rated fragment activity
             return new AllFragment_();
         case 1:
-            // Movies fragment activity
             return new GroupedByUserFragment_();
         }
  

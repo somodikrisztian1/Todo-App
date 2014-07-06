@@ -27,20 +27,30 @@ public final class TaskRestInterface_
 {
 
     private RestTemplate restTemplate;
-    private String rootUrl;
     private RestErrorHandler restErrorHandler;
+    private String rootUrl;
 
     public TaskRestInterface_() {
         restTemplate = new RestTemplate();
-        rootUrl = "";
+        rootUrl = "http://37.139.18.133";
         restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
         restTemplate.setInterceptors(new ArrayList<ClientHttpRequestInterceptor>());
         restTemplate.getInterceptors().add(new HttpBasicAuthenticatorInterceptor());
     }
 
     @Override
-    public RestTemplate getrRestTemplate() {
+    public RestTemplate getRestTemplate() {
         return restTemplate;
+    }
+
+    @Override
+    public void setRestTemplate(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
+    @Override
+    public void setRestErrorHandler(RestErrorHandler arg0) {
+        this.restErrorHandler = arg0;
     }
 
     @Override
@@ -51,7 +61,7 @@ public final class TaskRestInterface_
         HashMap<String, Object> urlVariables = new HashMap<String, Object>();
         urlVariables.put("token", token);
         try {
-            return restTemplate.exchange("http://37.139.18.133/tasks/?token={token}", HttpMethod.GET, requestEntity, List_Task.class, urlVariables).getBody();
+            return restTemplate.exchange(rootUrl.concat("/tasks/?token={token}"), HttpMethod.GET, requestEntity, List_Task.class, urlVariables).getBody();
         } catch (RestClientException e) {
             if (restErrorHandler!= null) {
                 restErrorHandler.onRestClientExceptionThrown(e);
@@ -71,7 +81,7 @@ public final class TaskRestInterface_
         urlVariables.put("email", email);
         urlVariables.put("password", password);
         try {
-            return restTemplate.exchange("http://37.139.18.133/sessions/?email={email}&password={password}", HttpMethod.POST, requestEntity, User.class, urlVariables).getBody();
+            return restTemplate.exchange(rootUrl.concat("/sessions/?email={email}&password={password}"), HttpMethod.POST, requestEntity, User.class, urlVariables).getBody();
         } catch (RestClientException e) {
             if (restErrorHandler!= null) {
                 restErrorHandler.onRestClientExceptionThrown(e);

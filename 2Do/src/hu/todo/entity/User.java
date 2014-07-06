@@ -2,6 +2,7 @@ package hu.todo.entity;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
