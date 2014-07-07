@@ -9,6 +9,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
@@ -16,9 +17,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.TextView;
-import hu.todo.R.id;
 import hu.todo.R.layout;
-import hu.todo.item.TodoItem;
+import hu.todo.entity.Task;
 import hu.todo.rest.TaskRestInterface_;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
@@ -30,7 +30,7 @@ public final class TaskActivity_
 {
 
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
-    public final static String TODO_ITEM_EXTRA = "todoItem";
+    public final static String TASK_EXTRA = "task";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -79,18 +79,18 @@ public final class TaskActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        updated = ((TextView) hasViews.findViewById(id.updated));
-        date = ((TextView) hasViews.findViewById(id.date));
-        btnCreate = ((Button) hasViews.findViewById(id.btnCreate));
-        description = ((EditText) hasViews.findViewById(id.description));
-        created = ((TextView) hasViews.findViewById(id.created));
-        user = ((MultiAutoCompleteTextView) hasViews.findViewById(id.user));
-        datePicker = ((EditText) hasViews.findViewById(id.datePicker));
-        title = ((TextView) hasViews.findViewById(id.title));
-        updatedPicker = ((EditText) hasViews.findViewById(id.updatedPicker));
-        createdPicker = ((EditText) hasViews.findViewById(id.createdPicker));
+        updated = ((TextView) hasViews.findViewById(hu.todo.R.id.updated));
+        title = ((TextView) hasViews.findViewById(hu.todo.R.id.title));
+        createdPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.createdPicker));
+        updatedPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.updatedPicker));
+        datePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.datePicker));
+        date = ((TextView) hasViews.findViewById(hu.todo.R.id.date));
+        btnCreate = ((Button) hasViews.findViewById(hu.todo.R.id.btnCreate));
+        user = ((MultiAutoCompleteTextView) hasViews.findViewById(hu.todo.R.id.user));
+        created = ((TextView) hasViews.findViewById(hu.todo.R.id.created));
+        description = ((EditText) hasViews.findViewById(hu.todo.R.id.description));
         {
-            View view = hasViews.findViewById(id.btnCreate);
+            View view = hasViews.findViewById(hu.todo.R.id.btnCreate);
             if (view!= null) {
                 view.setOnClickListener(new OnClickListener() {
 
@@ -110,8 +110,8 @@ public final class TaskActivity_
     private void injectExtras_() {
         Bundle extras_ = getIntent().getExtras();
         if (extras_!= null) {
-            if (extras_.containsKey(TODO_ITEM_EXTRA)) {
-                todoItem = extras_.getParcelable(TODO_ITEM_EXTRA);
+            if (extras_.containsKey(TASK_EXTRA)) {
+                task = extras_.getParcelable(TASK_EXTRA);
             }
         }
     }
@@ -120,6 +120,20 @@ public final class TaskActivity_
     public void setIntent(Intent newIntent) {
         super.setIntent(newIntent);
         injectExtras_();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        boolean handled = super.onOptionsItemSelected(item);
+        if (handled) {
+            return true;
+        }
+        int itemId_ = item.getItemId();
+        if (itemId_ == android.R.id.home) {
+            navigateBackOnHomePress(item);
+            return true;
+        }
+        return false;
     }
 
     public static class IntentBuilder_ {
@@ -175,8 +189,8 @@ public final class TaskActivity_
             }
         }
 
-        public TaskActivity_.IntentBuilder_ todoItem(TodoItem todoItem) {
-            intent_.putExtra(TODO_ITEM_EXTRA, todoItem);
+        public TaskActivity_.IntentBuilder_ task(Task task) {
+            intent_.putExtra(TASK_EXTRA, task);
             return this;
         }
 

@@ -1,7 +1,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/padding_default" >
+    android:padding="@dimen/padding_default"
+    android:background="@drawable/texture" >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -29,6 +30,7 @@
             android:layout_below="@+id/title"
             android:layout_marginBottom="10dp"
             android:layout_marginRight="120dp"
+            android:inputType="textNoSuggestions"
             android:gravity="left"
             android:hint="@string/description_hint" />
 

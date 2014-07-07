@@ -4,15 +4,12 @@ import hu.todo.activity.TaskActivity_;
 import hu.todo.adapter.TodoAdapter;
 import hu.todo.entity.Task;
 import hu.todo.function.ApplicationFunctions;
-import hu.todo.item.TodoItem;
 import hu.todo.rest.MyErrorHandler;
 import hu.todo.rest.TaskRestInterface;
 import hu.todo.toast.Toaster;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
@@ -62,8 +59,8 @@ public class AllFragment extends ListFragment {
     }
 	
 	@ItemClick(android.R.id.list)
-    public void myListItemClicked(TodoItem todoItem) {
-		TaskActivity_.intent(this).todoItem(todoItem).start();
+    public void myListItemClicked(Task task) {
+		TaskActivity_.intent(this).task(task).start();
     }
 	
 	
@@ -93,11 +90,9 @@ public class AllFragment extends ListFragment {
     @UiThread
     void showResult(List<Task> tasks) {
     	if(tasks != null) {
-	    	ArrayList<TodoItem> items = adapter.getItems();
+	    	ArrayList<Task> items = adapter.getItems();
 	    	for(Task task : tasks) {
-	    		items.add(new TodoItem(task.getTitle(), task.getDescription(),
-	    				task.getDate().getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT, Locale.getDefault()), 
-	    				task.getDate().get(Calendar.MONTH) + "/" + task.getDate().get(Calendar.DAY_OF_MONTH)));
+	    		items.add(task);
 	    	}
 	    	adapter.notifyDataSetChanged();
     	} //TODO vmi üzenet

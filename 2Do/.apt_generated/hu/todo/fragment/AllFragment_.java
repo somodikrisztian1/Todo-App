@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import hu.todo.adapter.TodoAdapter_;
-import hu.todo.item.TodoItem;
 import hu.todo.rest.MyErrorHandler_;
 import hu.todo.rest.TaskRestInterface_;
 import org.androidannotations.api.BackgroundExecutor;
@@ -80,7 +79,7 @@ public final class AllFragment_
 
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        AllFragment_.this.myListItemClicked(((TodoItem) parent.getAdapter().getItem(position)));
+                        AllFragment_.this.myListItemClicked(((hu.todo.entity.Task) parent.getAdapter().getItem(position)));
                     }
 
                 }

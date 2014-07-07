@@ -1106,6 +1106,7 @@ containing a value of this type.
         public static final int tab_background=0x7f02006a;
         public static final int textfield_focused=0x7f02006b;
         public static final int textfield_normal=0x7f02006c;
+        public static final int texture=0x7f02006d;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;

@@ -1,13 +1,15 @@
 package hu.todo.layout;
 
+import java.util.Calendar;
+import java.util.Locale;
+
 import hu.todo.R;
-import hu.todo.item.TodoItem;
+import hu.todo.entity.Task;
 
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;
 
 import android.content.Context;
-import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -31,11 +33,11 @@ public class TodoItemView extends LinearLayout {
 		super(context);
 	}
 
-	public void bind(TodoItem todoItem) {
-		txtContent1stRow.setText(todoItem.getTitle());
-		txtContent2ndRow.setText(todoItem.getDescription());
-		txtDate1stRow.setText(todoItem.getDay());
-		txtDate2ndRow.setText(todoItem.getDate());
+	public void bind(Task task) {
+		txtContent1stRow.setText(task.getTitle());
+		txtContent2ndRow.setText(task.getDescription());
+		txtDate1stRow.setText(task.getDate().getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT, Locale.getDefault()));
+		txtDate2ndRow.setText(task.getDate().get(Calendar.MONTH) + "/" + task.getDate().get(Calendar.DAY_OF_MONTH));
 	}
 	
 }

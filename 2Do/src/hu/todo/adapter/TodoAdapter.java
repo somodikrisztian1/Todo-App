@@ -1,6 +1,6 @@
 package hu.todo.adapter;
 
-import hu.todo.item.TodoItem;
+import hu.todo.entity.Task;
 import hu.todo.layout.TodoItemView;
 import hu.todo.layout.TodoItemView_;
 
@@ -13,23 +13,22 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
 
 // adapter a teendők listájához
 @EBean
 public class TodoAdapter extends BaseAdapter {
 	
-	ArrayList<TodoItem> items;
+	ArrayList<Task> items;
 	
 	@RootContext
 	Context context;
 	
-	public ArrayList<TodoItem> getItems() {
+	public ArrayList<Task> getItems() {
 		return items;
 	}
 	 
     public TodoAdapter(Context context) {
-    	items = new ArrayList<TodoItem>();
+    	items = new ArrayList<Task>();
     }
 	
 	@Override
@@ -38,7 +37,7 @@ public class TodoAdapter extends BaseAdapter {
 	}
 
 	@Override
-	public TodoItem getItem(int position) {
+	public Task getItem(int position) {
 		return items.get(position);
 	}
 

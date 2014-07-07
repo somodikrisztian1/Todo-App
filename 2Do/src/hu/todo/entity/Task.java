@@ -1,15 +1,16 @@
 package hu.todo.entity;
 
-import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 
 //to convert the JSON _id property to our id bean property.
-@SuppressWarnings("serial")
-public class Task implements Serializable {
+public class Task implements Parcelable{
 	
 	@JsonProperty("id")
 	private int id;
@@ -19,6 +20,11 @@ public class Task implements Serializable {
 	private Calendar date;
 	private Calendar created_at;
 	private Calendar updated_at;
+	
+	// kell a feldolgozashoz
+	public Task() {
+		super();
+	}
 
 	@JsonProperty("errors")
 	List<String> errors;
@@ -85,6 +91,55 @@ public class Task implements Serializable {
 				+ ", description=" + description + ", date=" + date
 				+ ", created_at=" + created_at + ", updated_at=" + updated_at
 				+ "]";
+	}
+	
+//  to pass complex data from one activity to another activity
+	/**
+    * Storing the TodoItem data to Parcel object
+    **/
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeInt(user_id);
+        dest.writeString(title);
+        dest.writeString(description);
+        dest.writeSerializable(date);
+        dest.writeSerializable(created_at);
+        dest.writeSerializable(updated_at);
+    }
+    
+    /**
+     * Retrieving TodoItem data from Parcel object
+     * This constructor is invoked by the method createFromParcel(Parcel source) of
+     * the object CREATOR
+     **/
+     private Task(Parcel in){
+    	 id = in.readInt();
+    	 user_id = in.readInt();
+         title = in.readString();
+         description = in.readString();
+         date = (Calendar) in.readSerializable();
+         created_at = (Calendar) in.readSerializable();
+         updated_at = (Calendar) in.readSerializable();
+     }
+  
+     public static final Parcelable.Creator<Task> CREATOR = new Parcelable.Creator<Task>() {
+  
+         @Override
+         public Task createFromParcel(Parcel source) {
+             return new Task(source);
+         }
+  
+         @Override
+         public Task[] newArray(int size) {
+             return new Task[size];
+         }
+     };
+
+    // esetek 99.8% ban nem kell csinalni ezzel semmit
+	@Override
+	public int describeContents() {
+		return 0;
 	}
 	
 }

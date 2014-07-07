@@ -120,20 +120,6 @@ public final class MainActivity_
     }
 
     @Override
-    public void onPostExecute() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MainActivity_.super.onPostExecute();
-            }
-
-        }
-        );
-    }
-
-    @Override
     public void onPreExecute() {
         handler_.post(new Runnable() {
 
@@ -141,6 +127,20 @@ public final class MainActivity_
             @Override
             public void run() {
                 MainActivity_.super.onPreExecute();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void onPostExecute() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MainActivity_.super.onPostExecute();
             }
 
         }
