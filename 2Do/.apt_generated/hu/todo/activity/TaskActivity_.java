@@ -12,6 +12,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.MultiAutoCompleteTextView;
+import android.widget.TextView;
 import hu.todo.R.id;
 import hu.todo.R.layout;
 import hu.todo.item.TodoItem;
@@ -34,14 +38,13 @@ public final class TaskActivity_
         init_(savedInstanceState);
         super.onCreate(savedInstanceState);
         OnViewChangedNotifier.replaceNotifier(previousNotifier);
-        setContentView(layout.activity_add_task);
+        setContentView(layout.activity_task);
     }
 
     private void init_(Bundle savedInstanceState) {
         OnViewChangedNotifier.registerOnViewChangedListener(this);
         injectExtras_();
         taskManager = new TaskRestInterface_();
-        after();
     }
 
     @Override
@@ -76,6 +79,16 @@ public final class TaskActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
+        updated = ((TextView) hasViews.findViewById(id.updated));
+        date = ((TextView) hasViews.findViewById(id.date));
+        btnCreate = ((Button) hasViews.findViewById(id.btnCreate));
+        description = ((EditText) hasViews.findViewById(id.description));
+        created = ((TextView) hasViews.findViewById(id.created));
+        user = ((MultiAutoCompleteTextView) hasViews.findViewById(id.user));
+        datePicker = ((EditText) hasViews.findViewById(id.datePicker));
+        title = ((TextView) hasViews.findViewById(id.title));
+        updatedPicker = ((EditText) hasViews.findViewById(id.updatedPicker));
+        createdPicker = ((EditText) hasViews.findViewById(id.createdPicker));
         {
             View view = hasViews.findViewById(id.btnCreate);
             if (view!= null) {
@@ -91,6 +104,7 @@ public final class TaskActivity_
                 );
             }
         }
+        afterViews();
     }
 
     private void injectExtras_() {

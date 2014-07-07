@@ -5,35 +5,59 @@ import hu.todo.item.TodoItem;
 import hu.todo.rest.TaskRestInterface;
 
 import org.androidannotations.annotations.AfterInject;
+import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Extra;
+import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.rest.RestService;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.MultiAutoCompleteTextView;
+import android.widget.TextView;
 
 // ez a felülete egy task nak
-@EActivity(R.layout.activity_add_task) 
+@EActivity(R.layout.activity_task) 
 public class TaskActivity extends Activity {
 	
-	// a teendő listapozíciója, aminek a részleteit mutatni fogja
+	@ViewById
+	TextView title;
+	@ViewById
+	EditText description;
+	@ViewById
+	MultiAutoCompleteTextView user;
+	@ViewById
+	TextView date;
+	@ViewById
+	EditText datePicker;
+	@ViewById
+	TextView created;
+	@ViewById
+	EditText createdPicker;
+	@ViewById
+	TextView updated;
+	@ViewById
+	EditText updatedPicker;
+	@ViewById
+	Button btnCreate;
+	
+	// a teendő listaelem amire kattintás történt
 	@Extra
 	TodoItem todoItem;
 	
 	@RestService
     TaskRestInterface taskManager;
 	
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	@AfterViews
+	void afterViews() {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-	}
-	
-	@AfterInject
-	void after(){
-		Log.d("lol", todoItem == null ? "null" : "nemnull");
+		title.setText(todoItem.getTitle());
+		description.setText(todoItem.getDescription());
+		datePicker.setText(todoItem.getDate());
 	}
 	
 	@Click(R.id.btnCreate)

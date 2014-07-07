@@ -32,10 +32,10 @@ public class TodoItemView extends LinearLayout {
 	}
 
 	public void bind(TodoItem todoItem) {
-		txtContent1stRow.setText(todoItem.getContent1stRow());
-		txtContent2ndRow.setText(todoItem.getContent2ndRow());
-		txtDate1stRow.setText(todoItem.getDate1stRow());
-		txtDate2ndRow.setText(todoItem.getDate2ndRow());
+		txtContent1stRow.setText(todoItem.getTitle());
+		txtContent2ndRow.setText(todoItem.getDescription());
+		txtDate1stRow.setText(todoItem.getDay());
+		txtDate2ndRow.setText(todoItem.getDate());
 	}
 	
 }

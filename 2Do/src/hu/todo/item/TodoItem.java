@@ -7,65 +7,77 @@ import android.os.Parcelable;
 // egy teendőt reprezentál
 public class TodoItem implements Parcelable {
 	
-	String content1stRow;
-	String content2ndRow;
-	String date1stRow;
-	String date2ndRow;
+	String title;
+	String description;
+	String day;
+	String date;
 	
 	public TodoItem(String content1stRow,
 			String content2ndRow, String date1stRow, String date2ndRow) {
 		super();
-		this.content1stRow = content1stRow;
-		this.content2ndRow = content2ndRow;
-		this.date1stRow = date1stRow;
-		this.date2ndRow = date2ndRow;
+		this.title = content1stRow;
+		this.description = content2ndRow;
+		this.day = date1stRow;
+		this.date = date2ndRow;
 	}
 
-	public String getContent1stRow() {
-		return content1stRow;
+	public String getTitle() {
+		return title;
 	}
 
-	public String getContent2ndRow() {
-		return content2ndRow;
+	public String getDescription() {
+		return description;
 	}
 
-	public String getDate1stRow() {
-		return date1stRow;
+	public String getDay() {
+		return day;
 	}
 
-	public String getDate2ndRow() {
-		return date2ndRow;
+	public String getDate() {
+		return date;
 	}
 	
-	// type safety miatt nem lehetne castolni ha külön osztály lenne
-	 private int mData;
+	//  to pass complex data from one activity to another activity
+	/**
+    * Storing the TodoItem data to Parcel object
+    **/
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(title);
+        dest.writeString(description);
+        dest.writeString(day);
+        dest.writeString(date);
+    }
+    
+    /**
+     * Retrieving TodoItem data from Parcel object
+     * This constructor is invoked by the method createFromParcel(Parcel source) of
+     * the object CREATOR
+     **/
+     private TodoItem(Parcel in){
+         this.title = in.readString();
+         this.description = in.readString();
+         this.day = in.readString();
+         this.date = in.readString();
+     }
+  
+     public static final Parcelable.Creator<TodoItem> CREATOR = new Parcelable.Creator<TodoItem>() {
+  
+         @Override
+         public TodoItem createFromParcel(Parcel source) {
+             return new TodoItem(source);
+         }
+  
+         @Override
+         public TodoItem[] newArray(int size) {
+             return new TodoItem[size];
+         }
+     };
 
-	    /* everything below here is for implementing Parcelable */
-
-	    // 99.9% of the time you can just ignore this
-	    public int describeContents() {
-	        return 0;
-	    }
-
-	    // write your object's data to the passed-in Parcel
-	    public void writeToParcel(Parcel out, int flags) {
-	        out.writeInt(mData);
-	    }
-
-	    // this is used to regenerate your object. All Parcelables must have a CREATOR that implements these two methods
-	    public static final Parcelable.Creator<TodoItem> CREATOR = new Parcelable.Creator<TodoItem>() {
-	        public TodoItem createFromParcel(Parcel in) {
-	            return new TodoItem(in);
-	        }
-
-	        public TodoItem[] newArray(int size) {
-	            return new TodoItem[size];
-	        }
-	    };
-
-	    // example constructor that takes a Parcel and gives you an object populated with it's values
-	    private TodoItem(Parcel in) {
-	        mData = in.readInt();
-	    }
+    // esetek 99.8% ban nem kell csinalni ezzel semmit
+	@Override
+	public int describeContents() {
+		return 0;
+	}
 	
 }
