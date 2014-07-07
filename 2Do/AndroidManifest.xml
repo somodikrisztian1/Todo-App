@@ -26,7 +26,12 @@
         </activity>
         <activity
             android:name=".activity.AddTaskActivity_"
-            android:label="@string/title_activity_add_task" >
+            android:label="@string/title_activity_add_task" 
+            android:parentActivityName=".activity.MainActivity_" >
+        <!-- Parent activity meta-data to support 4.0 and lower -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.myfirstapp.MainActivity_" /> 
         </activity>
     </application>
 

@@ -96,7 +96,7 @@ public final class MainActivity_
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(hu.todo.R.menu.activity_main_actions, menu);
+        menuInflater.inflate(hu.todo.R.menu.menu_activity_main, menu);
         refreshMenuItem = menu.findItem(id.action_refresh);
         return super.onCreateOptionsMenu(menu);
     }
@@ -108,6 +108,10 @@ public final class MainActivity_
             return true;
         }
         int itemId_ = item.getItemId();
+        if (itemId_ == id.action_new) {
+            menuAddTask(item);
+            return true;
+        }
         if (itemId_ == id.action_refresh) {
             menuRefresh(item);
             return true;

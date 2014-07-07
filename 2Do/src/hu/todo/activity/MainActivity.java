@@ -11,11 +11,13 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.OptionsMenuItem;
+import org.androidannotations.annotations.RootContext;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 
 import android.app.ActionBar;
 import android.app.ActionBar.OnNavigationListener;
+import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -23,9 +25,9 @@ import android.view.MenuItem;
 
 // a fő activity, amely egy viewpagert tartalmaz
 @EActivity(R.layout.activity_main)
-@OptionsMenu(R.menu.activity_main_actions)
+@OptionsMenu(R.menu.menu_activity_main)
 public class MainActivity extends FragmentActivity implements OnNavigationListener, OnPageChangeListener {
-
+	
 	@ViewById(R.id.pager)
 	public ViewPager viewPager;
 
@@ -38,6 +40,11 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 	@OptionsItem(R.id.action_refresh)
 	void menuRefresh(MenuItem item) {
 		refresh();
+	}
+	
+	@OptionsItem(R.id.action_new)
+	void menuAddTask(MenuItem item) {
+		addTask();
 	}
 	
     ActionBar actionBar;
@@ -54,6 +61,10 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
     	viewPager.setOnPageChangeListener(this);
     }
     
+	void addTask() {
+		AddTaskActivity_.intent(this).start();
+	}
+	
     // frissítés
     @Background
     void refresh() {

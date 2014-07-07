@@ -10,13 +10,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
+import hu.todo.R.id;
+import hu.todo.R.layout;
+import hu.todo.rest.TaskRestInterface_;
 import org.androidannotations.api.view.HasViews;
+import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
 public final class AddTaskActivity_
     extends AddTaskActivity
-    implements HasViews
+    implements HasViews, OnViewChangedListener
 {
 
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
@@ -27,9 +32,12 @@ public final class AddTaskActivity_
         init_(savedInstanceState);
         super.onCreate(savedInstanceState);
         OnViewChangedNotifier.replaceNotifier(previousNotifier);
+        setContentView(layout.activity_add_task);
     }
 
     private void init_(Bundle savedInstanceState) {
+        OnViewChangedNotifier.registerOnViewChangedListener(this);
+        taskManager = new TaskRestInterface_();
     }
 
     @Override
@@ -60,6 +68,25 @@ public final class AddTaskActivity_
 
     public static AddTaskActivity_.IntentBuilder_ intent(android.support.v4.app.Fragment supportFragment) {
         return new AddTaskActivity_.IntentBuilder_(supportFragment);
+    }
+
+    @Override
+    public void onViewChanged(HasViews hasViews) {
+        {
+            View view = hasViews.findViewById(id.btnCreate);
+            if (view!= null) {
+                view.setOnClickListener(new OnClickListener() {
+
+
+                    @Override
+                    public void onClick(View view) {
+                        AddTaskActivity_.this.plusButtonWasClicked();
+                    }
+
+                }
+                );
+            }
+        }
     }
 
     public static class IntentBuilder_ {

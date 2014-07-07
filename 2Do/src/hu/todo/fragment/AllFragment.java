@@ -2,7 +2,6 @@ package hu.todo.fragment;
 
 import hu.todo.adapter.TodoAdapter;
 import hu.todo.entity.Task;
-import hu.todo.entity.User;
 import hu.todo.function.ApplicationFunctions;
 import hu.todo.item.TodoItem;
 import hu.todo.rest.TaskRestInterface;
@@ -19,6 +18,8 @@ import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.rest.RestService;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -59,6 +60,21 @@ public class AllFragment extends ListFragment {
 	@Background
     void getItemsInBackground() {
 		String token = ApplicationFunctions.getInstance().getUserFunctions().getLoggedUser().getToken();
+		Task task = new Task();
+		task.setCreated_at(Calendar.getInstance());
+		task.setDate(Calendar.getInstance());
+		task.setDescription("jolesz");
+		task.setId(2);
+		task.setTitle("CYbeugro");
+		task.setUpdated_at(Calendar.getInstance());
+		task.setUser_id(3);
+		MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
+		map.set("task[user_id]", "3");
+		map.set("task[title]", "CYfeladat");
+		map.set("task[description]", "jolesz");
+		map.set("task[date]", "2014-07-08T00:00:00.000Z");
+		taskManager.addTask(map, token);
+		Log.d("lol", "utana");
         List<Task> tasks = taskManager.getAllTask(token); // itt is kell majd ellenőrizni pl mivan ha elavult a session id
         showResult(tasks);
     }

@@ -14,7 +14,7 @@ import android.util.Log;
 public class HttpBasicAuthenticatorInterceptor implements ClientHttpRequestInterceptor {
     @Override
     public ClientHttpResponse intercept(HttpRequest request, byte[] data, ClientHttpRequestExecution execution) throws IOException {
-        Log.d("lol", "req: " + request.getURI() 
+        Log.d("lol", "fej: " + request.getURI() 
         		+ " " + request.getHeaders());
         return execution.execute(request, data);
     }

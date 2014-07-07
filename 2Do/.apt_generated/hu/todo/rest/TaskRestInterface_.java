@@ -5,7 +5,6 @@
 
 package hu.todo.rest;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -18,8 +17,9 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
-import org.springframework.http.client.ClientHttpRequestInterceptor;
+import org.springframework.http.converter.FormHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
@@ -34,9 +34,8 @@ public final class TaskRestInterface_
     public TaskRestInterface_() {
         restTemplate = new RestTemplate();
         rootUrl = "http://37.139.18.133";
+        restTemplate.getMessageConverters().add(new FormHttpMessageConverter());
         restTemplate.getMessageConverters().add(new MappingJacksonHttpMessageConverter());
-        restTemplate.setInterceptors(new ArrayList<ClientHttpRequestInterceptor>());
-        restTemplate.getInterceptors().add(new HttpBasicAuthenticatorInterceptor());
     }
 
     @Override
@@ -52,6 +51,25 @@ public final class TaskRestInterface_
     @Override
     public void setRestErrorHandler(RestErrorHandler arg0) {
         this.restErrorHandler = arg0;
+    }
+
+    @Override
+    public List<User> getAllUser(String token) {
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
+        HttpEntity<Object> requestEntity = new HttpEntity<Object>(httpHeaders);
+        HashMap<String, Object> urlVariables = new HashMap<String, Object>();
+        urlVariables.put("token", token);
+        try {
+            return restTemplate.exchange(rootUrl.concat("/users/?token={token}"), HttpMethod.GET, requestEntity, List_User.class, urlVariables).getBody();
+        } catch (RestClientException e) {
+            if (restErrorHandler!= null) {
+                restErrorHandler.onRestClientExceptionThrown(e);
+                return null;
+            } else {
+                throw e;
+            }
+        }
     }
 
     @Override
@@ -74,18 +92,17 @@ public final class TaskRestInterface_
     }
 
     @Override
-    public List<User> getAllUser(String token) {
+    public void addTask(MultiValueMap<String, String> formFields, String token) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
-        HttpEntity<Object> requestEntity = new HttpEntity<Object>(httpHeaders);
+        HttpEntity<MultiValueMap<String, String>> requestEntity = new HttpEntity<MultiValueMap<String, String>>(formFields, httpHeaders);
         HashMap<String, Object> urlVariables = new HashMap<String, Object>();
         urlVariables.put("token", token);
         try {
-            return restTemplate.exchange(rootUrl.concat("/users/?token={token}"), HttpMethod.GET, requestEntity, List_User.class, urlVariables).getBody();
+            restTemplate.exchange(rootUrl.concat("/tasks/?token={token}"), HttpMethod.POST, requestEntity, null, urlVariables);
         } catch (RestClientException e) {
             if (restErrorHandler!= null) {
                 restErrorHandler.onRestClientExceptionThrown(e);
-                return null;
             } else {
                 throw e;
             }

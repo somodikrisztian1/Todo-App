@@ -11,12 +11,18 @@ import org.androidannotations.annotations.rest.Post;
 import org.androidannotations.annotations.rest.Rest;
 import org.androidannotations.api.rest.MediaType;
 import org.androidannotations.api.rest.RestClientErrorHandling;
+import org.springframework.http.converter.FormHttpMessageConverter;
 import org.springframework.http.converter.json.MappingJacksonHttpMessageConverter;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 
 // Task REST kommunikációja rooturl t majd
-@Rest(rootUrl = "http://37.139.18.133", converters = { MappingJacksonHttpMessageConverter.class}, interceptors = { HttpBasicAuthenticatorInterceptor.class }) 
+@Rest(rootUrl = "http://37.139.18.133", converters = {
+		FormHttpMessageConverter.class, 				
+		MappingJacksonHttpMessageConverter.class
+		})
+
 @Accept(MediaType.APPLICATION_JSON)
 public interface TaskRestInterface extends RestClientErrorHandling { 
 	 
@@ -32,5 +38,8 @@ public interface TaskRestInterface extends RestClientErrorHandling {
 	 
 	 @Get("/users/?token={token}")
 	 List<User> getAllUser(String token);
+	 
+	 @Post("/tasks/?token={token}")
+	 void addTask(MultiValueMap<String, String> formFields, String token);
 	 
 }
