@@ -62,8 +62,8 @@ public class AllFragment extends ListFragment {
     }
 	
 	@ItemClick(android.R.id.list)
-    public void myListItemClicked(int clickedItemPos) {
-		TaskActivity_.intent(this).todoItemPos(clickedItemPos).start();
+    public void myListItemClicked(TodoItem todoItem) {
+		TaskActivity_.intent(this).todoItem(todoItem).start();
     }
 	
 	

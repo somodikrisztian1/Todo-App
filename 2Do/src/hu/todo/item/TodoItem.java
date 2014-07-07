@@ -1,8 +1,11 @@
 package hu.todo.item;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 
 // egy teendőt reprezentál
-public class TodoItem {
+public class TodoItem implements Parcelable {
 	
 	String content1stRow;
 	String content2ndRow;
@@ -33,5 +36,36 @@ public class TodoItem {
 	public String getDate2ndRow() {
 		return date2ndRow;
 	}
+	
+	// type safety miatt nem lehetne castolni ha külön osztály lenne
+	 private int mData;
+
+	    /* everything below here is for implementing Parcelable */
+
+	    // 99.9% of the time you can just ignore this
+	    public int describeContents() {
+	        return 0;
+	    }
+
+	    // write your object's data to the passed-in Parcel
+	    public void writeToParcel(Parcel out, int flags) {
+	        out.writeInt(mData);
+	    }
+
+	    // this is used to regenerate your object. All Parcelables must have a CREATOR that implements these two methods
+	    public static final Parcelable.Creator<TodoItem> CREATOR = new Parcelable.Creator<TodoItem>() {
+	        public TodoItem createFromParcel(Parcel in) {
+	            return new TodoItem(in);
+	        }
+
+	        public TodoItem[] newArray(int size) {
+	            return new TodoItem[size];
+	        }
+	    };
+
+	    // example constructor that takes a Parcel and gives you an object populated with it's values
+	    private TodoItem(Parcel in) {
+	        mData = in.readInt();
+	    }
 	
 }

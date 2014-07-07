@@ -14,6 +14,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import hu.todo.R.id;
 import hu.todo.R.layout;
+import hu.todo.item.TodoItem;
 import hu.todo.rest.TaskRestInterface_;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
@@ -25,7 +26,7 @@ public final class TaskActivity_
 {
 
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
-    public final static String TODO_ITEM_POS_EXTRA = "todoItemPos";
+    public final static String TODO_ITEM_EXTRA = "todoItem";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public final class TaskActivity_
         OnViewChangedNotifier.registerOnViewChangedListener(this);
         injectExtras_();
         taskManager = new TaskRestInterface_();
+        after();
     }
 
     @Override
@@ -94,8 +96,8 @@ public final class TaskActivity_
     private void injectExtras_() {
         Bundle extras_ = getIntent().getExtras();
         if (extras_!= null) {
-            if (extras_.containsKey(TODO_ITEM_POS_EXTRA)) {
-                todoItemPos = extras_.getInt(TODO_ITEM_POS_EXTRA);
+            if (extras_.containsKey(TODO_ITEM_EXTRA)) {
+                todoItem = extras_.getParcelable(TODO_ITEM_EXTRA);
             }
         }
     }
@@ -159,8 +161,8 @@ public final class TaskActivity_
             }
         }
 
-        public TaskActivity_.IntentBuilder_ todoItemPos(int todoItemPos) {
-            intent_.putExtra(TODO_ITEM_POS_EXTRA, todoItemPos);
+        public TaskActivity_.IntentBuilder_ todoItem(TodoItem todoItem) {
+            intent_.putExtra(TODO_ITEM_EXTRA, todoItem);
             return this;
         }
 
