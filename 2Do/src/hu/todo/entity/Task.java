@@ -2,6 +2,7 @@ package hu.todo.entity;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 
@@ -19,6 +20,9 @@ public class Task implements Serializable {
 	private Calendar created_at;
 	private Calendar updated_at;
 
+	@JsonProperty("errors")
+	List<String> errors;
+	
 	public int getId() {
 		return id;
 	}

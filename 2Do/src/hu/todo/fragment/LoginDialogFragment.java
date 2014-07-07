@@ -4,10 +4,12 @@ import hu.todo.R;
 import hu.todo.activity.MainActivity;
 import hu.todo.entity.User;
 import hu.todo.function.ApplicationFunctions;
+import hu.todo.rest.MyErrorHandler;
 import hu.todo.rest.TaskRestInterface;
 import hu.todo.sharedprefs.MyPrefs_;
 
 import org.androidannotations.annotations.Background;
+import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.rest.RestService;
 import org.androidannotations.annotations.sharedpreferences.Pref;
@@ -29,6 +31,9 @@ public class LoginDialogFragment extends DialogFragment implements DialogInterfa
 	
 	@Pref
 	MyPrefs_ myPrefs;
+	
+	@Bean
+	MyErrorHandler myErrorHandler;
 	
 	@RestService
     TaskRestInterface taskManager;
@@ -117,10 +122,11 @@ public class LoginDialogFragment extends DialogFragment implements DialogInterfa
 		User loggedUser = null;
 	
 		try {
+			taskManager.setRestErrorHandler(myErrorHandler);
 			loggedUser = taskManager.login("somodikrisztian1@gmail.com", "letmein");
 		}catch (Exception e) {
 			e.printStackTrace();
-			
+			Log.d("lol", "itt hiba");
 			// ha már nem érvényes a token
 			myPrefs.clear();
 			
@@ -132,7 +138,7 @@ public class LoginDialogFragment extends DialogFragment implements DialogInterfa
 			String token = ApplicationFunctions.getInstance().getUserFunctions().getLoggedUser().getToken();
 			myPrefs.token().put(token);
 			fragment.getItemsInBackground();
-		}
+		} // TODO sikertelen a login
     }
 	
 }

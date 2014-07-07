@@ -19,12 +19,13 @@ import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
 
-public final class AddTaskActivity_
-    extends AddTaskActivity
+public final class TaskActivity_
+    extends TaskActivity
     implements HasViews, OnViewChangedListener
 {
 
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
+    public final static String TODO_ITEM_POS_EXTRA = "todoItemPos";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public final class AddTaskActivity_
 
     private void init_(Bundle savedInstanceState) {
         OnViewChangedNotifier.registerOnViewChangedListener(this);
+        injectExtras_();
         taskManager = new TaskRestInterface_();
     }
 
@@ -58,16 +60,16 @@ public final class AddTaskActivity_
         onViewChangedNotifier_.notifyViewChanged(this);
     }
 
-    public static AddTaskActivity_.IntentBuilder_ intent(Context context) {
-        return new AddTaskActivity_.IntentBuilder_(context);
+    public static TaskActivity_.IntentBuilder_ intent(Context context) {
+        return new TaskActivity_.IntentBuilder_(context);
     }
 
-    public static AddTaskActivity_.IntentBuilder_ intent(android.app.Fragment fragment) {
-        return new AddTaskActivity_.IntentBuilder_(fragment);
+    public static TaskActivity_.IntentBuilder_ intent(android.app.Fragment fragment) {
+        return new TaskActivity_.IntentBuilder_(fragment);
     }
 
-    public static AddTaskActivity_.IntentBuilder_ intent(android.support.v4.app.Fragment supportFragment) {
-        return new AddTaskActivity_.IntentBuilder_(supportFragment);
+    public static TaskActivity_.IntentBuilder_ intent(android.support.v4.app.Fragment supportFragment) {
+        return new TaskActivity_.IntentBuilder_(supportFragment);
     }
 
     @Override
@@ -80,13 +82,28 @@ public final class AddTaskActivity_
 
                     @Override
                     public void onClick(View view) {
-                        AddTaskActivity_.this.plusButtonWasClicked();
+                        TaskActivity_.this.plusButtonWasClicked();
                     }
 
                 }
                 );
             }
         }
+    }
+
+    private void injectExtras_() {
+        Bundle extras_ = getIntent().getExtras();
+        if (extras_!= null) {
+            if (extras_.containsKey(TODO_ITEM_POS_EXTRA)) {
+                todoItemPos = extras_.getInt(TODO_ITEM_POS_EXTRA);
+            }
+        }
+    }
+
+    @Override
+    public void setIntent(Intent newIntent) {
+        super.setIntent(newIntent);
+        injectExtras_();
     }
 
     public static class IntentBuilder_ {
@@ -98,26 +115,26 @@ public final class AddTaskActivity_
 
         public IntentBuilder_(Context context) {
             context_ = context;
-            intent_ = new Intent(context, AddTaskActivity_.class);
+            intent_ = new Intent(context, TaskActivity_.class);
         }
 
         public IntentBuilder_(android.app.Fragment fragment) {
             fragment_ = fragment;
             context_ = fragment.getActivity();
-            intent_ = new Intent(context_, AddTaskActivity_.class);
+            intent_ = new Intent(context_, TaskActivity_.class);
         }
 
         public IntentBuilder_(android.support.v4.app.Fragment fragment) {
             fragmentSupport_ = fragment;
             context_ = fragment.getActivity();
-            intent_ = new Intent(context_, AddTaskActivity_.class);
+            intent_ = new Intent(context_, TaskActivity_.class);
         }
 
         public Intent get() {
             return intent_;
         }
 
-        public AddTaskActivity_.IntentBuilder_ flags(int flags) {
+        public TaskActivity_.IntentBuilder_ flags(int flags) {
             intent_.setFlags(flags);
             return this;
         }
@@ -140,6 +157,11 @@ public final class AddTaskActivity_
                     }
                 }
             }
+        }
+
+        public TaskActivity_.IntentBuilder_ todoItemPos(int todoItemPos) {
+            intent_.putExtra(TODO_ITEM_POS_EXTRA, todoItemPos);
+            return this;
         }
 
     }

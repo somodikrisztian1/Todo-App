@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import hu.todo.rest.MyErrorHandler_;
 import hu.todo.rest.TaskRestInterface_;
 import hu.todo.sharedprefs.MyPrefs_;
 import org.androidannotations.api.BackgroundExecutor;
@@ -47,6 +48,7 @@ public final class LoginDialogFragment_
     private void init_(Bundle savedInstanceState) {
         myPrefs = new MyPrefs_(getActivity());
         taskManager = new TaskRestInterface_();
+        myErrorHandler = MyErrorHandler_.getInstance_(getActivity());
     }
 
     @Override

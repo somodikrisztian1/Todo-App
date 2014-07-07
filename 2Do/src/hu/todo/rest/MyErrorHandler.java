@@ -10,6 +10,7 @@ import android.util.Log;
 public class MyErrorHandler implements RestErrorHandler {
     @Override
     public void onRestClientExceptionThrown(RestClientException e) {
-        Log.d("lol", "ex: " + e.getMessage());
+        Log.d("lol", "ex");
+        e.printStackTrace();
     }
 }

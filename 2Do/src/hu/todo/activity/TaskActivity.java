@@ -5,13 +5,19 @@ import hu.todo.rest.TaskRestInterface;
 
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
+import org.androidannotations.annotations.Extra;
 import org.androidannotations.annotations.rest.RestService;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-@EActivity(R.layout.activity_add_task)
-public class AddTaskActivity extends Activity {
+// ez a felülete egy task nak
+@EActivity(R.layout.activity_add_task) 
+public class TaskActivity extends Activity {
+	
+	// a teendő listapozíciója, aminek a részleteit mutatni fogja
+	@Extra
+	int todoItemPos;
 	
 	@RestService
     TaskRestInterface taskManager;

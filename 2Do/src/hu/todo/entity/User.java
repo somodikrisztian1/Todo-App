@@ -18,7 +18,8 @@ public class User implements Serializable{
 	Calendar created_at;
 	Calendar updated_at;
 	
-	
+	@JsonProperty("errors")
+	List<String> errors;
 
 	public int getId() {
 		return id;

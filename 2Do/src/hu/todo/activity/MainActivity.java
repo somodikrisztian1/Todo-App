@@ -11,13 +11,11 @@ import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.OptionsMenuItem;
-import org.androidannotations.annotations.RootContext;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 
 import android.app.ActionBar;
 import android.app.ActionBar.OnNavigationListener;
-import android.content.Context;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -62,7 +60,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
     }
     
 	void addTask() {
-		AddTaskActivity_.intent(this).start();
+		TaskActivity_.intent(this).start();
 	}
 	
     // frissítés
@@ -108,6 +106,6 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 	@Override
 	public void onPageSelected(int position) {
 		actionBar.setSelectedNavigationItem(position);
-	}
-    
+	}    
+	
 }

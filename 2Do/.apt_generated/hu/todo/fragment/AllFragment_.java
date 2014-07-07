@@ -12,7 +12,10 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import hu.todo.adapter.TodoAdapter_;
+import hu.todo.rest.MyErrorHandler_;
 import hu.todo.rest.TaskRestInterface_;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
@@ -50,9 +53,10 @@ public final class AllFragment_
     }
 
     private void init_(Bundle savedInstanceState) {
+        OnViewChangedNotifier.registerOnViewChangedListener(this);
         taskManager = new TaskRestInterface_();
         adapter = TodoAdapter_.getInstance_(getActivity());
-        OnViewChangedNotifier.registerOnViewChangedListener(this);
+        myErrorHandler = MyErrorHandler_.getInstance_(getActivity());
     }
 
     @Override
@@ -67,6 +71,21 @@ public final class AllFragment_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
+        {
+            AdapterView<?> view = ((AdapterView<?> ) hasViews.findViewById(android.R.id.list));
+            if (view!= null) {
+                view.setOnItemClickListener(new OnItemClickListener() {
+
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        AllFragment_.this.myListItemClicked(position);
+                    }
+
+                }
+                );
+            }
+        }
         binddAdapter();
     }
 
