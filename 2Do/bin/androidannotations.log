@@ -10797,3 +10797,1184 @@ Element (TypeElementImpl): hu.todo.sharedprefs.MyPrefs
 17:49:42.57 [Worker-31] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
 17:49:42.118 [Worker-31] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 108 ms], [Generate Sources = 62 ms], [Extract Annotations = 17 ms], [Find R Classes = 12 ms], [Validate Annotations = 9 ms], [Process Annotations = 4 ms], [Extract Manifest = 3 ms], 
 17:49:42.119 [Worker-31] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+17:55:38.695 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+17:55:39.267 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 26 annotations on 28 elements
+17:55:39.385 [Worker-3] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+17:55:39.392 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+17:55:39.394 [Worker-3] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+17:55:39.471 [Worker-3] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+17:55:39.551 [Worker-3] INFO  o.a.p.ModelValidator:42 - Validating elements
+17:55:39.552 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.AddTaskActivity, hu.todo.activity.MainActivity, hu.todo.activity.ShowTaskActivity]
+17:55:39.557 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+17:55:39.560 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EBeanHandler: [hu.todo.rest.MyErrorHandler, hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+17:55:39.562 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+17:55:39.565 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with SharedPrefHandler: [hu.todo.sharedprefs.MyPrefs]
+17:55:39.570 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with PrefHandler: [myPrefs]
+17:55:39.573 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [txtContent1stRow, date, createdPicker, btnCreate, description, txtDate1stRow, txtDate2ndRow, updated, datePicker, updatedPicker, title, title, txtListSize, createdPicker, created, titleView, viewPager, timePicker, txtListTitle, description, datePicker, timePicker, txtContent2ndRow, updated, created, updatedPicker, date, user, user]
+17:55:39.583 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void clickCreate() ]
+17:55:39.586 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showTimePicker() , void showDatePicker() , void showDatePicker() , void showTimePicker() ]
+17:55:39.589 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with ItemClickHandler: [public void myListItemClicked(hu.todo.entity.Task) ]
+17:55:39.594 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with TransactionalHandler: [void getsome(android.database.sqlite.SQLiteDatabase) , void putsome(android.database.sqlite.SQLiteDatabase) , void insertTask(android.database.sqlite.SQLiteDatabase) ]
+17:55:39.595 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+17:55:39.596 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.rest.RestInterface]
+17:55:39.612 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> getAllTask(java.lang.String) , public abstract List<hu.todo.entity.User> getAllUser(java.lang.String) ]
+17:55:39.618 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with PostHandler: [public abstract void addTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , public abstract void updateTask(MultiValueMap<java.lang.String,java.lang.String>, int, java.lang.String) , public abstract hu.todo.entity.User login(java.lang.String, java.lang.String) ]
+17:55:39.620 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.MainActivity, hu.todo.activity.ShowTaskActivity]
+17:55:39.629 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, refreshMenuItem, saveMenuItem]
+17:55:39.632 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void navigateBackOnHomePress() , void menuAddTask(android.view.MenuItem) , void saveTask() , void navigateBackOnHomePress() , void editTask() , void menuRefresh(android.view.MenuItem) ]
+17:55:39.637 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager, taskManager, taskManager, taskManager]
+17:55:39.638 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with RootContextHanlder: [context, context]
+17:55:39.641 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler, myErrorHandler, myErrorHandler, adapter, adapter, adapter, myErrorHandler]
+17:55:39.644 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void datePChanged() , void updatedPChanged() , void datePChanged() , void descChanged() , void createdPChanged() , void descChanged() , void createdPChanged() , void updatedPChanged() ]
+17:55:39.652 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [desc, createdP, desc, createdP, dateP, isEdit, updatedP, updatedP, dateP]
+17:55:39.655 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() , void afterViews() , void binddAdapter() , void binddAdapter() , void init() ]
+17:55:39.656 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void onPostExecute() , void setAuCompleteUser() , void showResult(List<hu.todo.entity.Task>) , void onPreExecute() , void setAuCompleteUser() ]
+17:55:39.667 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getUsers(java.lang.String) , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void addTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void refresh() , void getItemsInBackground() , void getUsers(java.lang.String) , void login() ]
+17:55:39.688 [Worker-3] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+17:55:39.689 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.AddTaskActivity, hu.todo.activity.MainActivity, hu.todo.activity.ShowTaskActivity]
+17:55:39.751 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+17:55:39.760 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.rest.MyErrorHandler, hu.todo.adapter.TitleNavigationAdapter]
+17:55:39.763 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+17:55:39.783 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements SharedPrefHandler: [hu.todo.sharedprefs.MyPrefs]
+17:55:39.810 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.rest.RestInterface]
+17:55:39.818 [Worker-3] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+17:55:39.867 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 16
+17:55:39.871 [Worker-3] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+17:55:39.886 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.sharedprefs.MyPrefs_
+17:55:39.913 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.MyErrorHandler_
+17:55:39.917 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.RestInterface_
+17:55:39.926 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_Task
+17:55:39.927 [Worker-3] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_Task
+17:55:39.931 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_User
+17:55:39.931 [Worker-3] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_User
+17:55:39.934 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TitleNavigationAdapter_
+17:55:39.939 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TodoAdapter_
+17:55:39.941 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.AddTaskActivity_
+17:55:39.952 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.MainActivity_
+17:55:39.958 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+17:55:39.967 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavListItemView_
+17:55:40.2 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavTitleItemView_
+17:55:40.5 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.TodoItemView_
+17:55:40.8 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+17:55:40.15 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.GroupedByUserFragment_
+17:55:40.18 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+17:55:40.22 [Worker-3] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 755 ms], [Process Annotations = 198 ms], [Generate Sources = 155 ms], [Validate Annotations = 119 ms], [Extract Annotations = 114 ms], [Find R Classes = 92 ms], [Extract Manifest = 10 ms], 
+17:55:40.22 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:20:17.318 [Worker-1] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:20:18.268 [Worker-1] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 26 annotations on 28 elements
+20:20:19.389 [Worker-1] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:20:19.395 [Worker-1] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:20:19.397 [Worker-1] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:20:19.482 [Worker-1] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:20:20.298 [Worker-1] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:20:20.301 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.AddTaskActivity, hu.todo.activity.MainActivity, hu.todo.activity.ShowTaskActivity]
+20:20:20.307 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+20:20:20.311 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with EBeanHandler: [hu.todo.rest.MyErrorHandler, hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+20:20:20.312 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+20:20:20.316 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with SharedPrefHandler: [hu.todo.sharedprefs.MyPrefs]
+20:20:20.323 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with PrefHandler: [myPrefs]
+20:20:20.326 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [datePicker, timePicker, updated, txtListTitle, created, createdPicker, btnCreate, title, date, updatedPicker, user, updatedPicker, datePicker, txtDate1stRow, description, date, txtDate2ndRow, createdPicker, timePicker, title, user, created, txtListSize, txtContent1stRow, titleView, updated, txtContent2ndRow, description, viewPager]
+20:20:20.337 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void clickCreate() ]
+20:20:20.341 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showTimePicker() , void showDatePicker() , void showTimePicker() , void showDatePicker() ]
+20:20:20.344 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with ItemClickHandler: [public void myListItemClicked(hu.todo.entity.Task) ]
+20:20:20.348 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with TransactionalHandler: [void putsome(android.database.sqlite.SQLiteDatabase) , void insertTask(android.database.sqlite.SQLiteDatabase) , void getsome(android.database.sqlite.SQLiteDatabase) ]
+20:20:20.350 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+20:20:20.351 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.rest.RestInterface]
+20:20:20.826 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.User> getAllUser(java.lang.String) , public abstract List<hu.todo.entity.Task> getAllTask(java.lang.String) ]
+20:20:20.833 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with PostHandler: [public abstract void addTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , public abstract hu.todo.entity.User login(java.lang.String, java.lang.String) , public abstract void updateTask(MultiValueMap<java.lang.String,java.lang.String>, int, java.lang.String) ]
+20:20:20.836 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.MainActivity, hu.todo.activity.ShowTaskActivity]
+20:20:20.839 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, refreshMenuItem, saveMenuItem]
+20:20:20.842 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void saveTask() , void menuAddTask(android.view.MenuItem) , void navigateBackOnHomePress() , void menuRefresh(android.view.MenuItem) , void navigateBackOnHomePress() , void editTask() ]
+20:20:20.849 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager, taskManager, taskManager, taskManager]
+20:20:20.850 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with RootContextHanlder: [context, context]
+20:20:20.856 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler, myErrorHandler, myErrorHandler, myErrorHandler, adapter, adapter, adapter]
+20:20:20.860 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void datePChanged() , void descChanged() , void datePChanged() , void descChanged() , void createdPChanged() , void updatedPChanged() , void updatedPChanged() , void createdPChanged() ]
+20:20:20.864 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [updatedP, desc, createdP, createdP, desc, dateP, dateP, isEdit, updatedP]
+20:20:20.867 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void binddAdapter() , void afterViews() , void init() , void binddAdapter() , void afterViews() ]
+20:20:20.868 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) , void setAuCompleteUser() , void setAuCompleteUser() , void onPreExecute() , void onPostExecute() ]
+20:20:20.870 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getUsers(java.lang.String) , void refresh() , void getUsers(java.lang.String) , void login() , void getItemsInBackground() , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void addTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) ]
+20:20:20.892 [Worker-1] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:20:20.893 [Worker-1] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.AddTaskActivity, hu.todo.activity.MainActivity, hu.todo.activity.ShowTaskActivity]
+20:20:20.960 [Worker-1] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+20:20:20.969 [Worker-1] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.rest.MyErrorHandler, hu.todo.adapter.TitleNavigationAdapter]
+20:20:20.975 [Worker-1] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+20:20:21.20 [Worker-1] DEBUG o.a.p.ModelProcessor:80 - Processing root elements SharedPrefHandler: [hu.todo.sharedprefs.MyPrefs]
+20:20:21.33 [Worker-1] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.rest.RestInterface]
+20:20:21.40 [Worker-1] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:20:21.95 [Worker-1] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 16
+20:20:21.101 [Worker-1] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:20:21.178 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.sharedprefs.MyPrefs_
+20:20:21.273 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.MyErrorHandler_
+20:20:21.278 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.RestInterface_
+20:20:21.285 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_Task
+20:20:21.286 [Worker-1] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_Task
+20:20:21.290 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_User
+20:20:21.290 [Worker-1] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_User
+20:20:21.293 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TitleNavigationAdapter_
+20:20:21.298 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TodoAdapter_
+20:20:21.301 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.AddTaskActivity_
+20:20:21.313 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.MainActivity_
+20:20:21.324 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+20:20:21.336 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavListItemView_
+20:20:21.342 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavTitleItemView_
+20:20:21.348 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.TodoItemView_
+20:20:21.357 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:20:21.367 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.GroupedByUserFragment_
+20:20:21.374 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:20:21.391 [Worker-1] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 3123 ms], [Extract Annotations = 1118 ms], [Find R Classes = 868 ms], [Validate Annotations = 574 ms], [Generate Sources = 296 ms], [Process Annotations = 224 ms], [Extract Manifest = 8 ms], 
+20:20:21.392 [Worker-1] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:20:59.323 [Worker-1] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:20:59.338 [Worker-1] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 26 annotations on 28 elements
+20:20:59.410 [Worker-1] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:20:59.419 [Worker-1] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:20:59.420 [Worker-1] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:20:59.435 [Worker-1] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:20:59.452 [Worker-1] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:20:59.453 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.AddTaskActivity, hu.todo.activity.MainActivity, hu.todo.activity.ShowTaskActivity]
+20:20:59.456 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+20:20:59.460 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with EBeanHandler: [hu.todo.rest.MyErrorHandler, hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+20:20:59.461 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+20:20:59.467 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with SharedPrefHandler: [hu.todo.sharedprefs.MyPrefs]
+20:20:59.471 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with PrefHandler: [myPrefs]
+20:20:59.472 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [datePicker, txtListTitle, timePicker, txtDate2ndRow, created, updated, description, created, txtListSize, description, updated, user, txtDate1stRow, user, datePicker, timePicker, titleView, title, txtContent1stRow, txtContent2ndRow, createdPicker, date, updatedPicker, createdPicker, updatedPicker, date, btnCreate, viewPager, title]
+20:20:59.483 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void clickCreate() ]
+20:20:59.484 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showDatePicker() , void showTimePicker() , void showTimePicker() , void showDatePicker() ]
+20:20:59.487 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with ItemClickHandler: [public void myListItemClicked(hu.todo.entity.Task) ]
+20:20:59.488 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with TransactionalHandler: [void insertTask(android.database.sqlite.SQLiteDatabase) , void putsome(android.database.sqlite.SQLiteDatabase) , void getsome(android.database.sqlite.SQLiteDatabase) ]
+20:20:59.490 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+20:20:59.490 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.rest.RestInterface]
+20:20:59.494 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.Task> getAllTask(java.lang.String) , public abstract List<hu.todo.entity.User> getAllUser(java.lang.String) ]
+20:20:59.500 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with PostHandler: [public abstract void updateTask(MultiValueMap<java.lang.String,java.lang.String>, int, java.lang.String) , public abstract hu.todo.entity.User login(java.lang.String, java.lang.String) , public abstract void addTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) ]
+20:20:59.502 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.MainActivity, hu.todo.activity.ShowTaskActivity]
+20:20:59.503 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem, refreshMenuItem]
+20:20:59.505 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void menuRefresh(android.view.MenuItem) , void navigateBackOnHomePress() , void saveTask() , void menuAddTask(android.view.MenuItem) , void navigateBackOnHomePress() , void editTask() ]
+20:20:59.507 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager, taskManager, taskManager, taskManager]
+20:20:59.508 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with RootContextHanlder: [context, context]
+20:20:59.509 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler, myErrorHandler, adapter, myErrorHandler, myErrorHandler, adapter, adapter]
+20:20:59.526 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void descChanged() , void createdPChanged() , void updatedPChanged() , void datePChanged() , void updatedPChanged() , void datePChanged() , void descChanged() , void createdPChanged() ]
+20:20:59.528 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [isEdit, createdP, dateP, createdP, dateP, desc, desc, updatedP, updatedP]
+20:20:59.529 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() , void binddAdapter() , void binddAdapter() , void afterViews() , void init() ]
+20:20:59.530 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void showResult(List<hu.todo.entity.Task>) , void setAuCompleteUser() , void onPreExecute() , void setAuCompleteUser() , void onPostExecute() ]
+20:20:59.531 [Worker-1] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void login() , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void refresh() , void addTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) , void getUsers(java.lang.String) , void getItemsInBackground() ]
+20:20:59.533 [Worker-1] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:20:59.533 [Worker-1] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.AddTaskActivity, hu.todo.activity.MainActivity, hu.todo.activity.ShowTaskActivity]
+20:20:59.577 [Worker-1] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+20:20:59.579 [Worker-1] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.rest.MyErrorHandler, hu.todo.adapter.TitleNavigationAdapter]
+20:20:59.580 [Worker-1] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+20:20:59.595 [Worker-1] DEBUG o.a.p.ModelProcessor:80 - Processing root elements SharedPrefHandler: [hu.todo.sharedprefs.MyPrefs]
+20:20:59.596 [Worker-1] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.rest.RestInterface]
+20:20:59.599 [Worker-1] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:20:59.696 [Worker-1] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 16
+20:20:59.697 [Worker-1] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:20:59.698 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.sharedprefs.MyPrefs_
+20:20:59.709 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.MyErrorHandler_
+20:20:59.712 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.RestInterface_
+20:20:59.726 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_Task
+20:20:59.727 [Worker-1] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_Task
+20:20:59.733 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_User
+20:20:59.734 [Worker-1] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_User
+20:20:59.739 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TitleNavigationAdapter_
+20:20:59.743 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TodoAdapter_
+20:20:59.746 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.AddTaskActivity_
+20:20:59.761 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.MainActivity_
+20:20:59.768 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+20:20:59.782 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavListItemView_
+20:20:59.789 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavTitleItemView_
+20:20:59.801 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.TodoItemView_
+20:20:59.805 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:20:59.815 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.GroupedByUserFragment_
+20:20:59.828 [Worker-1] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:20:59.832 [Worker-1] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 494 ms], [Process Annotations = 164 ms], [Generate Sources = 136 ms], [Validate Annotations = 80 ms], [Extract Annotations = 71 ms], [Find R Classes = 32 ms], [Extract Manifest = 9 ms], 
+20:20:59.833 [Worker-1] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:21:26.110 [Worker-6] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:21:29.752 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:21:29.756 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 26 annotations on 28 elements
+20:21:29.789 [Worker-3] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:21:29.792 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:21:29.792 [Worker-3] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:21:29.799 [Worker-3] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:21:29.807 [Worker-3] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:21:29.808 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.AddTaskActivity, hu.todo.activity.MainActivity, hu.todo.activity.ShowTaskActivity]
+20:21:29.809 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+20:21:29.811 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EBeanHandler: [hu.todo.rest.MyErrorHandler, hu.todo.adapter.TodoAdapter, hu.todo.adapter.TitleNavigationAdapter]
+20:21:29.812 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+20:21:29.813 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with SharedPrefHandler: [hu.todo.sharedprefs.MyPrefs]
+20:21:29.814 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with PrefHandler: [myPrefs]
+20:21:29.815 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [datePicker, updatedPicker, timePicker, created, updated, createdPicker, user, txtListSize, txtDate2ndRow, user, createdPicker, txtListTitle, viewPager, date, created, title, datePicker, txtContent2ndRow, btnCreate, txtDate1stRow, description, title, description, date, titleView, updated, txtContent1stRow, timePicker, updatedPicker]
+20:21:29.820 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void clickCreate() ]
+20:21:29.821 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showDatePicker() , void showTimePicker() , void showDatePicker() , void showTimePicker() ]
+20:21:29.823 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with ItemClickHandler: [public void myListItemClicked(hu.todo.entity.Task) ]
+20:21:29.824 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with TransactionalHandler: [void insertTask(android.database.sqlite.SQLiteDatabase) , void getsome(android.database.sqlite.SQLiteDatabase) , void putsome(android.database.sqlite.SQLiteDatabase) ]
+20:21:29.824 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+20:21:29.825 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with RestHandler: [hu.todo.rest.RestInterface]
+20:21:29.828 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with GetHandler: [public abstract List<hu.todo.entity.User> getAllUser(java.lang.String) , public abstract List<hu.todo.entity.Task> getAllTask(java.lang.String) ]
+20:21:29.829 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with PostHandler: [public abstract void updateTask(MultiValueMap<java.lang.String,java.lang.String>, int, java.lang.String) , public abstract hu.todo.entity.User login(java.lang.String, java.lang.String) , public abstract void addTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) ]
+20:21:29.830 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.MainActivity, hu.todo.activity.ShowTaskActivity]
+20:21:29.831 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem, refreshMenuItem]
+20:21:29.832 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void menuAddTask(android.view.MenuItem) , void saveTask() , void menuRefresh(android.view.MenuItem) , void navigateBackOnHomePress() , void navigateBackOnHomePress() , void editTask() ]
+20:21:29.834 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager, taskManager, taskManager, taskManager]
+20:21:29.835 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with RootContextHanlder: [context, context]
+20:21:29.835 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [adapter, myErrorHandler, myErrorHandler, myErrorHandler, adapter, myErrorHandler, adapter]
+20:21:29.836 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void updatedPChanged() , void datePChanged() , void createdPChanged() , void descChanged() , void createdPChanged() , void datePChanged() , void descChanged() , void updatedPChanged() ]
+20:21:29.839 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [isEdit, createdP, updatedP, dateP, desc, createdP, dateP, desc, updatedP]
+20:21:29.841 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() , void binddAdapter() , void afterViews() , void binddAdapter() , void init() ]
+20:21:29.842 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() , void onPostExecute() , void showResult(List<hu.todo.entity.Task>) , void setAuCompleteUser() , void onPreExecute() ]
+20:21:29.843 [Worker-3] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getItemsInBackground() , void login() , void addTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) , void refresh() , void getUsers(java.lang.String) ]
+20:21:29.844 [Worker-3] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:21:29.845 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.AddTaskActivity, hu.todo.activity.MainActivity, hu.todo.activity.ShowTaskActivity]
+20:21:29.852 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EFragmentHandler: [hu.todo.fragment.AllFragment, hu.todo.fragment.GroupedByUserFragment, hu.todo.fragment.LoginDialogFragment]
+20:21:29.856 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EBeanHandler: [hu.todo.adapter.TodoAdapter, hu.todo.rest.MyErrorHandler, hu.todo.adapter.TitleNavigationAdapter]
+20:21:29.858 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EViewGroupHandler: [hu.todo.layout.NavListItemView, hu.todo.layout.TodoItemView, hu.todo.layout.NavTitleItemView]
+20:21:29.860 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements SharedPrefHandler: [hu.todo.sharedprefs.MyPrefs]
+20:21:29.861 [Worker-3] DEBUG o.a.p.ModelProcessor:80 - Processing root elements RestHandler: [hu.todo.rest.RestInterface]
+20:21:29.863 [Worker-3] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:21:29.882 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 16
+20:21:29.882 [Worker-3] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:21:29.883 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.sharedprefs.MyPrefs_
+20:21:29.888 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.MyErrorHandler_
+20:21:29.890 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.RestInterface_
+20:21:29.894 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_Task
+20:21:29.895 [Worker-3] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_Task
+20:21:29.898 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.rest.java.util.List_User
+20:21:29.899 [Worker-3] INFO  o.a.g.SourceCodewriter:63 - Generating class with no originating element: hu.todo.rest.java.util.List_User
+20:21:29.900 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TitleNavigationAdapter_
+20:21:29.904 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.adapter.TodoAdapter_
+20:21:29.907 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.AddTaskActivity_
+20:21:29.914 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.MainActivity_
+20:21:29.930 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+20:21:29.936 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavListItemView_
+20:21:29.940 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.NavTitleItemView_
+20:21:29.943 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.layout.TodoItemView_
+20:21:29.947 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.AllFragment_
+20:21:29.952 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.GroupedByUserFragment_
+20:21:29.959 [Worker-3] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.fragment.LoginDialogFragment_
+20:21:29.962 [Worker-3] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 206 ms], [Generate Sources = 80 ms], [Process Annotations = 38 ms], [Validate Annotations = 37 ms], [Extract Annotations = 32 ms], [Find R Classes = 15 ms], [Extract Manifest = 3 ms], 
+20:21:29.963 [Worker-3] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:34:14.644 [Worker-9] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:34:14.660 [Worker-9] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+20:34:14.687 [Worker-9] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:34:14.690 [Worker-9] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:34:14.691 [Worker-9] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:34:14.694 [Worker-9] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:34:14.705 [Worker-9] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:34:14.712 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:34:14.714 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [datePicker, created, description, date, updatedPicker, updated, title, timePicker, user, createdPicker]
+20:34:14.718 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showTimePicker() , void showDatePicker() ]
+20:34:14.720 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+20:34:14.721 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+20:34:14.723 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem]
+20:34:14.725 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void saveTask() , void navigateBackOnHomePress() , void editTask() ]
+20:34:14.726 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:34:14.727 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+20:34:14.728 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void datePChanged() , void updatedPChanged() , void descChanged() , void createdPChanged() ]
+20:34:14.730 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [isEdit, desc, dateP, updatedP, createdP]
+20:34:14.734 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+20:34:14.735 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+20:34:14.736 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+20:34:14.738 [Worker-9] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:34:14.739 [Worker-9] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:34:14.744 [Worker-9] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:34:14.751 [Worker-9] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:34:14.752 [Worker-9] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:34:14.752 [Worker-9] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+20:34:14.846 [Worker-9] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 186 ms], [Generate Sources = 95 ms], [Validate Annotations = 33 ms], [Extract Annotations = 25 ms], [Find R Classes = 13 ms], [Process Annotations = 13 ms], [Extract Manifest = 3 ms], 
+20:34:14.847 [Worker-9] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:34:27.507 [Worker-9] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:34:27.512 [Worker-9] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 3 elements
+20:34:27.531 [Worker-9] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:34:27.571 [Worker-9] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:34:27.572 [Worker-9] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:34:27.588 [Worker-9] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:34:27.596 [Worker-9] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:34:27.597 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:34:27.598 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [description, datePicker, updatedPicker, date, user, createdPicker, updated, created, title, timePicker]
+20:34:27.600 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showTimePicker() , void showDatePicker() ]
+20:34:27.601 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+20:34:27.602 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+20:34:27.603 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem]
+20:34:27.605 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void editTask() , void saveTask() , void navigateBackOnHomePress() ]
+20:34:27.610 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:34:27.612 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+20:34:27.615 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void updatedPChanged() , void descChanged() , void datePChanged() ]
+20:34:27.618 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [dateP, updatedP, isEdit, createdP, desc]
+20:34:27.619 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+20:34:27.620 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+20:34:27.621 [Worker-9] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getUsers(java.lang.String) , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) ]
+20:34:27.622 [Worker-9] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:34:27.622 [Worker-9] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:34:27.625 [Worker-9] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:34:27.631 [Worker-9] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:34:27.632 [Worker-9] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:34:27.632 [Worker-9] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+20:34:27.670 [Worker-9] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 159 ms], [Extract Manifest = 40 ms], [Generate Sources = 39 ms], [Validate Annotations = 25 ms], [Find R Classes = 24 ms], [Extract Annotations = 19 ms], [Process Annotations = 10 ms], 
+20:34:27.671 [Worker-9] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:41:36.726 [Worker-16] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:41:36.737 [Worker-16] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+20:41:36.764 [Worker-16] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:41:36.769 [Worker-16] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:41:36.770 [Worker-16] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:41:36.773 [Worker-16] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:41:36.783 [Worker-16] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:41:36.784 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:41:36.785 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [user, created, description, updatedPicker, title, date, updated, datePicker, timePicker, createdPicker]
+20:41:36.789 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showDatePicker() , void showTimePicker() ]
+20:41:36.790 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+20:41:36.793 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+20:41:36.794 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem]
+20:41:36.796 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void editTask() , void navigateBackOnHomePress() , void saveTask() ]
+20:41:36.797 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:41:36.798 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+20:41:36.799 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void datePChanged() , void descChanged() , void updatedPChanged() , void createdPChanged() ]
+20:41:36.801 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [updatedP, isEdit, dateP, desc, createdP]
+20:41:36.802 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+20:41:36.802 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+20:41:36.803 [Worker-16] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getUsers(java.lang.String) , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) ]
+20:41:36.805 [Worker-16] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:41:36.806 [Worker-16] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:41:36.811 [Worker-16] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:41:36.821 [Worker-16] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:41:36.822 [Worker-16] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:41:36.823 [Worker-16] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+20:41:36.856 [Worker-16] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 119 ms], [Generate Sources = 35 ms], [Extract Annotations = 26 ms], [Validate Annotations = 22 ms], [Process Annotations = 16 ms], [Find R Classes = 13 ms], [Extract Manifest = 5 ms], 
+20:41:36.857 [Worker-16] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:46:36.352 [Worker-21] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:46:36.355 [Worker-21] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 3 elements
+20:46:36.374 [Worker-21] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:46:36.378 [Worker-21] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:46:36.379 [Worker-21] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:46:36.387 [Worker-21] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:46:36.393 [Worker-21] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:46:36.394 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:46:36.395 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [title, created, date, updated, user, datePicker, updatedPicker, description, timePicker, createdPicker]
+20:46:36.398 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showTimePicker() , void showDatePicker() ]
+20:46:36.399 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+20:46:36.400 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+20:46:36.401 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+20:46:36.403 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void editTask() , void navigateBackOnHomePress() , void saveTask() ]
+20:46:36.404 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:46:36.404 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+20:46:36.405 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void updatedPChanged() , void datePChanged() , void descChanged() ]
+20:46:36.406 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [createdP, desc, dateP, isEdit, updatedP]
+20:46:36.408 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+20:46:36.408 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+20:46:36.409 [Worker-21] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+20:46:36.410 [Worker-21] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:46:36.410 [Worker-21] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:46:36.412 [Worker-21] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:46:36.422 [Worker-21] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:46:36.423 [Worker-21] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:46:36.423 [Worker-21] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+20:46:36.465 [Worker-21] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 110 ms], [Generate Sources = 43 ms], [Extract Annotations = 19 ms], [Validate Annotations = 16 ms], [Find R Classes = 14 ms], [Process Annotations = 13 ms], [Extract Manifest = 4 ms], 
+20:46:36.466 [Worker-21] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:48:29.963 [Worker-20] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:48:29.968 [Worker-20] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 3 elements
+20:48:29.996 [Worker-20] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:48:30.3 [Worker-20] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:48:30.4 [Worker-20] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:48:30.17 [Worker-20] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:48:30.25 [Worker-20] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:48:30.26 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:48:30.26 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [created, updated, updatedPicker, date, createdPicker, description, timePicker, user, datePicker, title]
+20:48:30.29 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showTimePicker() , void showDatePicker() ]
+20:48:30.30 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+20:48:30.31 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+20:48:30.32 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+20:48:30.33 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void saveTask() , void editTask() , void navigateBackOnHomePress() ]
+20:48:30.36 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:48:30.37 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+20:48:30.38 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void updatedPChanged() , void descChanged() , void datePChanged() , void createdPChanged() ]
+20:48:30.40 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [dateP, isEdit, createdP, desc, updatedP]
+20:48:30.41 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+20:48:30.42 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+20:48:30.43 [Worker-20] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+20:48:30.44 [Worker-20] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:48:30.44 [Worker-20] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:48:30.47 [Worker-20] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:48:30.53 [Worker-20] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:48:30.54 [Worker-20] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:48:30.54 [Worker-20] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+20:48:30.110 [Worker-20] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 142 ms], [Generate Sources = 57 ms], [Extract Annotations = 24 ms], [Find R Classes = 21 ms], [Validate Annotations = 19 ms], [Process Annotations = 9 ms], [Extract Manifest = 7 ms], 
+20:48:30.112 [Worker-20] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:50:49.455 [Worker-25] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:50:49.459 [Worker-25] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+20:50:49.489 [Worker-25] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:50:49.499 [Worker-25] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:50:49.500 [Worker-25] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:50:49.508 [Worker-25] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:50:49.515 [Worker-25] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:50:49.516 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:50:49.517 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [date, created, title, datePicker, createdPicker, updated, updatedPicker, user, description, timePicker]
+20:50:49.528 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showTimePicker() , void showDatePicker() ]
+20:50:49.531 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+20:50:49.532 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+20:50:49.533 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+20:50:49.535 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void navigateBackOnHomePress() , void saveTask() , void editTask() ]
+20:50:49.537 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:50:49.538 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+20:50:49.540 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void updatedPChanged() , void descChanged() , void datePChanged() ]
+20:50:49.541 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [updatedP, dateP, createdP, isEdit, desc]
+20:50:49.543 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+20:50:49.543 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+20:50:49.544 [Worker-25] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+20:50:49.551 [Worker-25] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:50:49.552 [Worker-25] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:50:49.563 [Worker-25] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:50:49.572 [Worker-25] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:50:49.573 [Worker-25] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:50:49.574 [Worker-25] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+20:50:49.626 [Worker-25] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 167 ms], [Generate Sources = 54 ms], [Validate Annotations = 30 ms], [Extract Annotations = 29 ms], [Process Annotations = 27 ms], [Find R Classes = 15 ms], [Extract Manifest = 7 ms], 
+20:50:49.627 [Worker-25] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+20:59:09.171 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+20:59:09.174 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+20:59:09.190 [Worker-32] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+20:59:09.193 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+20:59:09.194 [Worker-32] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+20:59:09.197 [Worker-32] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+20:59:09.204 [Worker-32] INFO  o.a.p.ModelValidator:42 - Validating elements
+20:59:09.205 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:59:09.206 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [created, datePicker, description, title, date, timePicker, createdPicker, updated, user, updatedPicker]
+20:59:09.209 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showTimePicker() , void showDatePicker() ]
+20:59:09.210 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+20:59:09.211 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+20:59:09.212 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+20:59:09.213 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void editTask() , void saveTask() , void navigateBackOnHomePress() ]
+20:59:09.214 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+20:59:09.215 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+20:59:09.216 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void updatedPChanged() , void descChanged() , void datePChanged() ]
+20:59:09.217 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [createdP, updatedP, desc, dateP, isEdit]
+20:59:09.218 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+20:59:09.219 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+20:59:09.219 [Worker-32] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+20:59:09.220 [Worker-32] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+20:59:09.221 [Worker-32] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+20:59:09.223 [Worker-32] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+20:59:09.229 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+20:59:09.230 [Worker-32] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+20:59:09.230 [Worker-32] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+20:59:09.266 [Worker-32] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 92 ms], [Generate Sources = 37 ms], [Validate Annotations = 16 ms], [Extract Annotations = 15 ms], [Find R Classes = 9 ms], [Process Annotations = 9 ms], [Extract Manifest = 3 ms], 
+20:59:09.267 [Worker-32] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:00:37.746 [Worker-35] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:00:37.749 [Worker-35] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:00:37.765 [Worker-35] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:00:37.767 [Worker-35] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:00:37.768 [Worker-35] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:00:37.771 [Worker-35] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:00:37.778 [Worker-35] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:00:37.779 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:00:37.780 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [timePicker, updatedPicker, created, date, createdPicker, description, updated, title, user, datePicker]
+21:00:37.782 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showTimePicker() , void showDatePicker() ]
+21:00:37.783 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:00:37.783 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:00:37.784 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem]
+21:00:37.785 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void navigateBackOnHomePress() , void editTask() , void saveTask() ]
+21:00:37.787 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:00:37.788 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:00:37.789 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void datePChanged() , void updatedPChanged() , void descChanged() , void createdPChanged() ]
+21:00:37.790 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [desc, updatedP, createdP, dateP, isEdit]
+21:00:37.790 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:00:37.791 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:00:37.792 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+21:00:37.792 [Worker-35] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:00:37.793 [Worker-35] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:00:37.795 [Worker-35] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:00:37.800 [Worker-35] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:00:37.801 [Worker-35] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:00:37.801 [Worker-35] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:00:37.861 [Worker-35] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 112 ms], [Generate Sources = 61 ms], [Extract Annotations = 14 ms], [Validate Annotations = 14 ms], [Find R Classes = 10 ms], [Process Annotations = 8 ms], [Extract Manifest = 3 ms], 
+21:00:37.862 [Worker-35] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:02:48.381 [Worker-33] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:02:48.383 [Worker-33] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:02:48.403 [Worker-33] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:02:48.407 [Worker-33] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:02:48.408 [Worker-33] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:02:48.411 [Worker-33] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:02:48.421 [Worker-33] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:02:48.421 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:02:48.422 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [description, updatedPicker, updated, title, created, user, datePicker, timePicker, date, createdPicker]
+21:02:48.425 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showDatePicker() , void showTimePicker() ]
+21:02:48.427 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:02:48.428 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:02:48.429 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+21:02:48.430 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void saveTask() , void navigateBackOnHomePress() , void editTask() ]
+21:02:48.431 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:02:48.433 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:02:48.434 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void updatedPChanged() , void datePChanged() , void createdPChanged() , void descChanged() ]
+21:02:48.435 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [desc, dateP, createdP, isEdit, updatedP]
+21:02:48.437 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:02:48.437 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:02:48.438 [Worker-33] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+21:02:48.439 [Worker-33] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:02:48.440 [Worker-33] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:02:48.443 [Worker-33] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:02:48.448 [Worker-33] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:02:48.449 [Worker-33] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:02:48.449 [Worker-33] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:02:48.483 [Worker-33] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 100 ms], [Generate Sources = 35 ms], [Extract Annotations = 19 ms], [Validate Annotations = 18 ms], [Find R Classes = 12 ms], [Process Annotations = 9 ms], [Extract Manifest = 4 ms], 
+21:02:48.484 [Worker-33] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:02:55.98 [Worker-38] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:02:55.100 [Worker-38] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:02:55.123 [Worker-38] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:02:55.126 [Worker-38] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:02:55.127 [Worker-38] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:02:55.131 [Worker-38] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:02:55.139 [Worker-38] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:02:55.139 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:02:55.140 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [title, user, created, timePicker, date, createdPicker, description, datePicker, updated, updatedPicker]
+21:02:55.143 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with FocusChangeHandler: [void showDatePicker() , void showTimePicker() ]
+21:02:55.144 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:02:55.145 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:02:55.146 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem]
+21:02:55.147 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void saveTask() , void navigateBackOnHomePress() , void editTask() ]
+21:02:55.148 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:02:55.148 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:02:55.149 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void descChanged() , void createdPChanged() , void datePChanged() , void updatedPChanged() ]
+21:02:55.150 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [createdP, isEdit, updatedP, dateP, desc]
+21:02:55.151 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:02:55.152 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:02:55.152 [Worker-38] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+21:02:55.153 [Worker-38] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:02:55.153 [Worker-38] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:02:55.156 [Worker-38] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:02:55.161 [Worker-38] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:02:55.162 [Worker-38] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:02:55.162 [Worker-38] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:02:55.188 [Worker-38] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 88 ms], [Generate Sources = 27 ms], [Extract Annotations = 22 ms], [Validate Annotations = 14 ms], [Find R Classes = 12 ms], [Process Annotations = 8 ms], [Extract Manifest = 3 ms], 
+21:02:55.189 [Worker-38] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:07:55.608 [Worker-35] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:07:55.612 [Worker-35] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:07:55.631 [Worker-35] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:07:55.633 [Worker-35] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:07:55.634 [Worker-35] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:07:55.637 [Worker-35] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:07:55.644 [Worker-35] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:07:55.645 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:07:55.646 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [updated, createdPicker, datePicker, updatedPicker, user, title, description, date, timePicker, created]
+21:07:55.650 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showTimePicker() , void showDatePicker() ]
+21:07:55.651 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:07:55.652 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:07:55.653 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+21:07:55.655 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void editTask() , void saveTask() , void navigateBackOnHomePress() ]
+21:07:55.656 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:07:55.657 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:07:55.658 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void descChanged() , void datePChanged() , void updatedPChanged() , void createdPChanged() ]
+21:07:55.660 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [createdP, dateP, isEdit, desc, updatedP]
+21:07:55.661 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:07:55.661 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:07:55.662 [Worker-35] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+21:07:55.663 [Worker-35] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:07:55.663 [Worker-35] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:07:55.665 [Worker-35] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:07:55.671 [Worker-35] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:07:55.671 [Worker-35] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:07:55.672 [Worker-35] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:07:55.698 [Worker-35] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 86 ms], [Generate Sources = 27 ms], [Validate Annotations = 19 ms], [Extract Annotations = 17 ms], [Find R Classes = 10 ms], [Process Annotations = 8 ms], [Extract Manifest = 3 ms], 
+21:07:55.699 [Worker-35] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:08:14.683 [Worker-43] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:08:14.685 [Worker-43] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:08:14.702 [Worker-43] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:08:14.704 [Worker-43] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:08:14.705 [Worker-43] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:08:14.708 [Worker-43] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:08:14.716 [Worker-43] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:08:14.716 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:08:14.717 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [user, createdPicker, title, description, created, date, updatedPicker, datePicker, updated, timePicker]
+21:08:14.719 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showDatePicker() , void showTimePicker() ]
+21:08:14.721 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:08:14.721 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:08:14.722 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+21:08:14.723 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void navigateBackOnHomePress() , void saveTask() , void editTask() ]
+21:08:14.725 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:08:14.726 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:08:14.727 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void descChanged() , void createdPChanged() , void updatedPChanged() , void datePChanged() ]
+21:08:14.728 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [isEdit, updatedP, createdP, dateP, desc]
+21:08:14.732 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:08:14.733 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:08:14.734 [Worker-43] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+21:08:14.735 [Worker-43] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:08:14.735 [Worker-43] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:08:14.739 [Worker-43] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:08:14.749 [Worker-43] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:08:14.750 [Worker-43] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:08:14.751 [Worker-43] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:08:14.770 [Worker-43] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 85 ms], [Generate Sources = 21 ms], [Validate Annotations = 20 ms], [Extract Annotations = 16 ms], [Process Annotations = 14 ms], [Find R Classes = 10 ms], [Extract Manifest = 2 ms], 
+21:08:14.771 [Worker-43] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:11:05.146 [Worker-41] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:11:05.148 [Worker-41] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:11:05.166 [Worker-41] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:11:05.169 [Worker-41] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:11:05.170 [Worker-41] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:11:05.173 [Worker-41] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:11:05.179 [Worker-41] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:11:05.180 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:11:05.181 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [timePicker, updatedPicker, updated, title, user, datePicker, date, description, createdPicker, created]
+21:11:05.183 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showTimePicker() , void showDatePicker() ]
+21:11:05.185 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:11:05.185 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:11:05.186 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+21:11:05.187 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void navigateBackOnHomePress() , void editTask() , void saveTask() ]
+21:11:05.188 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:11:05.189 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:11:05.190 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void descChanged() , void createdPChanged() , void updatedPChanged() , void datePChanged() ]
+21:11:05.191 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [isEdit, dateP, updatedP, desc, createdP]
+21:11:05.192 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:11:05.192 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:11:05.193 [Worker-41] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getUsers(java.lang.String) , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) ]
+21:11:05.194 [Worker-41] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:11:05.194 [Worker-41] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:11:05.197 [Worker-41] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:11:05.202 [Worker-41] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:11:05.202 [Worker-41] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:11:05.203 [Worker-41] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:11:05.231 [Worker-41] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 83 ms], [Generate Sources = 29 ms], [Extract Annotations = 17 ms], [Validate Annotations = 14 ms], [Find R Classes = 9 ms], [Process Annotations = 9 ms], [Extract Manifest = 3 ms], 
+21:11:05.231 [Worker-41] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:19:42.358 [Worker-42] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:19:42.361 [Worker-42] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:19:42.390 [Worker-42] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:19:42.393 [Worker-42] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:19:42.394 [Worker-42] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:19:42.398 [Worker-42] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:19:42.406 [Worker-42] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:19:42.408 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:19:42.409 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [user, date, updated, timePicker, updatedPicker, description, createdPicker, title, created, datePicker]
+21:19:42.413 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showDatePicker() , void showTimePicker() ]
+21:19:42.414 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:19:42.415 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:19:42.416 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+21:19:42.418 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void navigateBackOnHomePress() , void saveTask() , void editTask() ]
+21:19:42.420 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:19:42.421 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:19:42.422 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void updatedPChanged() , void datePChanged() , void descChanged() ]
+21:19:42.423 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [dateP, createdP, desc, isEdit, updatedP]
+21:19:42.424 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:19:42.425 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:19:42.427 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+21:19:42.428 [Worker-42] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:19:42.428 [Worker-42] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:19:42.431 [Worker-42] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:19:42.439 [Worker-42] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:19:42.439 [Worker-42] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:19:42.440 [Worker-42] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:19:42.467 [Worker-42] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 106 ms], [Generate Sources = 28 ms], [Extract Annotations = 27 ms], [Validate Annotations = 21 ms], [Find R Classes = 12 ms], [Process Annotations = 12 ms], [Extract Manifest = 3 ms], 
+21:19:42.467 [Worker-42] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:20:28.195 [Worker-45] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:20:28.197 [Worker-45] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:20:28.212 [Worker-45] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:20:28.215 [Worker-45] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:20:28.216 [Worker-45] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:20:28.244 [Worker-45] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:20:28.252 [Worker-45] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:20:28.253 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:20:28.254 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [date, updatedPicker, created, timePicker, description, title, updated, datePicker, user, createdPicker]
+21:20:28.257 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showTimePicker() , void showDatePicker() ]
+21:20:28.259 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:20:28.260 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:20:28.261 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+21:20:28.262 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void saveTask() , void editTask() , void navigateBackOnHomePress() ]
+21:20:28.265 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:20:28.266 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:20:28.267 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void descChanged() , void updatedPChanged() , void datePChanged() ]
+21:20:28.269 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [updatedP, createdP, desc, isEdit, dateP]
+21:20:28.270 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:20:28.271 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:20:28.271 [Worker-45] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getUsers(java.lang.String) , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) ]
+21:20:28.272 [Worker-45] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:20:28.273 [Worker-45] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:20:28.276 [Worker-45] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:20:28.282 [Worker-45] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:20:28.283 [Worker-45] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:20:28.284 [Worker-45] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:20:28.303 [Worker-45] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 107 ms], [Find R Classes = 36 ms], [Generate Sources = 21 ms], [Validate Annotations = 20 ms], [Extract Annotations = 15 ms], [Process Annotations = 10 ms], [Extract Manifest = 3 ms], 
+21:20:28.303 [Worker-45] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:21:07.216 [Worker-46] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:21:07.218 [Worker-46] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:21:07.233 [Worker-46] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:21:07.236 [Worker-46] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:21:07.236 [Worker-46] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:21:07.239 [Worker-46] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:21:07.246 [Worker-46] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:21:07.247 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:21:07.248 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [createdPicker, title, description, user, created, date, updatedPicker, datePicker, timePicker, updated]
+21:21:07.251 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showDatePicker() , void showTimePicker() ]
+21:21:07.253 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:21:07.253 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:21:07.254 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem]
+21:21:07.255 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void navigateBackOnHomePress() , void saveTask() , void editTask() ]
+21:21:07.256 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:21:07.256 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:21:07.257 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void updatedPChanged() , void descChanged() , void datePChanged() ]
+21:21:07.258 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [createdP, desc, updatedP, isEdit, dateP]
+21:21:07.259 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:21:07.259 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:21:07.260 [Worker-46] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+21:21:07.261 [Worker-46] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:21:07.261 [Worker-46] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:21:07.263 [Worker-46] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:21:07.267 [Worker-46] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:21:07.268 [Worker-46] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:21:07.269 [Worker-46] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:21:07.284 [Worker-46] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 66 ms], [Generate Sources = 17 ms], [Extract Annotations = 14 ms], [Validate Annotations = 14 ms], [Find R Classes = 10 ms], [Process Annotations = 7 ms], [Extract Manifest = 3 ms], 
+21:21:07.284 [Worker-46] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:27:08.226 [Worker-40] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:27:08.229 [Worker-40] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:27:08.257 [Worker-40] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:27:08.260 [Worker-40] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:27:08.261 [Worker-40] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:27:08.265 [Worker-40] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:27:08.272 [Worker-40] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:27:08.274 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:27:08.275 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [timePicker, title, user, datePicker, created, updated, createdPicker, date, updatedPicker, description]
+21:27:08.278 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showDatePicker() , void showTimePicker() ]
+21:27:08.280 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:27:08.281 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:27:08.281 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem]
+21:27:08.283 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void editTask() , void saveTask() , void navigateBackOnHomePress() ]
+21:27:08.285 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:27:08.286 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:27:08.287 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void datePChanged() , void updatedPChanged() , void createdPChanged() , void descChanged() ]
+21:27:08.288 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [isEdit, updatedP, createdP, desc, dateP]
+21:27:08.289 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:27:08.290 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:27:08.291 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getUsers(java.lang.String) , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) ]
+21:27:08.292 [Worker-40] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:27:08.293 [Worker-40] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:27:08.295 [Worker-40] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:27:08.302 [Worker-40] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:27:08.303 [Worker-40] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:27:08.303 [Worker-40] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:27:08.343 [Worker-40] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 114 ms], [Generate Sources = 41 ms], [Extract Annotations = 27 ms], [Validate Annotations = 20 ms], [Find R Classes = 11 ms], [Process Annotations = 10 ms], [Extract Manifest = 3 ms], 
+21:27:08.343 [Worker-40] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:27:17.220 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:27:17.222 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:27:17.239 [Worker-37] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:27:17.242 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:27:17.242 [Worker-37] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:27:17.246 [Worker-37] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:27:17.253 [Worker-37] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:27:17.253 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:27:17.254 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [updatedPicker, updated, title, timePicker, datePicker, description, user, createdPicker, created, date]
+21:27:17.257 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showTimePicker() , void showDatePicker() ]
+21:27:17.258 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:27:17.258 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:27:17.259 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem]
+21:27:17.259 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void navigateBackOnHomePress() , void saveTask() , void editTask() ]
+21:27:17.262 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:27:17.262 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:27:17.264 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void datePChanged() , void updatedPChanged() , void descChanged() ]
+21:27:17.265 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [updatedP, isEdit, desc, dateP, createdP]
+21:27:17.266 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:27:17.267 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:27:17.268 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getUsers(java.lang.String) , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) ]
+21:27:17.268 [Worker-37] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:27:17.269 [Worker-37] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:27:17.271 [Worker-37] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:27:17.276 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:27:17.276 [Worker-37] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:27:17.277 [Worker-37] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:27:17.300 [Worker-37] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 78 ms], [Generate Sources = 24 ms], [Extract Annotations = 17 ms], [Validate Annotations = 15 ms], [Find R Classes = 10 ms], [Process Annotations = 8 ms], [Extract Manifest = 3 ms], 
+21:27:17.301 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:28:25.85 [Worker-47] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:28:25.87 [Worker-47] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:28:25.108 [Worker-47] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:28:25.112 [Worker-47] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:28:25.113 [Worker-47] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:28:25.115 [Worker-47] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:28:25.123 [Worker-47] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:28:25.123 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:28:25.124 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [date, updated, user, createdPicker, created, timePicker, updatedPicker, datePicker, title, description]
+21:28:25.126 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showTimePicker() , void showDatePicker() ]
+21:28:25.128 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:28:25.129 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:28:25.130 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem]
+21:28:25.130 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void navigateBackOnHomePress() , void saveTask() , void editTask() ]
+21:28:25.131 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:28:25.132 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:28:25.133 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void descChanged() , void updatedPChanged() , void datePChanged() ]
+21:28:25.134 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [dateP, desc, updatedP, createdP, isEdit]
+21:28:25.135 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:28:25.135 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:28:25.136 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+21:28:25.136 [Worker-47] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:28:25.137 [Worker-47] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:28:25.139 [Worker-47] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:28:25.142 [Worker-47] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:28:25.143 [Worker-47] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:28:25.143 [Worker-47] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:28:25.177 [Worker-47] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 90 ms], [Generate Sources = 35 ms], [Extract Annotations = 20 ms], [Validate Annotations = 13 ms], [Find R Classes = 9 ms], [Process Annotations = 6 ms], [Extract Manifest = 4 ms], 
+21:28:25.177 [Worker-47] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:28:57.104 [Worker-40] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:28:57.107 [Worker-40] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:28:57.128 [Worker-40] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:28:57.131 [Worker-40] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:28:57.132 [Worker-40] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:28:57.136 [Worker-40] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:28:57.143 [Worker-40] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:28:57.144 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:28:57.145 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [date, createdPicker, updated, description, updatedPicker, datePicker, timePicker, title, user, created]
+21:28:57.147 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showDatePicker() , void showTimePicker() ]
+21:28:57.148 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:28:57.148 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:28:57.149 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem]
+21:28:57.150 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void saveTask() , void editTask() , void navigateBackOnHomePress() ]
+21:28:57.151 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:28:57.152 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:28:57.153 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void updatedPChanged() , void datePChanged() , void createdPChanged() , void descChanged() ]
+21:28:57.154 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [desc, updatedP, createdP, isEdit, dateP]
+21:28:57.155 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:28:57.155 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:28:57.156 [Worker-40] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+21:28:57.157 [Worker-40] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:28:57.158 [Worker-40] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:28:57.160 [Worker-40] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:28:57.165 [Worker-40] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:28:57.166 [Worker-40] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:28:57.166 [Worker-40] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:28:57.182 [Worker-40] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 76 ms], [Extract Annotations = 21 ms], [Generate Sources = 17 ms], [Validate Annotations = 14 ms], [Find R Classes = 11 ms], [Process Annotations = 8 ms], [Extract Manifest = 3 ms], 
+21:28:57.182 [Worker-40] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:29:04.258 [Worker-47] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:29:04.261 [Worker-47] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 3 elements
+21:29:04.276 [Worker-47] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:29:04.279 [Worker-47] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:29:04.279 [Worker-47] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:29:04.285 [Worker-47] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:29:04.291 [Worker-47] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:29:04.291 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:29:04.294 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [createdPicker, created, timePicker, title, date, description, updatedPicker, user, datePicker, updated]
+21:29:04.296 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showTimePicker() , void showDatePicker() ]
+21:29:04.297 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:29:04.298 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:29:04.299 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+21:29:04.299 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void saveTask() , void navigateBackOnHomePress() , void editTask() ]
+21:29:04.300 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:29:04.301 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:29:04.302 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void datePChanged() , void descChanged() , void updatedPChanged() , void createdPChanged() ]
+21:29:04.303 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [createdP, isEdit, updatedP, desc, dateP]
+21:29:04.304 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:29:04.305 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:29:04.305 [Worker-47] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+21:29:04.306 [Worker-47] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:29:04.308 [Worker-47] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:29:04.311 [Worker-47] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:29:04.315 [Worker-47] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:29:04.316 [Worker-47] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:29:04.316 [Worker-47] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:29:04.358 [Worker-47] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 98 ms], [Generate Sources = 43 ms], [Extract Annotations = 15 ms], [Validate Annotations = 15 ms], [Find R Classes = 12 ms], [Process Annotations = 9 ms], [Extract Manifest = 3 ms], 
+21:29:04.359 [Worker-47] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:31:47.638 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:31:47.640 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:31:47.665 [Worker-37] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:31:47.668 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:31:47.669 [Worker-37] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:31:47.677 [Worker-37] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:31:47.705 [Worker-37] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:31:47.706 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:31:47.707 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [title, timePicker, created, user, description, date, datePicker, createdPicker, updatedPicker, updated]
+21:31:47.710 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showTimePicker() , void showDatePicker() ]
+21:31:47.711 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:31:47.712 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:31:47.713 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+21:31:47.715 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void editTask() , void navigateBackOnHomePress() , void saveTask() ]
+21:31:47.724 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:31:47.725 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:31:47.726 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void descChanged() , void datePChanged() , void createdPChanged() , void updatedPChanged() ]
+21:31:47.730 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [updatedP, isEdit, dateP, dateT, createdP, desc]
+21:31:47.732 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:31:47.733 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:31:47.734 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getUsers(java.lang.String) , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) ]
+21:31:47.735 [Worker-37] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:31:47.736 [Worker-37] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:31:47.739 [Worker-37] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:31:47.745 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:31:47.745 [Worker-37] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:31:47.746 [Worker-37] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:31:47.798 [Worker-37] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 158 ms], [Generate Sources = 53 ms], [Find R Classes = 35 ms], [Validate Annotations = 30 ms], [Extract Annotations = 24 ms], [Process Annotations = 10 ms], [Extract Manifest = 3 ms], 
+21:31:47.798 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:33:50.513 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:33:50.515 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:33:50.561 [Worker-37] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:33:50.565 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:33:50.566 [Worker-37] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:33:50.571 [Worker-37] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:33:50.580 [Worker-37] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:33:50.580 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:33:50.581 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [timePicker, updated, description, createdPicker, title, date, updatedPicker, user, datePicker, created]
+21:33:50.584 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showDatePicker() , void showTimePicker() ]
+21:33:50.585 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:33:50.586 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:33:50.592 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem]
+21:33:50.594 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void editTask() , void navigateBackOnHomePress() , void saveTask() ]
+21:33:50.595 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:33:50.597 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:33:50.599 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void descChanged() , void createdPChanged() , void datePChanged() , void updatedPChanged() ]
+21:33:50.600 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [isEdit, dateT, createdP, dateP, updatedP, desc]
+21:33:50.601 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:33:50.603 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:33:50.604 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+21:33:50.605 [Worker-37] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:33:50.606 [Worker-37] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:33:50.610 [Worker-37] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:33:50.616 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:33:50.617 [Worker-37] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:33:50.618 [Worker-37] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:33:50.670 [Worker-37] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 155 ms], [Generate Sources = 54 ms], [Extract Annotations = 44 ms], [Validate Annotations = 25 ms], [Find R Classes = 13 ms], [Process Annotations = 11 ms], [Extract Manifest = 4 ms], 
+21:33:50.671 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:33:53.924 [Worker-42] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:33:53.927 [Worker-42] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 3 elements
+21:33:53.959 [Worker-42] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:33:53.966 [Worker-42] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:33:53.967 [Worker-42] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:33:53.974 [Worker-42] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:33:53.982 [Worker-42] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:33:53.983 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:33:53.984 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [description, date, datePicker, title, updated, timePicker, created, user, createdPicker, updatedPicker]
+21:33:53.987 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showDatePicker() , void showTimePicker() ]
+21:33:53.988 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:33:53.989 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:33:53.990 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+21:33:53.991 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void saveTask() , void editTask() , void navigateBackOnHomePress() ]
+21:33:53.993 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:33:53.995 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:33:54.9 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void datePChanged() , void updatedPChanged() , void createdPChanged() , void descChanged() ]
+21:33:54.12 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [isEdit, desc, updatedP, createdP, dateP, dateT]
+21:33:54.13 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:33:54.14 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:33:54.15 [Worker-42] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+21:33:54.16 [Worker-42] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:33:54.17 [Worker-42] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:33:54.48 [Worker-42] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:33:54.56 [Worker-42] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:33:54.57 [Worker-42] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:33:54.58 [Worker-42] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:33:54.80 [Worker-42] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 153 ms], [Process Annotations = 40 ms], [Validate Annotations = 34 ms], [Extract Annotations = 30 ms], [Generate Sources = 24 ms], [Find R Classes = 15 ms], [Extract Manifest = 9 ms], 
+21:33:54.81 [Worker-42] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:34:05.562 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:34:05.564 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 3 elements
+21:34:05.599 [Worker-37] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:34:05.604 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:34:05.605 [Worker-37] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:34:05.612 [Worker-37] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:34:05.617 [Worker-37] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:34:05.618 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:34:05.619 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [updated, datePicker, user, timePicker, description, createdPicker, updatedPicker, title, date, created]
+21:34:05.626 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showDatePicker() , void showTimePicker() ]
+21:34:05.630 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:34:05.631 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:34:05.632 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+21:34:05.634 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void saveTask() , void editTask() , void navigateBackOnHomePress() ]
+21:34:05.635 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:34:05.636 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:34:05.638 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void updatedPChanged() , void datePChanged() , void descChanged() ]
+21:34:05.639 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [updatedP, dateT, desc, dateP, isEdit, createdP]
+21:34:05.640 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:34:05.641 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:34:05.642 [Worker-37] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getUsers(java.lang.String) , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) ]
+21:34:05.643 [Worker-37] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:34:05.644 [Worker-37] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:34:05.646 [Worker-37] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:34:05.652 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:34:05.653 [Worker-37] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:34:05.654 [Worker-37] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:34:05.674 [Worker-37] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 110 ms], [Extract Annotations = 35 ms], [Validate Annotations = 26 ms], [Generate Sources = 22 ms], [Find R Classes = 12 ms], [Process Annotations = 9 ms], [Extract Manifest = 5 ms], 
+21:34:05.682 [Worker-37] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:37:42.944 [Worker-50] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:37:42.947 [Worker-50] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 3 elements
+21:37:42.966 [Worker-50] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:37:42.969 [Worker-50] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:37:42.970 [Worker-50] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:37:42.977 [Worker-50] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:37:42.982 [Worker-50] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:37:42.983 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:37:42.984 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [description, created, user, updated, title, updatedPicker, date, createdPicker, datePicker, timePicker]
+21:37:42.986 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showDatePicker() , void showTimePicker() ]
+21:37:42.987 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:37:42.987 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:37:42.988 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+21:37:42.989 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void navigateBackOnHomePress() , void saveTask() , void editTask() ]
+21:37:42.990 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:37:42.991 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:37:42.992 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void updatedPChanged() , void createdPChanged() , void datePChanged() , void descChanged() ]
+21:37:42.992 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [createdP, isEdit, desc, dateP, dateT, updatedP]
+21:37:42.993 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:37:42.994 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:37:42.994 [Worker-50] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getUsers(java.lang.String) , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) ]
+21:37:42.995 [Worker-50] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:37:42.995 [Worker-50] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:37:42.997 [Worker-50] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:37:43.15 [Worker-50] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:37:43.16 [Worker-50] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:37:43.16 [Worker-50] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:37:43.44 [Worker-50] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 97 ms], [Generate Sources = 29 ms], [Process Annotations = 20 ms], [Extract Annotations = 18 ms], [Validate Annotations = 13 ms], [Find R Classes = 12 ms], [Extract Manifest = 3 ms], 
+21:37:43.45 [Worker-50] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+21:37:51.615 [Worker-54] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+21:37:51.617 [Worker-54] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+21:37:51.654 [Worker-54] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+21:37:51.659 [Worker-54] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+21:37:51.660 [Worker-54] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+21:37:51.666 [Worker-54] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+21:37:51.679 [Worker-54] INFO  o.a.p.ModelValidator:42 - Validating elements
+21:37:51.680 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:37:51.681 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [createdPicker, created, user, description, updatedPicker, updated, title, datePicker, date, timePicker]
+21:37:51.684 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showDatePicker() , void showTimePicker() ]
+21:37:51.686 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+21:37:51.687 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+21:37:51.688 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+21:37:51.690 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void editTask() , void navigateBackOnHomePress() , void saveTask() ]
+21:37:51.691 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+21:37:51.692 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+21:37:51.694 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void descChanged() , void datePChanged() , void updatedPChanged() ]
+21:37:51.695 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [isEdit, desc, dateT, createdP, updatedP, dateP]
+21:37:51.696 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+21:37:51.697 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+21:37:51.698 [Worker-54] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+21:37:51.709 [Worker-54] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+21:37:51.710 [Worker-54] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+21:37:51.713 [Worker-54] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+21:37:51.723 [Worker-54] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+21:37:51.724 [Worker-54] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+21:37:51.728 [Worker-54] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+21:37:51.774 [Worker-54] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 157 ms], [Generate Sources = 51 ms], [Extract Annotations = 36 ms], [Validate Annotations = 30 ms], [Find R Classes = 20 ms], [Process Annotations = 14 ms], [Extract Manifest = 5 ms], 
+21:37:51.775 [Worker-54] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+22:05:44.419 [Worker-61] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+22:05:44.422 [Worker-61] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+22:05:44.438 [Worker-61] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+22:05:44.441 [Worker-61] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+22:05:44.442 [Worker-61] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+22:05:44.444 [Worker-61] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+22:05:44.461 [Worker-61] INFO  o.a.p.ModelValidator:42 - Validating elements
+22:05:44.462 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+22:05:44.463 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [description, date, user, timePicker, updated, datePicker, created, updatedPicker, title, createdPicker]
+22:05:44.467 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showDatePicker() , void showTimePicker() ]
+22:05:44.468 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+22:05:44.469 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+22:05:44.470 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+22:05:44.472 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void editTask() , void saveTask() , void navigateBackOnHomePress() ]
+22:05:44.473 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+22:05:44.474 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+22:05:44.475 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void datePChanged() , void updatedPChanged() , void descChanged() , void createdPChanged() ]
+22:05:44.476 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [isEdit, dateT, dateP, updatedP, createdP, desc]
+22:05:44.477 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+22:05:44.477 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+22:05:44.478 [Worker-61] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+22:05:44.479 [Worker-61] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+22:05:44.480 [Worker-61] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+22:05:44.484 [Worker-61] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+22:05:44.501 [Worker-61] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+22:05:44.502 [Worker-61] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+22:05:44.503 [Worker-61] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+22:05:44.555 [Worker-61] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 133 ms], [Generate Sources = 54 ms], [Process Annotations = 22 ms], [Find R Classes = 19 ms], [Validate Annotations = 18 ms], [Extract Annotations = 16 ms], [Extract Manifest = 3 ms], 
+22:05:44.556 [Worker-61] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+22:08:29.847 [Worker-63] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+22:08:29.850 [Worker-63] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+22:08:29.880 [Worker-63] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+22:08:29.887 [Worker-63] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+22:08:29.887 [Worker-63] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+22:08:29.896 [Worker-63] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+22:08:29.904 [Worker-63] INFO  o.a.p.ModelValidator:42 - Validating elements
+22:08:29.905 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+22:08:29.905 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [user, datePicker, description, title, timePicker, created, createdPicker, updatedPicker, updated, date]
+22:08:29.908 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showDatePicker() , void showTimePicker() ]
+22:08:29.909 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+22:08:29.910 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+22:08:29.911 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem]
+22:08:29.912 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void editTask() , void saveTask() , void navigateBackOnHomePress() ]
+22:08:29.918 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+22:08:29.919 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+22:08:29.921 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void datePChanged() , void descChanged() , void updatedPChanged() , void createdPChanged() ]
+22:08:29.923 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [createdP, dateT, desc, isEdit, updatedP, dateP]
+22:08:29.923 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+22:08:29.924 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+22:08:29.925 [Worker-63] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+22:08:29.926 [Worker-63] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+22:08:29.926 [Worker-63] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+22:08:29.928 [Worker-63] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+22:08:29.933 [Worker-63] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+22:08:29.934 [Worker-63] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+22:08:29.935 [Worker-63] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+22:08:29.979 [Worker-63] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 129 ms], [Generate Sources = 46 ms], [Extract Annotations = 28 ms], [Validate Annotations = 21 ms], [Find R Classes = 17 ms], [Extract Manifest = 8 ms], [Process Annotations = 8 ms], 
+22:08:29.979 [Worker-63] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+22:13:01.771 [Worker-64] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+22:13:01.773 [Worker-64] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+22:13:01.803 [Worker-64] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+22:13:01.807 [Worker-64] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+22:13:01.808 [Worker-64] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+22:13:01.811 [Worker-64] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+22:13:01.838 [Worker-64] INFO  o.a.p.ModelValidator:42 - Validating elements
+22:13:01.839 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+22:13:01.840 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [datePicker, description, timePicker, created, date, createdPicker, updatedPicker, user, title, updated]
+22:13:01.843 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showTimePicker() , void showDatePicker() ]
+22:13:01.851 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+22:13:01.852 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+22:13:01.853 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+22:13:01.855 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void editTask() , void navigateBackOnHomePress() , void saveTask() ]
+22:13:01.856 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+22:13:01.858 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+22:13:01.859 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void descChanged() , void updatedPChanged() , void datePChanged() ]
+22:13:01.860 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [createdP, isEdit, dateP, desc, updatedP, dateT]
+22:13:01.861 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+22:13:01.862 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+22:13:01.863 [Worker-64] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void getUsers(java.lang.String) , void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) ]
+22:13:01.865 [Worker-64] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+22:13:01.866 [Worker-64] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+22:13:01.871 [Worker-64] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+22:13:01.878 [Worker-64] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+22:13:01.880 [Worker-64] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+22:13:01.881 [Worker-64] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+22:13:01.921 [Worker-64] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 148 ms], [Generate Sources = 43 ms], [Find R Classes = 30 ms], [Extract Annotations = 29 ms], [Validate Annotations = 26 ms], [Process Annotations = 14 ms], [Extract Manifest = 4 ms], 
+22:13:01.924 [Worker-64] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+22:15:00.525 [Worker-67] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+22:15:00.527 [Worker-67] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+22:15:00.558 [Worker-67] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+22:15:00.561 [Worker-67] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+22:15:00.562 [Worker-67] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+22:15:00.565 [Worker-67] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+22:15:00.585 [Worker-67] INFO  o.a.p.ModelValidator:42 - Validating elements
+22:15:00.586 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+22:15:00.591 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [description, user, createdPicker, updatedPicker, datePicker, timePicker, updated, date, created, title]
+22:15:00.595 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showTimePicker() , void showDatePicker() ]
+22:15:00.596 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+22:15:00.597 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+22:15:00.598 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [saveMenuItem, editMenuItem]
+22:15:00.598 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void saveTask() , void navigateBackOnHomePress() , void editTask() ]
+22:15:00.600 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+22:15:00.600 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+22:15:00.601 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void datePChanged() , void descChanged() , void updatedPChanged() ]
+22:15:00.604 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [dateP, createdP, updatedP, dateT, isEdit, desc]
+22:15:00.607 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+22:15:00.608 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+22:15:00.609 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+22:15:00.611 [Worker-67] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+22:15:00.611 [Worker-67] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+22:15:00.615 [Worker-67] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+22:15:00.621 [Worker-67] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+22:15:00.622 [Worker-67] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+22:15:00.623 [Worker-67] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+22:15:00.652 [Worker-67] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 125 ms], [Generate Sources = 31 ms], [Extract Annotations = 30 ms], [Validate Annotations = 25 ms], [Find R Classes = 23 ms], [Process Annotations = 11 ms], [Extract Manifest = 3 ms], 
+22:15:00.652 [Worker-67] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing
+22:15:10.428 [Worker-67] INFO  o.a.AndroidAnnotationProcessor:85 - Initialize AndroidAnnotations 3.0.1 with options {phase=BUILD}
+22:15:10.430 [Worker-67] INFO  o.a.AndroidAnnotationProcessor:109 - Start processing for 14 annotations on 1 elements
+22:15:10.465 [Worker-67] DEBUG o.a.h.AndroidManifestFinder:137 - AndroidManifest.xml file found in parent folder /home/criss/git/Todo-App/2Do: /home/criss/git/Todo-App/2Do/AndroidManifest.xml
+22:15:10.473 [Worker-67] INFO  o.a.AndroidAnnotationProcessor:172 - AndroidManifest.xml found: AndroidManifest [applicationPackage=hu.todo, componentQualifiedNames=[hu.todo.activity.MainActivity_, hu.todo.activity.ShowTaskActivity_, hu.todo.activity.AddTaskActivity_], permissionQualifiedNames=[android.permission.ACCESS_NETWORK_STATE, android.permission.WRITE_EXTERNAL_STORAGE, android.permission.INTERNET], applicationClassName=null, libraryProject=false, debugabble=false, minSdkVersion=14, maxSdkVersion=-1, targetSdkVersion=19]
+22:15:10.474 [Worker-67] INFO  o.a.r.ProjectRClassFinder:50 - Found project R class: hu.todo.R
+22:15:10.478 [Worker-67] INFO  o.a.r.AndroidRClassFinder:44 - Found Android class: android.R
+22:15:10.497 [Worker-67] INFO  o.a.p.ModelValidator:42 - Validating elements
+22:15:10.498 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+22:15:10.499 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with ViewByIdHandler: [datePicker, title, date, created, description, createdPicker, updated, updatedPicker, user, timePicker]
+22:15:10.503 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with ClickHandler: [void showTimePicker() , void showDatePicker() ]
+22:15:10.507 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with ExtraHandler: [task]
+22:15:10.510 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuHandler: [hu.todo.activity.ShowTaskActivity]
+22:15:10.512 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsMenuItemHandler: [editMenuItem, saveMenuItem]
+22:15:10.513 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with OptionsItemHandler: [void editTask() , void saveTask() , void navigateBackOnHomePress() ]
+22:15:10.515 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with RestServiceHandler: [taskManager]
+22:15:10.518 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with BeanHandler: [myErrorHandler]
+22:15:10.523 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with AfterTextChangeHandler: [void createdPChanged() , void updatedPChanged() , void descChanged() , void datePChanged() ]
+22:15:10.524 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with InstanceStateHandler: [updatedP, desc, createdP, dateT, isEdit, dateP]
+22:15:10.526 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with AfterViewsHandler: [void afterViews() ]
+22:15:10.527 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with UiThreadHandler: [void setAuCompleteUser() ]
+22:15:10.527 [Worker-67] DEBUG o.a.p.ModelValidator:62 - Validating with BackgroundHandler: [void updateTask(MultiValueMap<java.lang.String,java.lang.String>, java.lang.String) , void getUsers(java.lang.String) ]
+22:15:10.529 [Worker-67] INFO  o.a.p.ModelProcessor:73 - Processing root elements
+22:15:10.530 [Worker-67] DEBUG o.a.p.ModelProcessor:80 - Processing root elements EActivityHandler: [hu.todo.activity.ShowTaskActivity]
+22:15:10.532 [Worker-67] INFO  o.a.p.ModelProcessor:104 - Processing enclosed elements
+22:15:10.540 [Worker-67] INFO  o.a.AndroidAnnotationProcessor:251 - Number of files generated by AndroidAnnotations: 1
+22:15:10.540 [Worker-67] INFO  o.a.g.ApiCodeGenerator:52 - Writting following API classes in project: []
+22:15:10.541 [Worker-67] DEBUG o.a.g.SourceCodewriter:55 - Generating class: hu.todo.activity.ShowTaskActivity_
+22:15:10.578 [Worker-67] INFO  o.a.p.TimeStats:81 - Time measurements: [Whole Processing = 148 ms], [Generate Sources = 38 ms], [Validate Annotations = 31 ms], [Extract Annotations = 27 ms], [Find R Classes = 23 ms], [Process Annotations = 12 ms], [Extract Manifest = 10 ms], 
+22:15:10.578 [Worker-67] INFO  o.a.AndroidAnnotationProcessor:123 - Finish processing

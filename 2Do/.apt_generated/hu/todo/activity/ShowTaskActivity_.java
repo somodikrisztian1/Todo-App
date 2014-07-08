@@ -18,7 +18,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnFocusChangeListener;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
@@ -99,24 +99,24 @@ public final class ShowTaskActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        updated = ((TextView) hasViews.findViewById(hu.todo.R.id.updated));
         datePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.datePicker));
-        user = ((AutoCompleteTextView) hasViews.findViewById(hu.todo.R.id.user));
         date = ((TextView) hasViews.findViewById(hu.todo.R.id.date));
-        createdPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.createdPicker));
         title = ((TextView) hasViews.findViewById(hu.todo.R.id.title));
         created = ((TextView) hasViews.findViewById(hu.todo.R.id.created));
+        createdPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.createdPicker));
         description = ((EditText) hasViews.findViewById(hu.todo.R.id.description));
+        updated = ((TextView) hasViews.findViewById(hu.todo.R.id.updated));
         updatedPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.updatedPicker));
+        user = ((AutoCompleteTextView) hasViews.findViewById(hu.todo.R.id.user));
         timePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.timePicker));
         {
             View view = hasViews.findViewById(hu.todo.R.id.timePicker);
             if (view!= null) {
-                view.setOnFocusChangeListener(new OnFocusChangeListener() {
+                view.setOnClickListener(new OnClickListener() {
 
 
                     @Override
-                    public void onFocusChange(View view, boolean hasFocus) {
+                    public void onClick(View view) {
                         ShowTaskActivity_.this.showTimePicker();
                     }
 
@@ -127,35 +127,12 @@ public final class ShowTaskActivity_
         {
             View view = hasViews.findViewById(hu.todo.R.id.datePicker);
             if (view!= null) {
-                view.setOnFocusChangeListener(new OnFocusChangeListener() {
+                view.setOnClickListener(new OnClickListener() {
 
 
                     @Override
-                    public void onFocusChange(View view, boolean hasFocus) {
+                    public void onClick(View view) {
                         ShowTaskActivity_.this.showDatePicker();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.datePicker));
-            if (view!= null) {
-                view.addTextChangedListener(new TextWatcher() {
-
-
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        ShowTaskActivity_.this.datePChanged();
                     }
 
                 }
@@ -202,6 +179,29 @@ public final class ShowTaskActivity_
                     @Override
                     public void afterTextChanged(Editable s) {
                         ShowTaskActivity_.this.updatedPChanged();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.datePicker));
+            if (view!= null) {
+                view.addTextChangedListener(new TextWatcher() {
+
+
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        ShowTaskActivity_.this.datePChanged();
                     }
 
                 }
@@ -283,22 +283,24 @@ public final class ShowTaskActivity_
     @Override
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
-        bundle.putString("createdP", createdP);
-        bundle.putString("dateP", dateP);
         bundle.putString("updatedP", updatedP);
+        bundle.putString("createdP", createdP);
         bundle.putString("desc", desc);
+        bundle.putString("dateT", dateT);
         bundle.putBoolean("isEdit", isEdit);
+        bundle.putString("dateP", dateP);
     }
 
     private void restoreSavedInstanceState_(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
             return ;
         }
-        createdP = savedInstanceState.getString("createdP");
-        dateP = savedInstanceState.getString("dateP");
         updatedP = savedInstanceState.getString("updatedP");
+        createdP = savedInstanceState.getString("createdP");
         desc = savedInstanceState.getString("desc");
+        dateT = savedInstanceState.getString("dateT");
         isEdit = savedInstanceState.getBoolean("isEdit");
+        dateP = savedInstanceState.getString("dateP");
     }
 
     @Override

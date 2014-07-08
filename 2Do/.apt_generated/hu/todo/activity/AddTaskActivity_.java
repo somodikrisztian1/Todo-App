@@ -99,17 +99,17 @@ public final class AddTaskActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        timePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.timePicker));
-        date = ((TextView) hasViews.findViewById(hu.todo.R.id.date));
-        title = ((EditText) hasViews.findViewById(hu.todo.R.id.title));
         updatedPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.updatedPicker));
-        description = ((EditText) hasViews.findViewById(hu.todo.R.id.description));
-        user = ((AutoCompleteTextView) hasViews.findViewById(hu.todo.R.id.user));
-        btnCreate = ((Button) hasViews.findViewById(hu.todo.R.id.btnCreate));
-        createdPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.createdPicker));
-        datePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.datePicker));
         updated = ((TextView) hasViews.findViewById(hu.todo.R.id.updated));
+        createdPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.createdPicker));
+        user = ((AutoCompleteTextView) hasViews.findViewById(hu.todo.R.id.user));
         created = ((TextView) hasViews.findViewById(hu.todo.R.id.created));
+        title = ((EditText) hasViews.findViewById(hu.todo.R.id.title));
+        datePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.datePicker));
+        btnCreate = ((Button) hasViews.findViewById(hu.todo.R.id.btnCreate));
+        description = ((EditText) hasViews.findViewById(hu.todo.R.id.description));
+        date = ((TextView) hasViews.findViewById(hu.todo.R.id.date));
+        timePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.timePicker));
         {
             View view = hasViews.findViewById(hu.todo.R.id.btnCreate);
             if (view!= null) {
@@ -179,29 +179,6 @@ public final class AddTaskActivity_
             }
         }
         {
-            final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.datePicker));
-            if (view!= null) {
-                view.addTextChangedListener(new TextWatcher() {
-
-
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        AddTaskActivity_.this.datePChanged();
-                    }
-
-                }
-                );
-            }
-        }
-        {
             final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.createdPicker));
             if (view!= null) {
                 view.addTextChangedListener(new TextWatcher() {
@@ -218,6 +195,29 @@ public final class AddTaskActivity_
                     @Override
                     public void afterTextChanged(Editable s) {
                         AddTaskActivity_.this.createdPChanged();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.datePicker));
+            if (view!= null) {
+                view.addTextChangedListener(new TextWatcher() {
+
+
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        AddTaskActivity_.this.datePChanged();
                     }
 
                 }
@@ -282,9 +282,9 @@ public final class AddTaskActivity_
     @Override
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
+        bundle.putString("updatedP", updatedP);
         bundle.putString("createdP", createdP);
         bundle.putString("desc", desc);
-        bundle.putString("updatedP", updatedP);
         bundle.putString("dateP", dateP);
     }
 
@@ -292,9 +292,9 @@ public final class AddTaskActivity_
         if (savedInstanceState == null) {
             return ;
         }
+        updatedP = savedInstanceState.getString("updatedP");
         createdP = savedInstanceState.getString("createdP");
         desc = savedInstanceState.getString("desc");
-        updatedP = savedInstanceState.getString("updatedP");
         dateP = savedInstanceState.getString("dateP");
     }
 
@@ -313,14 +313,14 @@ public final class AddTaskActivity_
     }
 
     @Override
-    public void getUsers(final String token) {
+    public void addTask(final MultiValueMap<String, String> formFields, final String token) {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    AddTaskActivity_.super.getUsers(token);
+                    AddTaskActivity_.super.addTask(formFields, token);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
@@ -331,14 +331,14 @@ public final class AddTaskActivity_
     }
 
     @Override
-    public void addTask(final MultiValueMap<String, String> formFields, final String token) {
+    public void getUsers(final String token) {
         BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
 
 
             @Override
             public void execute() {
                 try {
-                    AddTaskActivity_.super.addTask(formFields, token);
+                    AddTaskActivity_.super.getUsers(token);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

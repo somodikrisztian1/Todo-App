@@ -16,10 +16,7 @@
         android:textSize="@dimen/text_big_size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginBottom="10dp"
         android:gravity="center"
         android:text="@string/title"
         android:textStyle="bold" />
@@ -30,10 +27,7 @@
         android:textSize="@dimen/text_big_size"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="3dp"
+        android:layout_marginBottom="5dp"
         android:gravity="center"
         android:text="@string/dates"
         android:textStyle="bold" />
@@ -49,7 +43,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:focusable="false"
             android:hint="@string/_date" />
         
@@ -89,6 +83,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal" >
 
          <TextView
@@ -97,7 +92,6 @@
 	        android:textSize="@dimen/text_big_size"
 	        android:layout_width="0dp"
 	        android:layout_height="wrap_content"
-	        android:layout_marginTop="20dp"
 	        android:layout_weight="1"
 	        android:gravity="center"
 	        android:text="@string/in_charge"
@@ -112,7 +106,6 @@
             android:gravity="center"
             android:focusable="false"
             android:enabled="false"
-            android:layout_marginTop="20dp" 
             android:hint="@string/user_hint"
             android:inputType="textNoSuggestions"/>
     </LinearLayout>
@@ -122,10 +115,10 @@
 	    android:textSize="@dimen/text_normal_size"
 	    android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:gravity="center"
+        android:layout_marginTop="5dp"
         android:focusable="false"
-        android:inputType="textNoSuggestions"
+        android:inputType="textNoSuggestions|textMultiLine"
         android:hint="@string/description_hint" />
 
 </LinearLayout>

@@ -15,10 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="34dp"
-            android:layout_marginTop="0dp"
-            android:gravity="left"
+            android:gravity="center"
             android:text="@string/title"
             android:textStyle="bold" />
 
@@ -28,9 +25,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="10dp"
-            android:inputType="textNoSuggestions"
+            android:layout_marginBottom="20dp"
+            android:inputType="textNoSuggestions|textMultiLine"
             android:focusable="false"
             android:gravity="left"
             android:hint="@string/description_hint" />
@@ -57,9 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/user"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="34dp"
+            android:layout_marginBottom="10dp"
             android:gravity="left"
             android:text="@string/date"
             android:textStyle="bold" />
@@ -70,9 +64,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/date"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="180dp"
+            android:layout_marginBottom="15dp"
             android:focusable="false"
             android:gravity="left" />
     
@@ -83,9 +75,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/datePicker"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="34dp"
+            android:layout_marginBottom="10dp"
             android:gravity="left"
             android:text="@string/time"
             android:textStyle="bold" />
@@ -96,9 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/time"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="180dp"
+            android:layout_marginBottom="15dp"
             android:focusable="false"
             android:gravity="left" />
         
@@ -109,9 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/timePicker"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="34dp"
+            android:layout_marginBottom="10dp"
             android:gravity="left"
             android:text="@string/created_at"
             android:textStyle="bold" />

@@ -16,9 +16,9 @@ import org.androidannotations.annotations.AfterTextChange;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Extra;
-import org.androidannotations.annotations.FocusChange;
 import org.androidannotations.annotations.InstanceState;
 import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.OptionsMenu;
@@ -50,7 +50,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
-// ez a felülete egy task nak, amikor a listábol kattintva jutunk ide
+/**
+ * A felülete egy tasknak, ami akkor jön elő, ha az AllFragmentben kattintottunk listaelemre
+ */
 @EActivity(R.layout.activity_show_task) 
 @OptionsMenu(R.menu.menu_show_task)
 public class ShowTaskActivity extends FragmentActivity implements OnItemClickListener {
@@ -58,6 +60,9 @@ public class ShowTaskActivity extends FragmentActivity implements OnItemClickLis
 	private static Calendar dateCal;
 	private static Calendar timeCal;
 	
+	/**
+	 * Ez válósítja meg az óra-perc és a dátum kiválasztását pickerrel
+	 */
 	public static class DatePickerFragment extends DialogFragment
 	implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 	
@@ -96,8 +101,8 @@ public class ShowTaskActivity extends FragmentActivity implements OnItemClickLis
 		dateCal.set(Calendar.YEAR, year);
 		dateCal.set(Calendar.MONTH, month);
 		dateCal.set(Calendar.DAY_OF_MONTH, day);
-		
-		activity.datePicker.setText((dateCal.get(Calendar.YEAR) + " / " + (dateCal.get(Calendar.MONTH) + 1) + " / " + (dateCal.get(Calendar.DAY_OF_MONTH))));
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+		activity.datePicker.setText(formatter.format(dateCal.getTime()));
 	}
 
 	@Override
@@ -105,17 +110,9 @@ public class ShowTaskActivity extends FragmentActivity implements OnItemClickLis
 		timeCal = Calendar.getInstance();
 		timeCal.set(Calendar.HOUR_OF_DAY, hourOfDay);
 		timeCal.set(Calendar.MINUTE, minute);
-		
-		activity.timePicker.setText((timeCal.get(Calendar.HOUR_OF_DAY)) + ":" + (timeCal.get(Calendar.MINUTE)));
+		String format = String.format(Locale.getDefault(), "%02d:%02d", timeCal.get(Calendar.HOUR_OF_DAY), timeCal.get(Calendar.MINUTE));
+		activity.timePicker.setText(format);
 	}
-	
-	
-//	@Override
-//	public void onPause() {
-//		Log.d("lol", "pop");
-//		fragmentManager.popBackStack();
-//		super.onPause();
-//	}
 
 }
 	
@@ -144,6 +141,7 @@ public class ShowTaskActivity extends FragmentActivity implements OnItemClickLis
 	@Extra
 	Task task;
 	
+	// szerkesztés alatt áll-e a task
 	@InstanceState
 	boolean isEdit = false;
 	
@@ -152,6 +150,8 @@ public class ShowTaskActivity extends FragmentActivity implements OnItemClickLis
 	String desc;
 	@InstanceState
 	String dateP;
+	@InstanceState
+	String dateT;
 	@InstanceState
 	String createdP;
 	@InstanceState
@@ -206,11 +206,15 @@ public class ShowTaskActivity extends FragmentActivity implements OnItemClickLis
 			map.set("task[user_id]", "" + (selectedUser != null ? selectedUser.getId() : task.getUser_id()));  // TODO
 			map.set("task[title]", "" + title.getText());
 			map.set("task[description]", desc);
-			map.set("task[date]", ISO8601(now));  // TODO a pickerbol majd
+			map.set("task[date]", fromDatePickerToDateString(datePicker.getText().toString(), timePicker.getText().toString()));  // TODO a pickerbol majd
 			map.set("task[created_at]", ISO8601(task.getCreated_at()));
 			map.set("task[updated_at]", ISO8601(now));
 			updateTask(map, token);
 		}
+	}
+	
+	private String fromDatePickerToDateString(String dateText, String timeText) {
+		return dateText + "T" + timeText + ":00" + ".000Z";
 	}
 	
 	@Background
@@ -227,26 +231,39 @@ public class ShowTaskActivity extends FragmentActivity implements OnItemClickLis
 		}
 	}
 	
-	@Override
-	protected void onStart() {
-		// TODO Auto-generated method stub
-		super.onStart();
-	}
-	
 	@AfterViews
 	void afterViews() {
 			getActionBar().setDisplayHomeAsUpEnabled(true);
 			title.setText(task.getTitle());
 			description.setText( instanceState != null && instanceState.getString("desc") != null ? instanceState.getString("desc") : task.getDescription());
 			datePicker.setText(instanceState != null && instanceState.getString("dateP") != null ? instanceState.getString("dateP") : (task.getDate().get(Calendar.YEAR) + 
-					" / " + (task.getDate().get(Calendar.MONTH) + 1) + 
-					" / " + task.getDate().get(Calendar.DAY_OF_MONTH)));
+					"-" + (task.getDate().get(Calendar.MONTH) + 1) + 
+					"-" + task.getDate().get(Calendar.DAY_OF_MONTH)));
+			timePicker.setText(instanceState != null && instanceState.getString("timeP") != null ? instanceState.getString("timeP") : (task.getDate().get(Calendar.HOUR_OF_DAY) + 
+					":" + task.getDate().get(Calendar.MINUTE)));
 			createdPicker.setText(instanceState != null && instanceState.getString("createdP") != null ? instanceState.getString("createdP") : (task.getCreated_at().get(Calendar.YEAR) + 
-					" / " + (task.getCreated_at().get(Calendar.MONTH) + 1 )+ 
-					" / " + task.getCreated_at().get(Calendar.DAY_OF_MONTH)));
+					"-" + (task.getCreated_at().get(Calendar.MONTH) + 1 )+ 
+					"-" + task.getCreated_at().get(Calendar.DAY_OF_MONTH)));
 			updatedPicker.setText(instanceState != null && instanceState.getString("updatedP") != null ? instanceState.getString("updatedP") : (task.getUpdated_at().get(Calendar.YEAR) + 
-					" / " + (task.getUpdated_at().get(Calendar.MONTH) + 1 ) + 
-					" / " + task.getUpdated_at().get(Calendar.DAY_OF_MONTH)));
+					"-" + (task.getUpdated_at().get(Calendar.MONTH) + 1 ) + 
+					"-" + task.getUpdated_at().get(Calendar.DAY_OF_MONTH)));
+			
+			// azert kellenek hogy ne legyen ilyen: 12:1 vagy 2014-7-8
+			String[] dateSplit = datePicker.getText().toString().split("-");
+			String s = String.format(Locale.getDefault(),"%d-%02d-%02d", Integer.parseInt(dateSplit[0]), Integer.parseInt(dateSplit[1]), Integer.parseInt(dateSplit[2]));
+			datePicker.setText(s);
+			
+			String[] timeSplit = timePicker.getText().toString().split(":");
+			String s2 = String.format(Locale.getDefault(),"%02d:%02d", Integer.parseInt(timeSplit[0]), Integer.parseInt(timeSplit[1]));
+			timePicker.setText(s2);
+			
+			String[] createdSplit = createdPicker.getText().toString().split("-");
+			String s3 = String.format(Locale.getDefault(),"%d-%02d-%02d", Integer.parseInt(createdSplit[0]), Integer.parseInt(createdSplit[1]), Integer.parseInt(createdSplit[2]));
+			createdPicker.setText(s3);
+			
+			String[] updatedSplit = updatedPicker.getText().toString().split("-");
+			String s4 = String.format(Locale.getDefault(),"%d-%02d-%02d", Integer.parseInt(updatedSplit[0]), Integer.parseInt(updatedSplit[1]), Integer.parseInt(updatedSplit[2]));
+			updatedPicker.setText(s4);
 			
 			if(isEdit) {
 				setViewsFocusable();
@@ -286,28 +303,22 @@ public class ShowTaskActivity extends FragmentActivity implements OnItemClickLis
 		description.setFocusableInTouchMode(true);
 		user.setFocusableInTouchMode(true);
 		user.setEnabled(true);
-		datePicker.setFocusableInTouchMode(true);
-		timePicker.setFocusableInTouchMode(true);
-		createdPicker.setFocusableInTouchMode(true);
-		updatedPicker.setFocusableInTouchMode(true);
 	}
 	
 	void setViewsUnFocusable(){
 		description.setFocusable(false);
 		user.setFocusable(false);
 		user.setEnabled(false);
-		datePicker.setFocusable(false);
-		timePicker.setFocusable(false);
-		createdPicker.setFocusable(false);
-		updatedPicker.setFocusable(false);
 	}
 	
+	// leszedi a usereket
 	@Background
 	void getUsers(String token) {
 		 allUser = taskManager.getAllUser(token);
 		 setAuCompleteUser();
 	}
 	
+	// beállítja a usereket az autocomplete textviewnak és beállítja a task felelősét
 	@UiThread
 	void setAuCompleteUser() {
 		if(allUser != null) {
@@ -326,23 +337,29 @@ public class ShowTaskActivity extends FragmentActivity implements OnItemClickLis
 		}
 	}
 
-	@FocusChange(R.id.datePicker)
+	// elinditja a dátum kiválasztó pickert
+	@Click(R.id.datePicker)
 	void showDatePicker() {
-		FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-		DatePickerFragment fragment = new DatePickerFragment();
-		fragmentTransaction.add(fragment, "DATE"); 
-		fragmentTransaction.commit();
+		if(isEdit) {
+			FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+			DatePickerFragment fragment = new DatePickerFragment();
+			fragmentTransaction.add(fragment, "DATE"); 
+			fragmentTransaction.commit();
+		}
 	}
-	
-	@FocusChange(R.id.timePicker)
+
+	// elinditja az időkiválasztó pickert	
+	@Click(R.id.timePicker)
 	void showTimePicker() {
-		FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-		DatePickerFragment fragment = new DatePickerFragment();
-		fragmentTransaction.add(fragment, "TIME");
-		fragmentTransaction.commit();
+		if(isEdit) {
+			FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+			DatePickerFragment fragment = new DatePickerFragment();
+			fragmentTransaction.add(fragment, "TIME");
+			fragmentTransaction.commit();
+		}
 	}
 	
-	
+	// az autocomplete textviewból amire kattintottunk arra tesz egy referenciát
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
