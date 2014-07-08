@@ -35,7 +35,7 @@
             android:gravity="left"
             android:hint="@string/description_hint" />
 
-        <MultiAutoCompleteTextView
+        <AutoCompleteTextView
             android:id="@+id/user"
             style="@style/CustomAutoCompleteTextView"
             android:textSize="@dimen/text_normal_size"
@@ -47,6 +47,7 @@
             android:layout_marginBottom="30dp"
             android:gravity="left"
             android:focusable="false"
+            android:enabled="false"
             android:inputType="textNoSuggestions" 
             android:hint="@string/user_hint"/>
 

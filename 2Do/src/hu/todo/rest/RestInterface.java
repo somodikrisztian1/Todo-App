@@ -24,7 +24,7 @@ import org.springframework.web.client.RestTemplate;
 		})
 
 @Accept(MediaType.APPLICATION_JSON)
-public interface TaskRestInterface extends RestClientErrorHandling { 
+public interface RestInterface extends RestClientErrorHandling { 
 	 
 	RestTemplate getRestTemplate();
 	void setRestTemplate(RestTemplate restTemplate);

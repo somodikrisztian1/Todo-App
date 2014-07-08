@@ -5,7 +5,7 @@ import hu.todo.activity.MainActivity;
 import hu.todo.entity.User;
 import hu.todo.function.ApplicationFunctions;
 import hu.todo.rest.MyErrorHandler;
-import hu.todo.rest.TaskRestInterface;
+import hu.todo.rest.RestInterface;
 import hu.todo.sharedprefs.MyPrefs_;
 
 import org.androidannotations.annotations.Background;
@@ -36,7 +36,7 @@ public class LoginDialogFragment extends DialogFragment implements DialogInterfa
 	MyErrorHandler myErrorHandler;
 	
 	@RestService
-    TaskRestInterface taskManager;
+    RestInterface taskManager;
 	
 	MainActivity activity;
 	// mindig ujra create meg dismiss

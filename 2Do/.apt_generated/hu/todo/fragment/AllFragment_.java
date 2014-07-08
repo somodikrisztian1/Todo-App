@@ -16,7 +16,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import hu.todo.adapter.TodoAdapter_;
 import hu.todo.rest.MyErrorHandler_;
-import hu.todo.rest.TaskRestInterface_;
+import hu.todo.rest.RestInterface_;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
@@ -54,9 +54,9 @@ public final class AllFragment_
 
     private void init_(Bundle savedInstanceState) {
         OnViewChangedNotifier.registerOnViewChangedListener(this);
-        taskManager = new TaskRestInterface_();
-        adapter = TodoAdapter_.getInstance_(getActivity());
+        taskManager = new RestInterface_();
         myErrorHandler = MyErrorHandler_.getInstance_(getActivity());
+        adapter = TodoAdapter_.getInstance_(getActivity());
     }
 
     @Override

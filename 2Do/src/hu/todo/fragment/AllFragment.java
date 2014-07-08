@@ -5,7 +5,7 @@ import hu.todo.adapter.TodoAdapter;
 import hu.todo.entity.Task;
 import hu.todo.function.ApplicationFunctions;
 import hu.todo.rest.MyErrorHandler;
-import hu.todo.rest.TaskRestInterface;
+import hu.todo.rest.RestInterface;
 import hu.todo.toast.Toaster;
 
 import java.util.ArrayList;
@@ -35,7 +35,7 @@ public class AllFragment extends ListFragment {
 	MyErrorHandler myErrorHandler;
 	
 	@RestService
-    TaskRestInterface taskManager; // Inject
+    RestInterface taskManager; // Inject
 	
 	 @Override
 	    public void onCreate(Bundle savedInstanceState) {

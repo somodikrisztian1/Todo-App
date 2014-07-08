@@ -77,4 +77,9 @@ public class User implements Serializable{
 		this.updated_at = updated_at;
 	}
 	 
+	@Override
+	public String toString() {
+		return name;
+	}
+	
 }

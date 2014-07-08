@@ -2,25 +2,29 @@ package hu.todo.activity;
 
 import hu.todo.R;
 import hu.todo.entity.Task;
+import hu.todo.entity.User;
 import hu.todo.function.ApplicationFunctions;
 import hu.todo.rest.MyErrorHandler;
-import hu.todo.rest.TaskRestInterface;
+import hu.todo.rest.RestInterface;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 import org.androidannotations.annotations.AfterTextChange;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.Bean;
+import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Extra;
+import org.androidannotations.annotations.FocusChange;
 import org.androidannotations.annotations.InstanceState;
 import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.OptionsMenu;
 import org.androidannotations.annotations.OptionsMenuItem;
+import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.ViewById;
 import org.androidannotations.annotations.rest.RestService;
 import org.springframework.util.LinkedMultiValueMap;
@@ -30,21 +34,25 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
-import android.widget.MultiAutoCompleteTextView;
 import android.widget.TextView;
 
 // ez a felülete egy task nak, amikor a listábol kattintva jutunk ide
 @EActivity(R.layout.activity_show_task) 
 @OptionsMenu(R.menu.menu_show_task)
-public class ShowTaskActivity extends Activity {
+public class ShowTaskActivity extends Activity implements OnItemClickListener {
 	
 	@ViewById
 	TextView title;
 	@ViewById
 	EditText description; 
 	@ViewById
-	MultiAutoCompleteTextView user;
+	AutoCompleteTextView user;
 	@ViewById
 	TextView date;
 	@ViewById
@@ -76,7 +84,7 @@ public class ShowTaskActivity extends Activity {
 	String updatedP;
 	
 	@RestService
-    TaskRestInterface taskManager;
+    RestInterface taskManager;
 	
 	@Bean
 	MyErrorHandler myErrorHandler;
@@ -88,6 +96,9 @@ public class ShowTaskActivity extends Activity {
     MenuItem saveMenuItem;
 	private Bundle instanceState;
 	
+	private User selectedUser;
+	private List<User> allUser;
+	
 	@OptionsItem(android.R.id.home)
 	void navigateBackOnHomePress() {
 		onBackPressed();
@@ -95,8 +106,10 @@ public class ShowTaskActivity extends Activity {
 	
 	@OptionsItem(R.id.edit)
 	void editTask() {
-		setViewsFocusable();
-		isEdit = true;
+		if(!isEdit) {
+			setViewsFocusable();
+			isEdit = true;
+		}
 	}
 
 	private String ISO8601(Calendar c) {
@@ -108,25 +121,27 @@ public class ShowTaskActivity extends Activity {
 	
 	@OptionsItem(R.id.save)
 	void saveTask() {
-		setViewsUnFocusable();
-		isEdit = false;
-		taskManager.setRestErrorHandler(myErrorHandler);
-		
-		String token = ApplicationFunctions.getInstance().getUserFunctions().getLoggedUser().getToken();
-		MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
-		Calendar now = Calendar.getInstance();   // TODO updated mezot meg a createdet le lehet tiltani
-		map.set("task[user_id]", "" + ApplicationFunctions.getInstance().getUserFunctions().getLoggedUser().getId());
-		map.set("task[title]", "" + title.getText());
-		map.set("task[description]", desc);
-		map.set("task[date]", ISO8601(now));  // TODO a pickerbol majd
-		map.set("task[created_at]", ISO8601(task.getCreated_at()));
-		map.set("task[updated_at]", ISO8601(now));
-		updateTask(map, token);
+		if(isEdit) {
+			setViewsUnFocusable();
+			isEdit = false;
+			taskManager.setRestErrorHandler(myErrorHandler);
+			Log.d("lol", "iddd: " + selectedUser.getId());
+			String token = ApplicationFunctions.getInstance().getUserFunctions().getLoggedUser().getToken();
+			MultiValueMap<String, String> map = new LinkedMultiValueMap<String, String>();
+			Calendar now = Calendar.getInstance();   // TODO updated mezot meg a createdet le lehet tiltani
+			map.set("task[user_id]", "" + (selectedUser != null ? selectedUser.getId() : task.getUser_id()));  // TODO
+			map.set("task[title]", "" + title.getText());
+			map.set("task[description]", desc);
+			map.set("task[date]", ISO8601(now));  // TODO a pickerbol majd
+			map.set("task[created_at]", ISO8601(task.getCreated_at()));
+			map.set("task[updated_at]", ISO8601(now));
+			updateTask(map, token);
+		}
 	}
 	
 	@Background
 	void updateTask(MultiValueMap<String, String> map, String token) {
-		taskManager.updateTask(map, task.getId(), token);
+		taskManager.updateTask(map, task.getId(), token);  // TODO kf
 	}
 	
 	@Override
@@ -159,9 +174,15 @@ public class ShowTaskActivity extends Activity {
 					" / " + (task.getUpdated_at().get(Calendar.MONTH) + 1 ) + 
 					" / " + task.getUpdated_at().get(Calendar.DAY_OF_MONTH)));
 			
-			Log.d("lol", updatedPicker.getText().toString());
 			if(isEdit) {
 				setViewsFocusable();
+			}
+			
+			// feltölti a user autocomplete textviewt
+			taskManager.setRestErrorHandler(myErrorHandler);
+			String token = ApplicationFunctions.getInstance().getUserFunctions().getLoggedUser().getToken();
+			if(token != null) {
+				getUsers(token);
 			}
 		
 	} 
@@ -190,6 +211,7 @@ public class ShowTaskActivity extends Activity {
 	void setViewsFocusable() {
 		description.setFocusableInTouchMode(true);
 		user.setFocusableInTouchMode(true);
+		user.setEnabled(true);
 		datePicker.setFocusableInTouchMode(true);
 		createdPicker.setFocusableInTouchMode(true);
 		updatedPicker.setFocusableInTouchMode(true);
@@ -198,9 +220,45 @@ public class ShowTaskActivity extends Activity {
 	void setViewsUnFocusable(){
 		description.setFocusable(false);
 		user.setFocusable(false);
+		user.setEnabled(false);
 		datePicker.setFocusable(false);
 		createdPicker.setFocusable(false);
 		updatedPicker.setFocusable(false);
 	}
+	
+	@Background
+	void getUsers(String token) {
+		 allUser = taskManager.getAllUser(token);
+		 setAuCompleteUser();
+		 Log.d("lol", "itt jarsz?");
+	}
+	
+	@UiThread
+	void setAuCompleteUser() {
+		if(allUser != null) {
+			ArrayAdapter<User> adapter = new ArrayAdapter<User>(this, android.R.layout.simple_dropdown_item_1line, allUser);
+			 user.setAdapter(adapter);
+			 user.setOnItemClickListener(this);
+			 String owner = null;
+			 for(User u : allUser) {
+				 if(u.getId() == task.getUser_id()) {
+					 owner = u.getName();
+				 }
+			 }
+			 if(owner != null) {
+				 user.setText(owner);
+			 }
+		}
+	}
 
+	
+	
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		selectedUser = (User) parent.getItemAtPosition(position);
+		Log.d("lol", "" + selectedUser.getId());
+	}
+	
+	
 }

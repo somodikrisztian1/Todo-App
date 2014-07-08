@@ -93,7 +93,7 @@
             android:text="@string/in_charge"
             android:textStyle="bold" />
         
-        <MultiAutoCompleteTextView
+        <AutoCompleteTextView
             android:id="@+id/user"
             style="@style/CustomAutoCompleteTextView"
             android:layout_width="0dp"
@@ -101,6 +101,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:focusable="false"
+            android:enabled="false"
             android:layout_marginTop="20dp" 
             android:hint="@string/user_hint"
             android:inputType="textNoSuggestions"/>
