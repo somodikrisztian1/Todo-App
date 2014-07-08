@@ -60,7 +60,7 @@ public class AllFragment extends ListFragment {
 	
 	@ItemClick(android.R.id.list)
     public void myListItemClicked(Task task) {
-		TaskActivity_.intent(this).task(task).start();
+		TaskActivity_.intent(this).task(task).isShowTask(true).start();
     }
 	
 	

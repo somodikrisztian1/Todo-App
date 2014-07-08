@@ -1097,16 +1097,17 @@ containing a value of this type.
         public static final int ic_action_edit=0x7f020061;
         public static final int ic_action_new=0x7f020062;
         public static final int ic_action_refresh=0x7f020063;
-        public static final int ic_action_search=0x7f020064;
-        public static final int ic_launcher=0x7f020065;
-        public static final int listitem_background=0x7f020066;
-        public static final int listitem_selector=0x7f020067;
-        public static final int local_mode_icon=0x7f020068;
-        public static final int selector_checkbox=0x7f020069;
-        public static final int tab_background=0x7f02006a;
-        public static final int textfield_focused=0x7f02006b;
-        public static final int textfield_normal=0x7f02006c;
-        public static final int texture=0x7f02006d;
+        public static final int ic_action_save=0x7f020064;
+        public static final int ic_action_search=0x7f020065;
+        public static final int ic_launcher=0x7f020066;
+        public static final int listitem_background=0x7f020067;
+        public static final int listitem_selector=0x7f020068;
+        public static final int local_mode_icon=0x7f020069;
+        public static final int selector_checkbox=0x7f02006a;
+        public static final int tab_background=0x7f02006b;
+        public static final int textfield_focused=0x7f02006c;
+        public static final int textfield_normal=0x7f02006d;
+        public static final int texture=0x7f02006e;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1164,6 +1165,7 @@ containing a value of this type.
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
         public static final int radio=0x7f05002f;
+        public static final int save=0x7f050059;
         public static final int search_badge=0x7f050032;
         public static final int search_bar=0x7f050031;
         public static final int search_button=0x7f050033;
@@ -1266,9 +1268,9 @@ containing a value of this type.
         public static final int menu_task=0x7f0c0001;
     }
     public static final class string {
-        public static final int _created_at=0x7f0a001a;
-        public static final int _date=0x7f0a0019;
-        public static final int _updated_at=0x7f0a001b;
+        public static final int _created_at=0x7f0a001b;
+        public static final int _date=0x7f0a001a;
+        public static final int _updated_at=0x7f0a001c;
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
          */
         public static final int abc_action_bar_home_description=0x7f0a0001;
@@ -1310,21 +1312,22 @@ containing a value of this type.
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
         public static final int action_new=0x7f0a000e;
-        public static final int action_refresh=0x7f0a000f;
+        public static final int action_refresh=0x7f0a0010;
+        public static final int action_save=0x7f0a000f;
         public static final int app_name=0x7f0a000d;
-        public static final int create=0x7f0a0018;
-        public static final int created_at=0x7f0a0016;
-        public static final int date=0x7f0a0015;
-        public static final int dates=0x7f0a001f;
-        public static final int description=0x7f0a0014;
-        public static final int description_hint=0x7f0a001e;
-        public static final int hello_world=0x7f0a0011;
-        public static final int in_charge=0x7f0a001c;
-        public static final int title=0x7f0a0013;
-        public static final int title_activity_add_task=0x7f0a0012;
-        public static final int title_activity_main=0x7f0a0010;
-        public static final int updated_at=0x7f0a0017;
-        public static final int user_hint=0x7f0a001d;
+        public static final int create=0x7f0a0019;
+        public static final int created_at=0x7f0a0017;
+        public static final int date=0x7f0a0016;
+        public static final int dates=0x7f0a0020;
+        public static final int description=0x7f0a0015;
+        public static final int description_hint=0x7f0a001f;
+        public static final int hello_world=0x7f0a0012;
+        public static final int in_charge=0x7f0a001d;
+        public static final int title=0x7f0a0014;
+        public static final int title_activity_add_task=0x7f0a0013;
+        public static final int title_activity_main=0x7f0a0011;
+        public static final int updated_at=0x7f0a0018;
+        public static final int user_hint=0x7f0a001e;
     }
     public static final class style {
         /**  Action Bar 

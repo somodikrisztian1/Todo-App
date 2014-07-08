@@ -108,29 +108,15 @@ public final class MainActivity_
             return true;
         }
         int itemId_ = item.getItemId();
-        if (itemId_ == id.action_refresh) {
-            menuRefresh(item);
-            return true;
-        }
         if (itemId_ == id.action_new) {
             menuAddTask(item);
             return true;
         }
-        return false;
-    }
-
-    @Override
-    public void onPreExecute() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MainActivity_.super.onPreExecute();
-            }
-
+        if (itemId_ == id.action_refresh) {
+            menuRefresh(item);
+            return true;
         }
-        );
+        return false;
     }
 
     @Override
@@ -141,6 +127,20 @@ public final class MainActivity_
             @Override
             public void run() {
                 MainActivity_.super.onPostExecute();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void onPreExecute() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MainActivity_.super.onPreExecute();
             }
 
         }

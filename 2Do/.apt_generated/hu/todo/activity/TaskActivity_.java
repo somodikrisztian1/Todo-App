@@ -9,6 +9,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -30,6 +32,7 @@ public final class TaskActivity_
 {
 
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
+    public final static String IS_SHOW_TASK_EXTRA = "isShowTask";
     public final static String TASK_EXTRA = "task";
 
     @Override
@@ -45,6 +48,7 @@ public final class TaskActivity_
         OnViewChangedNotifier.registerOnViewChangedListener(this);
         injectExtras_();
         taskManager = new TaskRestInterface_();
+        restoreSavedInstanceState_(savedInstanceState);
     }
 
     @Override
@@ -79,16 +83,16 @@ public final class TaskActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        updated = ((TextView) hasViews.findViewById(hu.todo.R.id.updated));
-        title = ((TextView) hasViews.findViewById(hu.todo.R.id.title));
         createdPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.createdPicker));
-        updatedPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.updatedPicker));
         datePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.datePicker));
-        date = ((TextView) hasViews.findViewById(hu.todo.R.id.date));
-        btnCreate = ((Button) hasViews.findViewById(hu.todo.R.id.btnCreate));
         user = ((MultiAutoCompleteTextView) hasViews.findViewById(hu.todo.R.id.user));
-        created = ((TextView) hasViews.findViewById(hu.todo.R.id.created));
+        btnCreate = ((Button) hasViews.findViewById(hu.todo.R.id.btnCreate));
+        title = ((TextView) hasViews.findViewById(hu.todo.R.id.title));
         description = ((EditText) hasViews.findViewById(hu.todo.R.id.description));
+        created = ((TextView) hasViews.findViewById(hu.todo.R.id.created));
+        updatedPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.updatedPicker));
+        updated = ((TextView) hasViews.findViewById(hu.todo.R.id.updated));
+        date = ((TextView) hasViews.findViewById(hu.todo.R.id.date));
         {
             View view = hasViews.findViewById(hu.todo.R.id.btnCreate);
             if (view!= null) {
@@ -110,6 +114,9 @@ public final class TaskActivity_
     private void injectExtras_() {
         Bundle extras_ = getIntent().getExtras();
         if (extras_!= null) {
+            if (extras_.containsKey(IS_SHOW_TASK_EXTRA)) {
+                isShowTask = extras_.getBoolean(IS_SHOW_TASK_EXTRA);
+            }
             if (extras_.containsKey(TASK_EXTRA)) {
                 task = extras_.getParcelable(TASK_EXTRA);
             }
@@ -123,17 +130,47 @@ public final class TaskActivity_
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(hu.todo.R.menu.menu_task, menu);
+        editMenuItem = menu.findItem(hu.todo.R.id.edit);
+        saveMenuItem = menu.findItem(hu.todo.R.id.save);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         boolean handled = super.onOptionsItemSelected(item);
         if (handled) {
             return true;
         }
         int itemId_ = item.getItemId();
+        if (itemId_ == hu.todo.R.id.save) {
+            saveTask();
+            return true;
+        }
+        if (itemId_ == hu.todo.R.id.edit) {
+            editTask();
+            return true;
+        }
         if (itemId_ == android.R.id.home) {
-            navigateBackOnHomePress(item);
+            navigateBackOnHomePress();
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle bundle) {
+        super.onSaveInstanceState(bundle);
+        bundle.putBoolean("isEdit", isEdit);
+    }
+
+    private void restoreSavedInstanceState_(Bundle savedInstanceState) {
+        if (savedInstanceState == null) {
+            return ;
+        }
+        isEdit = savedInstanceState.getBoolean("isEdit");
     }
 
     public static class IntentBuilder_ {
@@ -187,6 +224,11 @@ public final class TaskActivity_
                     }
                 }
             }
+        }
+
+        public TaskActivity_.IntentBuilder_ isShowTask(boolean isShowTask) {
+            intent_.putExtra(IS_SHOW_TASK_EXTRA, isShowTask);
+            return this;
         }
 
         public TaskActivity_.IntentBuilder_ task(Task task) {

@@ -3,6 +3,7 @@
 
     <string name="app_name">2Do</string>
     <string name="action_new">Új</string>
+    <string name="action_save">Mentés</string>
     <string name="action_refresh">Frissítés</string>
     <string name="title_activity_main">2Do</string>
     <string name="hello_world">Hello world!</string>

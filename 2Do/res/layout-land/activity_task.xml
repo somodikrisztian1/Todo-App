@@ -100,7 +100,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:focusable="false"
             android:layout_marginTop="20dp" 
+            android:hint="@string/user_hint"
             android:inputType="textNoSuggestions"/>
     </LinearLayout>
 
@@ -111,6 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:gravity="center"
+        android:focusable="false"
         android:inputType="textNoSuggestions"
         android:hint="@string/description_hint" />
     

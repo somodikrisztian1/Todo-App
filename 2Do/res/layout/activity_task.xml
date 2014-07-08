@@ -31,6 +31,7 @@
             android:layout_marginBottom="10dp"
             android:layout_marginRight="120dp"
             android:inputType="textNoSuggestions"
+            android:focusable="false"
             android:gravity="left"
             android:hint="@string/description_hint" />
 
@@ -45,6 +46,7 @@
             android:layout_below="@+id/description"
             android:layout_marginBottom="30dp"
             android:gravity="left"
+            android:focusable="false"
             android:inputType="textNoSuggestions" 
             android:hint="@string/user_hint"/>
 
