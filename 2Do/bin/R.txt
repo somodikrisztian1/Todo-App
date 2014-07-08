@@ -428,7 +428,7 @@ int string app_name 0x7f0a000d
 int string create 0x7f0a001c
 int string created_at 0x7f0a001a
 int string date 0x7f0a0018
-int string dates 0x7f0a0024
+int string dates 0x7f0a0025
 int string description 0x7f0a0017
 int string description_hint 0x7f0a0023
 int string hello_world 0x7f0a0013
@@ -438,6 +438,7 @@ int string title 0x7f0a0016
 int string title_activity_add_task 0x7f0a0014
 int string title_activity_main 0x7f0a0012
 int string title_activity_show_task 0x7f0a0015
+int string title_hint 0x7f0a0024
 int string updated_at 0x7f0a001b
 int string user_hint 0x7f0a0022
 int style ActionBar 0x7f0b0092

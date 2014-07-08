@@ -8,19 +8,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <TextView
+        <EditText
             android:id="@+id/title"
-            style="@style/MyTextView"
             android:textSize="@dimen/text_big_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginRight="34dp"
-            android:layout_marginTop="0dp"
+            android:layout_below="@+id/title"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:inputType="textNoSuggestions"
             android:gravity="left"
-            android:text="@string/title"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:hint="@string/title_hint" />
 
         <EditText
             android:id="@+id/description"
@@ -31,7 +30,6 @@
             android:layout_marginBottom="10dp"
             android:layout_marginRight="10dp"
             android:inputType="textNoSuggestions"
-            android:focusable="false"
             android:gravity="left"
             android:hint="@string/description_hint" />
 
@@ -45,8 +43,6 @@
             android:layout_below="@+id/description"
             android:layout_marginBottom="30dp"
             android:gravity="left"
-            android:focusable="false"
-            android:enabled="false"
             android:inputType="textNoSuggestions" 
             android:hint="@string/user_hint"/>
 
@@ -73,7 +69,6 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="180dp"
-            android:focusable="false"
             android:gravity="left" />
     
         <TextView
@@ -99,7 +94,6 @@
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="180dp"
-            android:focusable="false"
             android:gravity="left" />
         
         <TextView
@@ -124,7 +118,6 @@
             android:layout_alignLeft="@+id/created"
             android:layout_alignRight="@+id/created"
             android:layout_below="@+id/created"
-            android:focusable="false"
             android:gravity="left" />
         
         <TextView
@@ -149,7 +142,6 @@
             android:layout_alignLeft="@+id/updated"
             android:layout_alignRight="@+id/updated"
             android:layout_below="@+id/updated"
-            android:focusable="false"
             android:gravity="left" />
    
                  

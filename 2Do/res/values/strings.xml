@@ -25,7 +25,8 @@
     
     <string name="in_charge">Felelős személy</string>
     <string name="user_hint">felelős személy</string>
-    <string name="description_hint">a feladat leírása</string>
+    <string name="description_hint">leírás</string>
+    <string name="title_hint">cím</string>
     
     <string name="dates">határidő (dátum, óra), létrehozva, frissítve</string>
     

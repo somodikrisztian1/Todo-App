@@ -6,9 +6,11 @@
 package hu.todo.fragment;
 
 import java.util.List;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -87,6 +89,36 @@ public final class AllFragment_
             }
         }
         binddAdapter();
+    }
+
+    @Override
+    public void getsome(final SQLiteDatabase db) {
+        db.beginTransaction();
+        try {
+            AllFragment_.super.getsome(db);
+            db.setTransactionSuccessful();
+            return ;
+        } catch (RuntimeException e) {
+            Log.e("AllFragment_", "Error in transaction", e);
+            throw e;
+        } finally {
+            db.endTransaction();
+        }
+    }
+
+    @Override
+    public void putsome(final SQLiteDatabase db) {
+        db.beginTransaction();
+        try {
+            AllFragment_.super.putsome(db);
+            db.setTransactionSuccessful();
+            return ;
+        } catch (RuntimeException e) {
+            Log.e("AllFragment_", "Error in transaction", e);
+            throw e;
+        } finally {
+            db.endTransaction();
+        }
     }
 
     @Override

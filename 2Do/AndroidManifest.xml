@@ -8,6 +8,8 @@
         android:minSdkVersion="14"
         android:targetSdkVersion="19" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     
     <application
@@ -27,6 +29,10 @@
         <activity
             android:name=".activity.ShowTaskActivity_"
             android:label="@string/title_activity_show_task" >
+        </activity>
+        <activity
+            android:name=".activity.AddTaskActivity_"
+            android:label="@string/title_activity_add_task" >
         </activity>
     </application>
 

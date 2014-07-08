@@ -1323,7 +1323,7 @@ containing a value of this type.
         public static final int create=0x7f0a001c;
         public static final int created_at=0x7f0a001a;
         public static final int date=0x7f0a0018;
-        public static final int dates=0x7f0a0024;
+        public static final int dates=0x7f0a0025;
         public static final int description=0x7f0a0017;
         public static final int description_hint=0x7f0a0023;
         public static final int hello_world=0x7f0a0013;
@@ -1333,6 +1333,7 @@ containing a value of this type.
         public static final int title_activity_add_task=0x7f0a0014;
         public static final int title_activity_main=0x7f0a0012;
         public static final int title_activity_show_task=0x7f0a0015;
+        public static final int title_hint=0x7f0a0024;
         public static final int updated_at=0x7f0a001b;
         public static final int user_hint=0x7f0a0022;
     }
