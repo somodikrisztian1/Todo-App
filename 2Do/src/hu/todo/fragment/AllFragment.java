@@ -1,6 +1,6 @@
 package hu.todo.fragment;
 
-import hu.todo.activity.TaskActivity_;
+import hu.todo.activity.ShowTaskActivity_;
 import hu.todo.adapter.TodoAdapter;
 import hu.todo.entity.Task;
 import hu.todo.function.ApplicationFunctions;
@@ -60,7 +60,7 @@ public class AllFragment extends ListFragment {
 	
 	@ItemClick(android.R.id.list)
     public void myListItemClicked(Task task) {
-		TaskActivity_.intent(this).task(task).isShowTask(true).start();
+		ShowTaskActivity_.intent(this).task(task).start();
     }
 	
 	

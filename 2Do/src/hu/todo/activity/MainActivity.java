@@ -60,7 +60,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
     }
     
 	void addTask() {
-		TaskActivity_.intent(this).isShowTask(false).start();
+		ShowTaskActivity_.intent(this).start();
 	}
 	
     // frissítés

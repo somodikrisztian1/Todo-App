@@ -3,8 +3,8 @@
      
     <!-- Szerkesztés -->
     <item android:id="@+id/edit"
-          android:icon="@drawable/ic_action_edit"
-          android:title="@string/action_refresh"
+          android:icon="@drawable/ic_action_content_edit"
+          android:title="@string/action_edit"
           android:showAsAction="always" />
     
     <!-- Mentés -->

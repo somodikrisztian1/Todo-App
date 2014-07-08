@@ -55,8 +55,8 @@ public final class AllFragment_
     private void init_(Bundle savedInstanceState) {
         OnViewChangedNotifier.registerOnViewChangedListener(this);
         taskManager = new TaskRestInterface_();
-        myErrorHandler = MyErrorHandler_.getInstance_(getActivity());
         adapter = TodoAdapter_.getInstance_(getActivity());
+        myErrorHandler = MyErrorHandler_.getInstance_(getActivity());
     }
 
     @Override
