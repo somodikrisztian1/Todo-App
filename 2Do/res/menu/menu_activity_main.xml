@@ -12,17 +12,5 @@
           android:icon="@drawable/ic_action_new"
           android:title="@string/action_new"
           android:showAsAction="always"/>
-    
-    <!-- Help -->
-    <item android:id="@+id/action_help"
-          android:icon="@drawable/abc_tab_selected_holo"
-          android:title="menu 1"
-          android:showAsAction="never"/>
-     
-    <!-- Check updates -->
-    <item android:id="@+id/action_check_updates"
-          android:icon="@drawable/ic_action_refresh"
-          android:title="menu 2"
-          android:showAsAction="never" />
 
 </menu>

@@ -210,6 +210,7 @@ public class ShowTaskActivity extends FragmentActivity implements OnItemClickLis
 			map.set("task[created_at]", ISO8601(task.getCreated_at()));
 			map.set("task[updated_at]", ISO8601(now));
 			updateTask(map, token);
+			finish();
 		}
 	}
 	
@@ -287,6 +288,11 @@ public class ShowTaskActivity extends FragmentActivity implements OnItemClickLis
 	@AfterTextChange(R.id.datePicker)
 	void datePChanged() {
 		dateP = datePicker.getText().toString();
+	}
+	
+	@AfterTextChange(R.id.timePicker)
+	void timePChanged() {
+		dateT = timePicker.getText().toString();
 	}
 	
 	@AfterTextChange(R.id.createdPicker)

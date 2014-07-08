@@ -9,6 +9,7 @@ import hu.todo.rest.MyErrorHandler;
 import hu.todo.rest.RestInterface;
 import hu.todo.utility.LocalDatabaseOpenHelper;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -20,7 +21,6 @@ import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
-import org.androidannotations.annotations.FocusChange;
 import org.androidannotations.annotations.InstanceState;
 import org.androidannotations.annotations.OptionsItem;
 import org.androidannotations.annotations.Transactional;
@@ -53,7 +53,9 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-// ez a felülete egy task létrehozásának
+/**
+ * Felület az új taskhoz, nagyon hasonló a ShowTaskActivityhez
+ */
 @EActivity(R.layout.activity_add_task) 
 public class AddTaskActivity extends FragmentActivity implements OnItemClickListener {
 	
@@ -98,8 +100,8 @@ public class AddTaskActivity extends FragmentActivity implements OnItemClickList
 		dateCal.set(Calendar.YEAR, year);
 		dateCal.set(Calendar.MONTH, month);
 		dateCal.set(Calendar.DAY_OF_MONTH, day);
-		
-		activity.datePicker.setText((dateCal.get(Calendar.YEAR) + " / " + (dateCal.get(Calendar.MONTH) + 1) + " / " + (dateCal.get(Calendar.DAY_OF_MONTH))));
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+		activity.datePicker.setText(formatter.format(dateCal.getTime()));
 	}
 
 	@Override
@@ -107,22 +109,13 @@ public class AddTaskActivity extends FragmentActivity implements OnItemClickList
 		timeCal = Calendar.getInstance();
 		timeCal.set(Calendar.HOUR_OF_DAY, hourOfDay);
 		timeCal.set(Calendar.MINUTE, minute);
-		
-		activity.timePicker.setText((timeCal.get(Calendar.HOUR_OF_DAY)) + ":" + (timeCal.get(Calendar.MINUTE)));
+		String format = String.format(Locale.getDefault(), "%02d:%02d", timeCal.get(Calendar.HOUR_OF_DAY), timeCal.get(Calendar.MINUTE));
+		activity.timePicker.setText(format);
 	}
-	
-	
-//	@Override
-//	public void onPause() {
-//		Log.d("lol", "pop");
-//		fragmentManager.popBackStack();
-//		super.onPause();
-//	}
-
 }
 	
 	@ViewById
-	EditText title;
+	TextView title;
 	@ViewById
 	EditText description; 
 	@ViewById
@@ -150,6 +143,8 @@ public class AddTaskActivity extends FragmentActivity implements OnItemClickList
 	@InstanceState
 	String dateP;
 	@InstanceState
+	String dateT;
+	@InstanceState
 	String createdP;
 	@InstanceState
 	String updatedP;
@@ -169,28 +164,35 @@ public class AddTaskActivity extends FragmentActivity implements OnItemClickList
 		onBackPressed();
 	}
 
+	private Calendar ISO8601(String str) {
+		try {
+			str = str.substring(0,22)+str.substring(23);
+			Calendar r = Calendar.getInstance();
+			r.setTime(ISO8601.parse(str));
+			return r;
+		} catch ( ParseException pe ) {
+			pe.printStackTrace();
+			return null;
+		} catch ( StringIndexOutOfBoundsException se ) {
+			se.printStackTrace();
+			return null;
+		} 
+	}
+	
 	private String ISO8601(Calendar c) {
 		String s = ISO8601.format(c.getTime());
 		return (s.substring(0, 22)+":"+s.substring(22));
 	}
-	private Bundle instanceState;
+	
 	private final SimpleDateFormat ISO8601 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssZ", Locale.getDefault());
 	
-	
-//	@Background
-//	void updateTask(MultiValueMap<String, String> map, String token) {
-//		taskManager.updateTask(map, task.getId(), token);  // TODO kf
-//	}
+	private String fromDatePickerToDateString(String dateText, String timeText) {
+		return dateText + "T" + timeText + ":00" + ".000Z";
+	}
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-	}
-	
-	@Override
-	protected void onStart() {
-		// TODO Auto-generated method stub
-		super.onStart();
 	}
 	
 	@AfterViews
@@ -218,6 +220,11 @@ public class AddTaskActivity extends FragmentActivity implements OnItemClickList
 		dateP = datePicker.getText().toString();
 	}
 	
+	@AfterTextChange(R.id.timePicker)
+	void timePChanged() {
+		dateT = timePicker.getText().toString();
+	}
+	
 	@AfterTextChange(R.id.createdPicker)
 	void createdPChanged() {
 		createdP = createdPicker.getText().toString();
@@ -243,8 +250,25 @@ public class AddTaskActivity extends FragmentActivity implements OnItemClickList
 			 user.setOnItemClickListener(this);
 		}
 	}
-
-	@FocusChange(R.id.datePicker)
+	
+	@AfterViews
+	void setViews() {
+		Calendar c = Calendar.getInstance();
+		int month = c.get(Calendar.MONTH) + 1;
+		int day = c.get(Calendar.DAY_OF_MONTH);
+		String s1 = String.format(Locale.getDefault(), "%02d", month);
+		String s2 = String.format(Locale.getDefault(), "%02d", day);
+		
+		int hour = c.get(Calendar.HOUR_OF_DAY);
+		int min = c.get(Calendar.MINUTE);
+		String s3 = String.format(Locale.getDefault(), "%02d", hour);
+		String s4 = String.format(Locale.getDefault(), "%02d", min);
+		
+		createdPicker.setText(c.get(Calendar.YEAR) + "-" + s1 + "-" + s2 + "  " + s3 + ":" + s4);
+		updatedPicker.setText(c.get(Calendar.YEAR) + "-" + s1 + "-" + s2 + "  " + s3 + ":" + s4);
+	}
+	
+	@Click(R.id.datePicker)
 	void showDatePicker() {
 		FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 		DatePickerFragment fragment = new DatePickerFragment();
@@ -252,7 +276,7 @@ public class AddTaskActivity extends FragmentActivity implements OnItemClickList
 		fragmentTransaction.commit();
 	}
 	
-	@FocusChange(R.id.timePicker)
+	@Click(R.id.timePicker)
 	void showTimePicker() {
 		FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 		DatePickerFragment fragment = new DatePickerFragment();
@@ -273,15 +297,18 @@ public class AddTaskActivity extends FragmentActivity implements OnItemClickList
 	@Click(R.id.btnCreate)
 	void clickCreate() {
 		if(title.getText() != null && user.getText() != null
-				&& description.getText() != null && datePicker.getText() != null) {
+				&& description.getText() != null && datePicker.getText() != null
+				&& timePicker.getText() != null && selectedUser != null) {
 			task = new Task();
 			task.setUser_id(selectedUser.getId());
 			task.setTitle(title.getText().toString());
 			task.setDescription(description.getText().toString());
-//			task.setDate(description.getText().toString());
+			String s = fromDatePickerToDateString(datePicker.getText().toString(), timePicker.getText().toString());
+			task.setDate(ISO8601(s));
 			task.setCreated_at(Calendar.getInstance());
 			task.setUpdated_at(Calendar.getInstance());
 			
+			// ha van net akkor távoli adatbázisba
 			if (SystemFunctions.isOnline(this)) {
 				taskManager.setRestErrorHandler(myErrorHandler);
 				String token = ApplicationFunctions.getInstance().getUserFunctions().getLoggedUser().getToken();
@@ -289,11 +316,12 @@ public class AddTaskActivity extends FragmentActivity implements OnItemClickList
 				map.set("task[user_id]", "" + task.getUser_id());
 				map.set("task[title]", task.getTitle());
 				map.set("task[description]", task.getDescription());
-				map.set("task[date]", "2014-07-08T00:00:00.000Z");
+				map.set("task[date]", fromDatePickerToDateString(datePicker.getText().toString(), timePicker.getText().toString()));
 				map.set("task[created_at]", ISO8601(task.getCreated_at()));
 				map.set("task[updated_at]", ISO8601(task.getUpdated_at()));
 				addTask(map, token);
 			}
+			// ha nincs net akkor lokális adatbázisba
 			else {
 				Toast.makeText(this, "nincs net igy lokálba megy", Toast.LENGTH_SHORT).show();
 				LocalDatabaseOpenHelper helper = new LocalDatabaseOpenHelper(this);
@@ -301,6 +329,7 @@ public class AddTaskActivity extends FragmentActivity implements OnItemClickList
 				insertTask(writableDatabase);
 				writableDatabase.close();
 			}
+			finish();
 		}
 	}
 	

@@ -13,7 +13,9 @@ import android.content.Context;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-// a teendőt leíró nézet
+/**
+ *	a teendőt leíró nézet 
+ */
 @EViewGroup(R.layout.list_item_todo)
 public class TodoItemView extends LinearLayout {
 	
@@ -37,7 +39,7 @@ public class TodoItemView extends LinearLayout {
 		txtContent1stRow.setText(task.getTitle());
 		txtContent2ndRow.setText(task.getDescription());
 		txtDate1stRow.setText(task.getDate().getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT, Locale.getDefault()));
-		txtDate2ndRow.setText(task.getDate().get(Calendar.MONTH) + "/" + task.getDate().get(Calendar.DAY_OF_MONTH));
+		txtDate2ndRow.setText((task.getDate().get(Calendar.MONTH) + 1) + "/" + task.getDate().get(Calendar.DAY_OF_MONTH));
 	}
 	
 }

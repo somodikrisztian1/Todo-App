@@ -18,8 +18,8 @@
     <string name="created_at">Létrehozva</string>
     <string name="updated_at">Frissítve</string>
     <string name="create">Létrehozás</string>
-    <string name="_date">határidő (dátum)</string>
-    <string name="_time">határidő (óra)</string>
+    <string name="_date">dátum</string>
+    <string name="_time">óra</string>
     <string name="_created_at">létrehozva</string>
     <string name="_updated_at">frissítve</string>
     
