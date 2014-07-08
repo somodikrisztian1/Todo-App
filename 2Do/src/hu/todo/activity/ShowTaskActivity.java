@@ -16,7 +16,6 @@ import org.androidannotations.annotations.AfterTextChange;
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.Bean;
-import org.androidannotations.annotations.Click;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.Extra;
 import org.androidannotations.annotations.FocusChange;
@@ -31,7 +30,14 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -39,13 +45,79 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 // ez a felülete egy task nak, amikor a listábol kattintva jutunk ide
 @EActivity(R.layout.activity_show_task) 
 @OptionsMenu(R.menu.menu_show_task)
-public class ShowTaskActivity extends Activity implements OnItemClickListener {
+public class ShowTaskActivity extends FragmentActivity implements OnItemClickListener {
+	
+	private static Calendar dateCal;
+	private static Calendar timeCal;
+	
+	public static class DatePickerFragment extends DialogFragment
+	implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
+	
+		private ShowTaskActivity activity; 
+		private FragmentManager fragmentManager;
+	
+		
+		@Override
+		public void onAttach(Activity activity) {
+			super.onAttach(activity);
+			this.activity = (ShowTaskActivity) activity;
+		}
+
+	@Override
+	public Dialog onCreateDialog(Bundle savedInstanceState) {
+		final Calendar c = Calendar.getInstance();
+		int year = c.get(Calendar.YEAR);
+		int month = c.get(Calendar.MONTH);
+		int day = c.get(Calendar.DAY_OF_MONTH);
+		int hour = c.get(Calendar.HOUR_OF_DAY);
+		int minute = c.get(Calendar.MINUTE);
+		fragmentManager = getFragmentManager();
+		
+		if(fragmentManager.findFragmentByTag("DATE") != null) {
+			return new DatePickerDialog(getActivity(), this, year, month, day);
+		}
+		else {
+			return new TimePickerDialog(getActivity(), this, hour, minute, true);
+		}
+		
+	}
+	
+	@Override
+	public void onDateSet(DatePicker view, int year, int month, int day) {
+		dateCal = Calendar.getInstance();
+		dateCal.set(Calendar.YEAR, year);
+		dateCal.set(Calendar.MONTH, month);
+		dateCal.set(Calendar.DAY_OF_MONTH, day);
+		
+		activity.datePicker.setText((dateCal.get(Calendar.YEAR) + " / " + (dateCal.get(Calendar.MONTH) + 1) + " / " + (dateCal.get(Calendar.DAY_OF_MONTH))));
+	}
+
+	@Override
+	public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+		timeCal = Calendar.getInstance();
+		timeCal.set(Calendar.HOUR_OF_DAY, hourOfDay);
+		timeCal.set(Calendar.MINUTE, minute);
+		
+		activity.timePicker.setText((timeCal.get(Calendar.HOUR_OF_DAY)) + ":" + (timeCal.get(Calendar.MINUTE)));
+	}
+	
+	
+//	@Override
+//	public void onPause() {
+//		Log.d("lol", "pop");
+//		fragmentManager.popBackStack();
+//		super.onPause();
+//	}
+
+}
 	
 	@ViewById
 	TextView title;
@@ -57,6 +129,8 @@ public class ShowTaskActivity extends Activity implements OnItemClickListener {
 	TextView date;
 	@ViewById
 	EditText datePicker;
+	@ViewById
+	EditText timePicker;
 	@ViewById
 	TextView created;
 	@ViewById
@@ -213,6 +287,7 @@ public class ShowTaskActivity extends Activity implements OnItemClickListener {
 		user.setFocusableInTouchMode(true);
 		user.setEnabled(true);
 		datePicker.setFocusableInTouchMode(true);
+		timePicker.setFocusableInTouchMode(true);
 		createdPicker.setFocusableInTouchMode(true);
 		updatedPicker.setFocusableInTouchMode(true);
 	}
@@ -222,6 +297,7 @@ public class ShowTaskActivity extends Activity implements OnItemClickListener {
 		user.setFocusable(false);
 		user.setEnabled(false);
 		datePicker.setFocusable(false);
+		timePicker.setFocusable(false);
 		createdPicker.setFocusable(false);
 		updatedPicker.setFocusable(false);
 	}
@@ -230,7 +306,6 @@ public class ShowTaskActivity extends Activity implements OnItemClickListener {
 	void getUsers(String token) {
 		 allUser = taskManager.getAllUser(token);
 		 setAuCompleteUser();
-		 Log.d("lol", "itt jarsz?");
 	}
 	
 	@UiThread
@@ -251,6 +326,21 @@ public class ShowTaskActivity extends Activity implements OnItemClickListener {
 		}
 	}
 
+	@FocusChange(R.id.datePicker)
+	void showDatePicker() {
+		FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		DatePickerFragment fragment = new DatePickerFragment();
+		fragmentTransaction.add(fragment, "DATE"); 
+		fragmentTransaction.commit();
+	}
+	
+	@FocusChange(R.id.timePicker)
+	void showTimePicker() {
+		FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+		DatePickerFragment fragment = new DatePickerFragment();
+		fragmentTransaction.add(fragment, "TIME");
+		fragmentTransaction.commit();
+	}
 	
 	
 	@Override

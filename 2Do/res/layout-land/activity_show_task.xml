@@ -44,6 +44,16 @@
         android:orientation="horizontal" >
 
         <EditText
+            android:id="@+id/timePicker"
+            android:textSize="@dimen/text_normal_size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:hint="@string/_date" />
+        
+            <EditText
             android:id="@+id/datePicker"
             android:textSize="@dimen/text_normal_size"
             android:layout_width="0dp"

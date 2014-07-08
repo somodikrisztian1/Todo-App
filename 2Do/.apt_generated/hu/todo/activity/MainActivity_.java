@@ -108,12 +108,12 @@ public final class MainActivity_
             return true;
         }
         int itemId_ = item.getItemId();
-        if (itemId_ == id.action_refresh) {
-            menuRefresh(item);
-            return true;
-        }
         if (itemId_ == id.action_new) {
             menuAddTask(item);
+            return true;
+        }
+        if (itemId_ == id.action_refresh) {
+            menuRefresh(item);
             return true;
         }
         return false;

@@ -13,11 +13,13 @@
 
     <string name="title">Cím</string>
     <string name="description">Leírás</string>
-    <string name="date">Határidő</string>
+    <string name="date">Határidő (dátum)</string>
+    <string name="time">Határidő (óra)</string>
     <string name="created_at">Létrehozva</string>
     <string name="updated_at">Frissítve</string>
     <string name="create">Létrehozás</string>
-    <string name="_date">határidő</string>
+    <string name="_date">határidő (dátum)</string>
+    <string name="_time">határidő (óra)</string>
     <string name="_created_at">létrehozva</string>
     <string name="_updated_at">frissítve</string>
     
@@ -25,6 +27,6 @@
     <string name="user_hint">felelős személy</string>
     <string name="description_hint">a feladat leírása</string>
     
-    <string name="dates">határidő, létrehozva, frissítve</string>
+    <string name="dates">határidő (dátum, óra), létrehozva, frissítve</string>
     
 </resources>

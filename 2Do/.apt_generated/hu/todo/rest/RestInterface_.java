@@ -54,6 +54,25 @@ public final class RestInterface_
     }
 
     @Override
+    public List<User> getAllUser(String token) {
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
+        HttpEntity<Object> requestEntity = new HttpEntity<Object>(httpHeaders);
+        HashMap<String, Object> urlVariables = new HashMap<String, Object>();
+        urlVariables.put("token", token);
+        try {
+            return restTemplate.exchange(rootUrl.concat("/users/?token={token}"), HttpMethod.GET, requestEntity, List_User.class, urlVariables).getBody();
+        } catch (RestClientException e) {
+            if (restErrorHandler!= null) {
+                restErrorHandler.onRestClientExceptionThrown(e);
+                return null;
+            } else {
+                throw e;
+            }
+        }
+    }
+
+    @Override
     public List<Task> getAllTask(String token) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
@@ -73,18 +92,18 @@ public final class RestInterface_
     }
 
     @Override
-    public List<User> getAllUser(String token) {
+    public void updateTask(MultiValueMap<String, String> formFields, int id, String token) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
-        HttpEntity<Object> requestEntity = new HttpEntity<Object>(httpHeaders);
+        HttpEntity<MultiValueMap<String, String>> requestEntity = new HttpEntity<MultiValueMap<String, String>>(formFields, httpHeaders);
         HashMap<String, Object> urlVariables = new HashMap<String, Object>();
+        urlVariables.put("id", id);
         urlVariables.put("token", token);
         try {
-            return restTemplate.exchange(rootUrl.concat("/users/?token={token}"), HttpMethod.GET, requestEntity, List_User.class, urlVariables).getBody();
+            restTemplate.exchange(rootUrl.concat("/tasks/{id}/?token={token}"), HttpMethod.POST, requestEntity, null, urlVariables);
         } catch (RestClientException e) {
             if (restErrorHandler!= null) {
                 restErrorHandler.onRestClientExceptionThrown(e);
-                return null;
             } else {
                 throw e;
             }
@@ -123,25 +142,6 @@ public final class RestInterface_
             if (restErrorHandler!= null) {
                 restErrorHandler.onRestClientExceptionThrown(e);
                 return null;
-            } else {
-                throw e;
-            }
-        }
-    }
-
-    @Override
-    public void updateTask(MultiValueMap<String, String> formFields, int id, String token) {
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
-        HttpEntity<MultiValueMap<String, String>> requestEntity = new HttpEntity<MultiValueMap<String, String>>(formFields, httpHeaders);
-        HashMap<String, Object> urlVariables = new HashMap<String, Object>();
-        urlVariables.put("id", id);
-        urlVariables.put("token", token);
-        try {
-            restTemplate.exchange(rootUrl.concat("/tasks/{id}/?token={token}"), HttpMethod.POST, requestEntity, null, urlVariables);
-        } catch (RestClientException e) {
-            if (restErrorHandler!= null) {
-                restErrorHandler.onRestClientExceptionThrown(e);
             } else {
                 throw e;
             }

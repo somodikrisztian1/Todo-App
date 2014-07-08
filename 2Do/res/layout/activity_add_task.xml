@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
             android:layout_marginBottom="10dp"
-            android:layout_marginRight="120dp"
+            android:layout_marginRight="10dp"
             android:inputType="textNoSuggestions"
             android:focusable="false"
             android:gravity="left"
@@ -39,10 +39,9 @@
             android:id="@+id/user"
             style="@style/CustomAutoCompleteTextView"
             android:textSize="@dimen/text_normal_size"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/description"
-            android:layout_alignRight="@+id/description"
             android:layout_below="@+id/description"
             android:layout_marginBottom="30dp"
             android:gravity="left"
@@ -78,12 +77,38 @@
             android:gravity="left" />
     
         <TextView
-            android:id="@+id/created"
+            android:id="@+id/time"
             style="@style/MyTextView"
             android:textSize="@dimen/text_big_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/datePicker"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="34dp"
+            android:gravity="left"
+            android:text="@string/time"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/timePicker"
+            android:textSize="@dimen/text_normal_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/time"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="180dp"
+            android:focusable="false"
+            android:gravity="left" />
+        
+        <TextView
+            android:id="@+id/created"
+            style="@style/MyTextView"
+            android:textSize="@dimen/text_big_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/timePicker"
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="0dp"
             android:layout_marginRight="34dp"
