@@ -1,8 +1,8 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/padding_default"
-    android:background="@drawable/texture" >
+    android:background="@drawable/texture"
+    android:padding="@dimen/padding_default" >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -11,112 +11,111 @@
         <TextView
             android:id="@+id/title"
             style="@style/MyTextView"
-            android:textSize="@dimen/text_big_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="15dp"
             android:gravity="center"
             android:text="@string/title"
+            android:textSize="@dimen/text_big_size"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/description"
-            android:textSize="@dimen/text_normal_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
             android:layout_marginBottom="20dp"
-            android:inputType="textNoSuggestions|textMultiLine"
             android:focusable="false"
             android:gravity="left"
-            android:hint="@string/description_hint" />
+            android:hint="@string/description_hint"
+            android:inputType="textNoSuggestions|textMultiLine"
+            android:textSize="@dimen/text_normal_size" />
 
         <AutoCompleteTextView
             android:id="@+id/user"
             style="@style/CustomAutoCompleteTextView"
-            android:textSize="@dimen/text_normal_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/description"
             android:layout_below="@+id/description"
             android:layout_marginBottom="30dp"
-            android:gravity="left"
-            android:focusable="false"
             android:enabled="false"
-            android:inputType="textNoSuggestions" 
-            android:hint="@string/user_hint"/>
+            android:focusable="false"
+            android:gravity="left"
+            android:hint="@string/user_hint"
+            android:inputType="textNoSuggestions"
+            android:textSize="@dimen/text_normal_size" />
 
         <TextView
             android:id="@+id/date"
             style="@style/MyTextView"
-            android:textSize="@dimen/text_big_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/user"
             android:layout_marginBottom="10dp"
             android:gravity="left"
             android:text="@string/date"
+            android:textSize="@dimen/text_big_size"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/datePicker"
-            android:textSize="@dimen/text_normal_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/date"
             android:layout_marginBottom="15dp"
             android:focusable="false"
-            android:gravity="left" />
-    
-         <TextView
+            android:gravity="left"
+            android:textSize="@dimen/text_normal_size" />
+
+        <TextView
             android:id="@+id/time"
             style="@style/MyTextView"
-            android:textSize="@dimen/text_big_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/datePicker"
             android:layout_marginBottom="10dp"
             android:gravity="left"
             android:text="@string/time"
+            android:textSize="@dimen/text_big_size"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/timePicker"
-            android:textSize="@dimen/text_normal_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/time"
             android:layout_marginBottom="15dp"
             android:focusable="false"
-            android:gravity="left" />
-        
+            android:gravity="left"
+            android:textSize="@dimen/text_normal_size" />
+
         <TextView
             android:id="@+id/created"
             style="@style/MyTextView"
-            android:textSize="@dimen/text_big_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/timePicker"
             android:layout_marginBottom="10dp"
             android:gravity="left"
             android:text="@string/created_at"
+            android:textSize="@dimen/text_big_size"
             android:textStyle="bold" />
-        
+
         <EditText
             android:id="@+id/createdPicker"
-            android:textSize="@dimen/text_normal_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/created"
             android:layout_alignRight="@+id/created"
             android:layout_below="@+id/created"
             android:focusable="false"
-            android:gravity="left" />
-        
+            android:gravity="left"
+            android:textSize="@dimen/text_normal_size" />
+
         <TextView
             android:id="@+id/updated"
             style="@style/MyTextView"
-            android:textSize="@dimen/text_big_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/createdPicker"
@@ -125,19 +124,19 @@
             android:layout_marginRight="34dp"
             android:gravity="left"
             android:text="@string/updated_at"
+            android:textSize="@dimen/text_big_size"
             android:textStyle="bold" />
-        
+
         <EditText
             android:id="@+id/updatedPicker"
-            android:textSize="@dimen/text_normal_size"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/updated"
             android:layout_alignRight="@+id/updated"
             android:layout_below="@+id/updated"
             android:focusable="false"
-            android:gravity="left" />
-   
+            android:gravity="left"
+            android:textSize="@dimen/text_normal_size" />
     </RelativeLayout>
 
 </ScrollView>

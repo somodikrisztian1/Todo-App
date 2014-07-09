@@ -51,8 +51,8 @@ public final class MainActivity_
     private void init_(Bundle savedInstanceState) {
         OnViewChangedNotifier.registerOnViewChangedListener(this);
         taskManager = new RestInterface_();
-        adapter = TitleNavigationAdapter_.getInstance_(this);
         myErrorHandler = MyErrorHandler_.getInstance_(this);
+        adapter = TitleNavigationAdapter_.getInstance_(this);
     }
 
     @Override
@@ -141,20 +141,6 @@ public final class MainActivity_
     }
 
     @Override
-    public void onPostExecute() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MainActivity_.super.onPostExecute();
-            }
-
-        }
-        );
-    }
-
-    @Override
     public void dismissDialog() {
         handler_.post(new Runnable() {
 
@@ -169,13 +155,13 @@ public final class MainActivity_
     }
 
     @Override
-    public void onPreExecute() {
+    public void onPostExecute() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                MainActivity_.super.onPreExecute();
+                MainActivity_.super.onPostExecute();
             }
 
         }
@@ -190,6 +176,20 @@ public final class MainActivity_
             @Override
             public void run() {
                 MainActivity_.super.showDialog();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void onPreExecute() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MainActivity_.super.onPreExecute();
             }
 
         }

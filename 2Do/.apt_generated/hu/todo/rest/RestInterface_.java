@@ -112,14 +112,15 @@ public final class RestInterface_
     }
 
     @Override
-    public Task addTask(MultiValueMap<String, String> formFields, String token) {
+    public User login(String email, String password) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
-        HttpEntity<MultiValueMap<String, String>> requestEntity = new HttpEntity<MultiValueMap<String, String>>(formFields, httpHeaders);
+        HttpEntity<Object> requestEntity = new HttpEntity<Object>(httpHeaders);
         HashMap<String, Object> urlVariables = new HashMap<String, Object>();
-        urlVariables.put("token", token);
+        urlVariables.put("email", email);
+        urlVariables.put("password", password);
         try {
-            return restTemplate.exchange(rootUrl.concat("/tasks/?token={token}"), HttpMethod.POST, requestEntity, Task.class, urlVariables).getBody();
+            return restTemplate.exchange(rootUrl.concat("/sessions/?email={email}&password={password}"), HttpMethod.POST, requestEntity, User.class, urlVariables).getBody();
         } catch (RestClientException e) {
             if (restErrorHandler!= null) {
                 restErrorHandler.onRestClientExceptionThrown(e);
@@ -131,15 +132,14 @@ public final class RestInterface_
     }
 
     @Override
-    public User login(String email, String password) {
+    public Task addTask(MultiValueMap<String, String> formFields, String token) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
-        HttpEntity<Object> requestEntity = new HttpEntity<Object>(httpHeaders);
+        HttpEntity<MultiValueMap<String, String>> requestEntity = new HttpEntity<MultiValueMap<String, String>>(formFields, httpHeaders);
         HashMap<String, Object> urlVariables = new HashMap<String, Object>();
-        urlVariables.put("email", email);
-        urlVariables.put("password", password);
+        urlVariables.put("token", token);
         try {
-            return restTemplate.exchange(rootUrl.concat("/sessions/?email={email}&password={password}"), HttpMethod.POST, requestEntity, User.class, urlVariables).getBody();
+            return restTemplate.exchange(rootUrl.concat("/tasks/?token={token}"), HttpMethod.POST, requestEntity, Task.class, urlVariables).getBody();
         } catch (RestClientException e) {
             if (restErrorHandler!= null) {
                 restErrorHandler.onRestClientExceptionThrown(e);

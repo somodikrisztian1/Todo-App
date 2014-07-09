@@ -124,20 +124,6 @@ public final class AllFragment_
     }
 
     @Override
-    public void showResult(final List<hu.todo.entity.Task> tasks) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                AllFragment_.super.showResult(tasks);
-            }
-
-        }
-        );
-    }
-
-    @Override
     public void dismissDialog() {
         handler_.post(new Runnable() {
 
@@ -145,6 +131,20 @@ public final class AllFragment_
             @Override
             public void run() {
                 AllFragment_.super.dismissDialog();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showResult(final List<hu.todo.entity.Task> tasks) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                AllFragment_.super.showResult(tasks);
             }
 
         }

@@ -7,8 +7,8 @@ import java.util.List;
 import org.codehaus.jackson.annotate.JsonProperty;
 
 @SuppressWarnings("serial")
-public class User implements Serializable{
-	
+public class User implements Serializable {
+
 	@JsonProperty("id")
 	int id;
 	String name;
@@ -17,12 +17,10 @@ public class User implements Serializable{
 	String password;
 	Calendar created_at;
 	Calendar updated_at;
-	
+
 	@JsonProperty("errors")
 	List<String> errors;
 
-	
-	
 	public List<String> getErrors() {
 		return errors;
 	}
@@ -35,7 +33,7 @@ public class User implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-  
+
 	public User(String name) {
 		super();
 		this.name = name;
@@ -96,10 +94,10 @@ public class User implements Serializable{
 	public void setUpdated_at(Calendar updated_at) {
 		this.updated_at = updated_at;
 	}
-	 
+
 	@Override
 	public String toString() {
 		return name;
 	}
-	
+
 }

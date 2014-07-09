@@ -44,7 +44,6 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -244,16 +243,16 @@ public class ShowTaskActivity extends FragmentActivity implements
 	@Background
 	void updateTask(MultiValueMap<String, String> map, String token) {
 		showDialog();
-		if(SystemFunctions.isOnline(this)) {
+		if (SystemFunctions.isOnline(this)) {
 			Task taskError = taskManager.updateTask(map, task.getId(), token);
-			
-			if(taskError.getErrors() != null) {
-				AlertDialog.Builder b =  new  AlertDialog.Builder(this)
-			    .setTitle("Hiba történt!")
-			    .setPositiveButton("OK", this)
-			    .setNegativeButton("Cancel",this);
-				
-				for(String s : taskError.getErrors()) {
+
+			if (taskError.getErrors() != null) {
+				AlertDialog.Builder b = new AlertDialog.Builder(this)
+						.setTitle("Hiba történt!")
+						.setPositiveButton("OK", this)
+						.setNegativeButton("Cancel", this);
+
+				for (String s : taskError.getErrors()) {
 					b.setMessage(s + "\n");
 				}
 				b.show();
@@ -395,25 +394,24 @@ public class ShowTaskActivity extends FragmentActivity implements
 		progressDialog.setCanceledOnTouchOutside(false);
 		progressDialog.show();
 	}
-	
+
 	@Background
 	void getUsers(String token) {
 		showDialog();
-		if(SystemFunctions.isOnline(this)) {
+		if (SystemFunctions.isOnline(this)) {
 			allUser = taskManager.getAllUser(token);
 			// hiba történt
-			if(allUser.size() > 0 && allUser.get(0).getErrors() != null) {
-				AlertDialog.Builder b =  new  AlertDialog.Builder(this)
-			    .setTitle("Hiba történt!")
-			    .setPositiveButton("OK", this)
-			    .setNegativeButton("Cancel",this);
-				
-				for(String s : allUser.get(0).getErrors()) {
+			if (allUser.size() > 0 && allUser.get(0).getErrors() != null) {
+				AlertDialog.Builder b = new AlertDialog.Builder(this)
+						.setTitle("Hiba történt!")
+						.setPositiveButton("OK", this)
+						.setNegativeButton("Cancel", this);
+
+				for (String s : allUser.get(0).getErrors()) {
 					b.setMessage(s + "\n");
 				}
 				b.show();
-			}
-			else {
+			} else {
 				setAuCompleteUser();
 			}
 		}
@@ -476,13 +474,12 @@ public class ShowTaskActivity extends FragmentActivity implements
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		selectedUser = (User) parent.getItemAtPosition(position);
-		Log.d("lol", "" + selectedUser.getId());
 	}
 
 	@Override
 	public void onClick(DialogInterface dialog, int which) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

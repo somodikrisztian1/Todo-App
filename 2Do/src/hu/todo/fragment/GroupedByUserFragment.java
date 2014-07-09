@@ -7,7 +7,6 @@ import hu.todo.function.ApplicationFunctions;
 import hu.todo.function.SystemFunctions;
 import hu.todo.rest.MyErrorHandler;
 import hu.todo.rest.RestInterface;
-import hu.todo.toast.Toaster;
 import hu.todo.utility.CalendarFormatter;
 import hu.todo.utility.LocalDatabaseOpenHelper;
 import hu.todo.utility.OrientationLocker;
@@ -33,9 +32,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ListFragment;
-import android.util.Log;
 
 /**
  * Megjeleníti az összes teendőt user_id alapján.
@@ -62,7 +59,6 @@ public class GroupedByUserFragment extends ListFragment implements
 	void getLocalTasks(SQLiteDatabase db) {
 		Cursor c = db.query("tasks", new String[] { "*" }, null, null, null,
 				null, null);
-		Log.d("lol", "cnt: " + c.getCount());
 		if (c.moveToFirst()) {
 			ArrayList<Task> tasks = new ArrayList<Task>();
 			while (!c.isAfterLast()) {
@@ -78,7 +74,6 @@ public class GroupedByUserFragment extends ListFragment implements
 				if (c.getString(6) != null)
 					updated_at = c.getString(6);
 
-				Log.d("lol", date == null ? "DATE null" : "DATE nem null");
 				Task task = new Task(id, user_id, title, description,
 						CalendarFormatter.ISO8601(date),
 						created_at == null ? null : CalendarFormatter
@@ -109,7 +104,7 @@ public class GroupedByUserFragment extends ListFragment implements
 		if (ApplicationFunctions.getInstance().getUserFunctions()
 				.getLoginStatus()) {
 			getItemsInBackground();
-		} 
+		}
 	}
 
 	@AfterViews
@@ -136,23 +131,23 @@ public class GroupedByUserFragment extends ListFragment implements
 
 	@Background
 	void getItemsInBackground() {
-		if(ApplicationFunctions.getInstance().getUserFunctions()
+		if (ApplicationFunctions.getInstance().getUserFunctions()
 				.getLoggedUser().getToken() != null) {
 			showDialog();
-			String token = ApplicationFunctions.getInstance().getUserFunctions()
-					.getLoggedUser().getToken();
+			String token = ApplicationFunctions.getInstance()
+					.getUserFunctions().getLoggedUser().getToken();
 			taskManager.setRestErrorHandler(myErrorHandler);
 			List<Task> tasks = null;
 			if (SystemFunctions.isOnline(getActivity())) {
 				tasks = taskManager.getAllTask(token);
-	
+
 				// hiba történt
 				if (tasks.size() > 0 && tasks.get(0).getErrors() != null) {
-					AlertDialog.Builder b = new AlertDialog.Builder(getActivity())
-							.setTitle("Hiba történt!")
+					AlertDialog.Builder b = new AlertDialog.Builder(
+							getActivity()).setTitle("Hiba történt!")
 							.setPositiveButton("OK", this)
 							.setNegativeButton("Cancel", this);
-	
+
 					for (String s : tasks.get(0).getErrors()) {
 						b.setMessage(s + "\n");
 					}
@@ -161,7 +156,7 @@ public class GroupedByUserFragment extends ListFragment implements
 			}
 			if (tasks != null)
 				showResult(tasks);
-	
+
 			dismissDialog();
 		}
 	}

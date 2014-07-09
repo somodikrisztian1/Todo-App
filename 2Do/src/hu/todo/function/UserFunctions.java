@@ -4,9 +4,7 @@ import hu.todo.entity.User;
 
 public class UserFunctions {
 	private User loggedUser;
-	
-	
-	// TODO kivenni
+
 	public UserFunctions() {
 		super();
 		loggedUser = new User();
@@ -20,13 +18,11 @@ public class UserFunctions {
 		this.loggedUser = loggedInUser;
 	}
 
-	public User getLoggedUser()
-	{
+	public User getLoggedUser() {
 		return loggedUser;
 	}
 
-	public void logout()
-	{
+	public void logout() {
 		loggedUser = null;
 	}
 

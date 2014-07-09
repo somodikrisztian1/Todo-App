@@ -1258,13 +1258,11 @@ containing a value of this type.
         public static final int activity_main=0x7f03001a;
         public static final int activity_show_task=0x7f03001b;
         public static final int fragment_all=0x7f03001c;
-        public static final int fragment_calendar=0x7f03001d;
-        public static final int fragment_login_dialog=0x7f03001e;
-        public static final int fragment_mobile_list=0x7f03001f;
-        public static final int list_item_navigation=0x7f030020;
-        public static final int list_item_title_navigation=0x7f030021;
-        public static final int list_item_todo=0x7f030022;
-        public static final int support_simple_spinner_dropdown_item=0x7f030023;
+        public static final int fragment_login_dialog=0x7f03001d;
+        public static final int list_item_navigation=0x7f03001e;
+        public static final int list_item_title_navigation=0x7f03001f;
+        public static final int list_item_todo=0x7f030020;
+        public static final int support_simple_spinner_dropdown_item=0x7f030021;
     }
     public static final class menu {
         public static final int menu_activity_main=0x7f0c0000;

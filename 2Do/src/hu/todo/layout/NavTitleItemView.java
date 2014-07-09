@@ -10,20 +10,19 @@ import android.content.Context;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
 // spinner címét leíró nézet
 @EViewGroup(R.layout.list_item_title_navigation)
 public class NavTitleItemView extends LinearLayout {
 
 	@ViewById(R.id.txtTitle)
 	TextView titleView;
-	
+
 	public NavTitleItemView(Context context) {
 		super(context);
 	}
 
 	public void bind(SpinnerNavItem navItem) {
-        titleView.setText(navItem.getTitle());
-    }
-	
+		titleView.setText(navItem.getTitle());
+	}
+
 }

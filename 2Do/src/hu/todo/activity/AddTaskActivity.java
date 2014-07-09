@@ -11,7 +11,6 @@ import hu.todo.utility.CalendarFormatter;
 import hu.todo.utility.LocalDatabaseOpenHelper;
 import hu.todo.utility.OrientationLocker;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -46,7 +45,6 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -150,7 +148,7 @@ public class AddTaskActivity extends FragmentActivity implements
 
 	// azert kellenek hogy az edittext valtoztatás után is tartalmazza a jó
 	// értéket
-	
+
 	@InstanceState
 	String t;
 	@InstanceState
@@ -231,7 +229,7 @@ public class AddTaskActivity extends FragmentActivity implements
 	void updatedTChanged() {
 		t = updatedPicker.getText().toString();
 	}
-	
+
 	private ProgressDialog progressDialog;
 
 	@UiThread
@@ -243,25 +241,24 @@ public class AddTaskActivity extends FragmentActivity implements
 		progressDialog.setCanceledOnTouchOutside(false);
 		progressDialog.show();
 	}
-	
+
 	@Background
 	void getUsers(String token) {
 		showDialog();
-		if(SystemFunctions.isOnline(this)) {
+		if (SystemFunctions.isOnline(this)) {
 			allUser = taskManager.getAllUser(token);
 			// hiba történt
-			if(allUser.size() > 0 && allUser.get(0).getErrors() != null) {
-				AlertDialog.Builder b =  new  AlertDialog.Builder(this)
-			    .setTitle("Hiba történt!")
-			    .setPositiveButton("OK", this)
-			    .setNegativeButton("Cancel",this);
-				
-				for(String s : allUser.get(0).getErrors()) {
+			if (allUser.size() > 0 && allUser.get(0).getErrors() != null) {
+				AlertDialog.Builder b = new AlertDialog.Builder(this)
+						.setTitle("Hiba történt!")
+						.setPositiveButton("OK", this)
+						.setNegativeButton("Cancel", this);
+
+				for (String s : allUser.get(0).getErrors()) {
 					b.setMessage(s + "\n");
 				}
 				b.show();
-			}
-			else {
+			} else {
 				setAuCompleteUser();
 			}
 		}
@@ -273,7 +270,7 @@ public class AddTaskActivity extends FragmentActivity implements
 		progressDialog.dismiss();
 		OrientationLocker.unlockScreenOrientation(this);
 	}
-	
+
 	@UiThread
 	void setAuCompleteUser() {
 		if (allUser != null) {
@@ -325,14 +322,13 @@ public class AddTaskActivity extends FragmentActivity implements
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		selectedUser = (User) parent.getItemAtPosition(position);
-		Log.d("lol", "" + selectedUser.getId());
 	}
 
 	Task task;
 
 	@Click(R.id.btnCreate)
 	void clickCreate() {
-		if(selectedUser == null) {
+		if (selectedUser == null) {
 			// ha nemvolt net és nem tudta kiválasztani a listából a nevet
 			// akkor létrejön egy User a mezőbe írt névvel
 			selectedUser = new User(user.getText().toString());
@@ -347,7 +343,6 @@ public class AddTaskActivity extends FragmentActivity implements
 			String s = fromDatePickerToDateString(datePicker.getText()
 					.toString(), timePicker.getText().toString());
 			task.setDate(CalendarFormatter.ISO8601(s));
-			Log.d("lol", task.getDate().toString());
 			task.setCreated_at(Calendar.getInstance());
 			task.setUpdated_at(Calendar.getInstance());
 
@@ -371,7 +366,9 @@ public class AddTaskActivity extends FragmentActivity implements
 			}
 			// ha nincs net akkor lokális adatbázisba
 			else {
-				Toast.makeText(this, "Nincs intetrnet kapcsolat, ezért lokális adatbázisba történik a mentés.",
+				Toast.makeText(
+						this,
+						"Nincs intetrnet kapcsolat, ezért lokális adatbázisba történik a mentés.",
 						Toast.LENGTH_SHORT).show();
 				LocalDatabaseOpenHelper helper = new LocalDatabaseOpenHelper(
 						this);
@@ -384,22 +381,20 @@ public class AddTaskActivity extends FragmentActivity implements
 		}
 	}
 
-	
-	
 	@Background
 	void addTask(MultiValueMap<String, String> formFields, String token) {
 		showDialog();
-		if(SystemFunctions.isOnline(this)) {
+		if (SystemFunctions.isOnline(this)) {
 			Task taskError = taskManager.addTask(formFields, token);
-			
+
 			// hiba történt
-			if(taskError.getErrors() != null) {
-				AlertDialog.Builder b =  new  AlertDialog.Builder(this)
-			    .setTitle("Hiba történt!")
-			    .setPositiveButton("OK", this)
-			    .setNegativeButton("Cancel",this);
-				
-				for(String s : taskError.getErrors()) {
+			if (taskError.getErrors() != null) {
+				AlertDialog.Builder b = new AlertDialog.Builder(this)
+						.setTitle("Hiba történt!")
+						.setPositiveButton("OK", this)
+						.setNegativeButton("Cancel", this);
+
+				for (String s : taskError.getErrors()) {
 					b.setMessage(s + "\n");
 				}
 				b.show();
@@ -410,27 +405,23 @@ public class AddTaskActivity extends FragmentActivity implements
 
 	@Transactional
 	void insertTask(SQLiteDatabase db) {
-		if(task.getUser_id() != 0 && task.getTitle() != null &&
-				task.getDescription() != null && task.getDate() != null) {
+		if (task.getUser_id() != 0 && task.getTitle() != null
+				&& task.getDescription() != null && task.getDate() != null) {
 			db.execSQL(
 					"INSERT INTO tasks (user_id, title, description, date, created_at, updated_at) "
 							+ "VALUES (?, ?, ?, ?, ?, ?);",
 					new Object[] { task.getUser_id(), task.getTitle(),
-							task.getDescription(), CalendarFormatter.ISO8601(task.getDate()),
-							CalendarFormatter.ISO8601(task.getCreated_at()), CalendarFormatter.ISO8601(task.getUpdated_at()) });
+							task.getDescription(),
+							CalendarFormatter.ISO8601(task.getDate()),
+							CalendarFormatter.ISO8601(task.getCreated_at()),
+							CalendarFormatter.ISO8601(task.getUpdated_at()) });
 		}
-		Log.d("lol", task.getUser_id() == 0 ? "null userid" : "nem null userid");
-		Log.d("lol", task.getTitle() == null ? "null title" : "nem null title");
-		Log.d("lol", task.getDescription() == null ? "null desc" : "nem null desc");
-		Log.d("lol", task.getDate() == null ? "null dp" : "nem null dp");
-		Log.d("lol", task.getCreated_at() == null ? "null dp" : "nem null cre");
-		Log.d("lol", task.getUpdated_at() == null ? "null dp" : "nem null upd");
 	}
 
 	@Override
 	public void onClick(DialogInterface dialog, int which) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

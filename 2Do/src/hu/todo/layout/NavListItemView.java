@@ -17,10 +17,10 @@ public class NavListItemView extends LinearLayout {
 
 	@ViewById
 	TextView txtListTitle;
-	
+
 	@ViewById
 	TextView txtListSize;
-	
+
 	public NavListItemView(Context context) {
 		super(context);
 	}
@@ -28,6 +28,6 @@ public class NavListItemView extends LinearLayout {
 	public void bind(SpinnerNavItem navItem) {
 		txtListTitle.setText(navItem.getTitle());
 		txtListSize.setText(navItem.getSize());
-    }
+	}
 
 }

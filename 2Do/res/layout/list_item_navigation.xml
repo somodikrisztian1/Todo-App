@@ -3,22 +3,24 @@
     android:layout_width="250dp"
     android:layout_height="match_parent"
     android:orientation="horizontal"
+    android:paddingBottom="5dp"
     android:paddingLeft="5dp"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp" >
-     
-    <TextView android:id="@+id/txtListTitle"
+    android:paddingTop="5dp" >
+
+    <TextView
+        android:id="@+id/txtListTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColor="#FFFFFF"
-        android:gravity="left|center_horizontal"/>
-    
-    <TextView android:id="@+id/txtListSize"
+        android:gravity="left|center_horizontal"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/txtListSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:textColor="#B5B2A8"
-        android:gravity="right|center_horizontal"/>
- 
+        android:gravity="right|center_horizontal"
+        android:textColor="#B5B2A8" />
+
 </LinearLayout>

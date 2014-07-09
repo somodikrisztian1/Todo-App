@@ -92,21 +92,6 @@ public final class GroupedByUserFragment_
     }
 
     @Override
-    public void getLocalTasks(final SQLiteDatabase db) {
-        db.beginTransaction();
-        try {
-            GroupedByUserFragment_.super.getLocalTasks(db);
-            db.setTransactionSuccessful();
-            return ;
-        } catch (RuntimeException e) {
-            Log.e("GroupedByUserFragment_", "Error in transaction", e);
-            throw e;
-        } finally {
-            db.endTransaction();
-        }
-    }
-
-    @Override
     public void putsome(final SQLiteDatabase db) {
         db.beginTransaction();
         try {
@@ -122,17 +107,18 @@ public final class GroupedByUserFragment_
     }
 
     @Override
-    public void showResult(final List<hu.todo.entity.Task> tasks) {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                GroupedByUserFragment_.super.showResult(tasks);
-            }
-
+    public void getLocalTasks(final SQLiteDatabase db) {
+        db.beginTransaction();
+        try {
+            GroupedByUserFragment_.super.getLocalTasks(db);
+            db.setTransactionSuccessful();
+            return ;
+        } catch (RuntimeException e) {
+            Log.e("GroupedByUserFragment_", "Error in transaction", e);
+            throw e;
+        } finally {
+            db.endTransaction();
         }
-        );
     }
 
     @Override
@@ -143,6 +129,20 @@ public final class GroupedByUserFragment_
             @Override
             public void run() {
                 GroupedByUserFragment_.super.dismissDialog();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void showResult(final List<hu.todo.entity.Task> tasks) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                GroupedByUserFragment_.super.showResult(tasks);
             }
 
         }
