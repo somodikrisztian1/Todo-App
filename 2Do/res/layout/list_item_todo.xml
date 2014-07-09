@@ -8,9 +8,9 @@
     <ImageView android:id="@+id/todoImage"
 	 android:layout_width="wrap_content"
 	 android:layout_height="wrap_content"
-	 android:layout_gravity="center"
-	 android:src="@drawable/local_mode_icon" 
-	 android:contentDescription="hol van tarolva"/>
+	 android:layout_gravity="center" 
+	 android:src="@drawable/web" 
+	 android:contentDescription="@string/stored"/> 
     
     <LinearLayout 
 	    android:layout_width="wrap_content"

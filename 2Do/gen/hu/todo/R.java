@@ -1109,6 +1109,7 @@ containing a value of this type.
         public static final int textfield_focused=0x7f02006d;
         public static final int textfield_normal=0x7f02006e;
         public static final int texture=0x7f02006f;
+        public static final int web=0x7f020070;
     }
     public static final class id {
         public static final int action_bar=0x7f05001c;
@@ -1327,6 +1328,7 @@ containing a value of this type.
         public static final int description_hint=0x7f0a0023;
         public static final int hello_world=0x7f0a0013;
         public static final int in_charge=0x7f0a0021;
+        public static final int stored=0x7f0a0026;
         public static final int time=0x7f0a0019;
         public static final int title=0x7f0a0016;
         public static final int title_activity_add_task=0x7f0a0014;

@@ -21,6 +21,18 @@ public class User implements Serializable{
 	@JsonProperty("errors")
 	List<String> errors;
 
+	
+	
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+  
+	public User(String name) {
+		super();
+		this.name = name;
+	}
+
 	public int getId() {
 		return id;
 	}

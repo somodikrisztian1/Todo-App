@@ -8,24 +8,28 @@ package hu.todo.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import hu.todo.R.id;
 import hu.todo.R.layout;
 import hu.todo.adapter.TitleNavigationAdapter_;
+import hu.todo.rest.MyErrorHandler_;
+import hu.todo.rest.RestInterface_;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.SdkVersionHelper;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
 import org.androidannotations.api.view.OnViewChangedNotifier;
+import org.springframework.util.MultiValueMap;
 
 public final class MainActivity_
     extends MainActivity
@@ -46,6 +50,8 @@ public final class MainActivity_
 
     private void init_(Bundle savedInstanceState) {
         OnViewChangedNotifier.registerOnViewChangedListener(this);
+        taskManager = new RestInterface_();
+        myErrorHandler = MyErrorHandler_.getInstance_(this);
         adapter = TitleNavigationAdapter_.getInstance_(this);
     }
 
@@ -89,15 +95,30 @@ public final class MainActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        viewPager = ((ViewPager) hasViews.findViewById(id.pager));
+        viewPager = ((ViewPager) hasViews.findViewById(hu.todo.R.id.pager));
         init();
+    }
+
+    @Override
+    public void deleteLocal(final SQLiteDatabase db, final int id) {
+        db.beginTransaction();
+        try {
+            MainActivity_.super.deleteLocal(db, id);
+            db.setTransactionSuccessful();
+            return ;
+        } catch (RuntimeException e) {
+            Log.e("MainActivity_", "Error in transaction", e);
+            throw e;
+        } finally {
+            db.endTransaction();
+        }
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(hu.todo.R.menu.menu_activity_main, menu);
-        refreshMenuItem = menu.findItem(id.action_refresh);
+        refreshMenuItem = menu.findItem(hu.todo.R.id.action_refresh);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -108,15 +129,29 @@ public final class MainActivity_
             return true;
         }
         int itemId_ = item.getItemId();
-        if (itemId_ == id.action_refresh) {
-            menuRefresh(item);
-            return true;
-        }
-        if (itemId_ == id.action_new) {
+        if (itemId_ == hu.todo.R.id.action_new) {
             menuAddTask(item);
             return true;
         }
+        if (itemId_ == hu.todo.R.id.action_refresh) {
+            menuRefresh(item);
+            return true;
+        }
         return false;
+    }
+
+    @Override
+    public void addTask(final MultiValueMap<String, String> formFields, final String token) {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MainActivity_.super.addTask(formFields, token);
+            }
+
+        }
+        );
     }
 
     @Override

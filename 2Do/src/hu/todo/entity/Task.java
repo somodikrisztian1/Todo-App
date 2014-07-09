@@ -21,10 +21,32 @@ public class Task implements Parcelable{
 	private Calendar created_at;
 	private Calendar updated_at;
 	
+	// lokálisan van-e tárolva
+	private boolean isLocal = false; 
+	
+
 	// kell a feldolgozashoz
 	public Task() {
 		super();
 	}
+	
+	
+
+	public Task(int id, int user_id, String title, String description,
+			Calendar date, Calendar created_at, Calendar updated_at,
+			List<String> errors) {
+		super();
+		this.id = id;
+		this.user_id = user_id;
+		this.title = title;
+		this.description = description;
+		this.date = date;
+		this.created_at = created_at;
+		this.updated_at = updated_at;
+		this.errors = errors;
+	}
+
+
 
 	@JsonProperty("errors")
 	List<String> errors;
@@ -85,6 +107,15 @@ public class Task implements Parcelable{
 		this.updated_at = updated_at;
 	}
 
+	public boolean isLocal() {
+		return isLocal;
+	}
+
+	public void setLocal(boolean isLocal) {
+		this.isLocal = isLocal;
+	}
+
+	
 	@Override
 	public String toString() {
 		return "Task [id=" + id + ", user_id=" + user_id + ", title=" + title

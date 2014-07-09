@@ -92,10 +92,10 @@ public final class AllFragment_
     }
 
     @Override
-    public void putsome(final SQLiteDatabase db) {
+    public void getLocalTasks(final SQLiteDatabase db) {
         db.beginTransaction();
         try {
-            AllFragment_.super.putsome(db);
+            AllFragment_.super.getLocalTasks(db);
             db.setTransactionSuccessful();
             return ;
         } catch (RuntimeException e) {
@@ -107,10 +107,10 @@ public final class AllFragment_
     }
 
     @Override
-    public void getsome(final SQLiteDatabase db) {
+    public void putsome(final SQLiteDatabase db) {
         db.beginTransaction();
         try {
-            AllFragment_.super.getsome(db);
+            AllFragment_.super.putsome(db);
             db.setTransactionSuccessful();
             return ;
         } catch (RuntimeException e) {

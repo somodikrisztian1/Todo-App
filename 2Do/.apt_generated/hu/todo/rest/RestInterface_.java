@@ -111,6 +111,24 @@ public final class RestInterface_
     }
 
     @Override
+    public void addTask(MultiValueMap<String, String> formFields, String token) {
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
+        HttpEntity<MultiValueMap<String, String>> requestEntity = new HttpEntity<MultiValueMap<String, String>>(formFields, httpHeaders);
+        HashMap<String, Object> urlVariables = new HashMap<String, Object>();
+        urlVariables.put("token", token);
+        try {
+            restTemplate.exchange(rootUrl.concat("/tasks/?token={token}"), HttpMethod.POST, requestEntity, null, urlVariables);
+        } catch (RestClientException e) {
+            if (restErrorHandler!= null) {
+                restErrorHandler.onRestClientExceptionThrown(e);
+            } else {
+                throw e;
+            }
+        }
+    }
+
+    @Override
     public User login(String email, String password) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
@@ -124,24 +142,6 @@ public final class RestInterface_
             if (restErrorHandler!= null) {
                 restErrorHandler.onRestClientExceptionThrown(e);
                 return null;
-            } else {
-                throw e;
-            }
-        }
-    }
-
-    @Override
-    public void addTask(MultiValueMap<String, String> formFields, String token) {
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.setAccept(Collections.singletonList(MediaType.parseMediaType("application/json")));
-        HttpEntity<MultiValueMap<String, String>> requestEntity = new HttpEntity<MultiValueMap<String, String>>(formFields, httpHeaders);
-        HashMap<String, Object> urlVariables = new HashMap<String, Object>();
-        urlVariables.put("token", token);
-        try {
-            restTemplate.exchange(rootUrl.concat("/tasks/?token={token}"), HttpMethod.POST, requestEntity, null, urlVariables);
-        } catch (RestClientException e) {
-            if (restErrorHandler!= null) {
-                restErrorHandler.onRestClientExceptionThrown(e);
             } else {
                 throw e;
             }
