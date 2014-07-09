@@ -66,8 +66,8 @@ public final class NavListItemView_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        txtListTitle = ((TextView) hasViews.findViewById(id.txtListTitle));
         txtListSize = ((TextView) hasViews.findViewById(id.txtListSize));
+        txtListTitle = ((TextView) hasViews.findViewById(id.txtListTitle));
     }
 
 }

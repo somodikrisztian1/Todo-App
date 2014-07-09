@@ -26,8 +26,8 @@ public class TitleNavigationAdapter extends BaseAdapter {
 
 	public TitleNavigationAdapter(Context context) {
 		navSpinner = new ArrayList<SpinnerNavItem>();
-		navSpinner.add(new SpinnerNavItem("All", "időrendben az összes todo"));
-		navSpinner.add(new SpinnerNavItem("Grouped by users", "felhasználók szerint csoportosítva"));
+		navSpinner.add(new SpinnerNavItem("Mind", "időrendben az összes teendő"));
+		navSpinner.add(new SpinnerNavItem("Csoportosított", "felhasználók szerint csoportosítva"));
 	}
 
 	@Override

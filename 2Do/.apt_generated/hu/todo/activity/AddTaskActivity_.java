@@ -99,16 +99,16 @@ public final class AddTaskActivity_
     @Override
     public void onViewChanged(HasViews hasViews) {
         btnCreate = ((Button) hasViews.findViewById(hu.todo.R.id.btnCreate));
-        user = ((AutoCompleteTextView) hasViews.findViewById(hu.todo.R.id.user));
-        timePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.timePicker));
-        created = ((TextView) hasViews.findViewById(hu.todo.R.id.created));
         createdPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.createdPicker));
+        description = ((EditText) hasViews.findViewById(hu.todo.R.id.description));
         title = ((EditText) hasViews.findViewById(hu.todo.R.id.title));
         updatedPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.updatedPicker));
-        description = ((EditText) hasViews.findViewById(hu.todo.R.id.description));
-        date = ((TextView) hasViews.findViewById(hu.todo.R.id.date));
-        datePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.datePicker));
+        user = ((AutoCompleteTextView) hasViews.findViewById(hu.todo.R.id.user));
         updated = ((TextView) hasViews.findViewById(hu.todo.R.id.updated));
+        date = ((TextView) hasViews.findViewById(hu.todo.R.id.date));
+        timePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.timePicker));
+        datePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.datePicker));
+        created = ((TextView) hasViews.findViewById(hu.todo.R.id.created));
         {
             View view = hasViews.findViewById(hu.todo.R.id.btnCreate);
             if (view!= null) {
@@ -171,52 +171,6 @@ public final class AddTaskActivity_
                     @Override
                     public void afterTextChanged(Editable s) {
                         AddTaskActivity_.this.updatedTChanged();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.timePicker));
-            if (view!= null) {
-                view.addTextChangedListener(new TextWatcher() {
-
-
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        AddTaskActivity_.this.timePChanged();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.description));
-            if (view!= null) {
-                view.addTextChangedListener(new TextWatcher() {
-
-
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        AddTaskActivity_.this.descChanged();
                     }
 
                 }
@@ -292,8 +246,54 @@ public final class AddTaskActivity_
                 );
             }
         }
-        afterViews();
+        {
+            final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.timePicker));
+            if (view!= null) {
+                view.addTextChangedListener(new TextWatcher() {
+
+
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        AddTaskActivity_.this.timePChanged();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.description));
+            if (view!= null) {
+                view.addTextChangedListener(new TextWatcher() {
+
+
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        AddTaskActivity_.this.descChanged();
+                    }
+
+                }
+                );
+            }
+        }
         setViews();
+        afterViews();
     }
 
     @Override
@@ -328,24 +328,24 @@ public final class AddTaskActivity_
     @Override
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
-        bundle.putString("dateP", dateP);
         bundle.putString("updatedP", updatedP);
-        bundle.putString("desc", desc);
-        bundle.putString("createdP", createdP);
-        bundle.putString("t", t);
         bundle.putString("dateT", dateT);
+        bundle.putString("dateP", dateP);
+        bundle.putString("desc", desc);
+        bundle.putString("t", t);
+        bundle.putString("createdP", createdP);
     }
 
     private void restoreSavedInstanceState_(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
             return ;
         }
-        dateP = savedInstanceState.getString("dateP");
         updatedP = savedInstanceState.getString("updatedP");
-        desc = savedInstanceState.getString("desc");
-        createdP = savedInstanceState.getString("createdP");
-        t = savedInstanceState.getString("t");
         dateT = savedInstanceState.getString("dateT");
+        dateP = savedInstanceState.getString("dateP");
+        desc = savedInstanceState.getString("desc");
+        t = savedInstanceState.getString("t");
+        createdP = savedInstanceState.getString("createdP");
     }
 
     @Override

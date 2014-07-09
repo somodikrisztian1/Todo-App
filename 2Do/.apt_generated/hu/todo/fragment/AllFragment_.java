@@ -59,8 +59,8 @@ public final class AllFragment_
         myPref = new MyPrefs_(getActivity());
         OnViewChangedNotifier.registerOnViewChangedListener(this);
         taskManager = new RestInterface_();
-        adapter = TodoAdapter_.getInstance_(getActivity());
         myErrorHandler = MyErrorHandler_.getInstance_(getActivity());
+        adapter = TodoAdapter_.getInstance_(getActivity());
     }
 
     @Override
@@ -94,21 +94,6 @@ public final class AllFragment_
     }
 
     @Override
-    public void getLocalTasks(final SQLiteDatabase db) {
-        db.beginTransaction();
-        try {
-            AllFragment_.super.getLocalTasks(db);
-            db.setTransactionSuccessful();
-            return ;
-        } catch (RuntimeException e) {
-            Log.e("AllFragment_", "Error in transaction", e);
-            throw e;
-        } finally {
-            db.endTransaction();
-        }
-    }
-
-    @Override
     public void putsome(final SQLiteDatabase db) {
         db.beginTransaction();
         try {
@@ -124,17 +109,18 @@ public final class AllFragment_
     }
 
     @Override
-    public void dismissDialog() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                AllFragment_.super.dismissDialog();
-            }
-
+    public void getLocalTasks(final SQLiteDatabase db) {
+        db.beginTransaction();
+        try {
+            AllFragment_.super.getLocalTasks(db);
+            db.setTransactionSuccessful();
+            return ;
+        } catch (RuntimeException e) {
+            Log.e("AllFragment_", "Error in transaction", e);
+            throw e;
+        } finally {
+            db.endTransaction();
         }
-        );
     }
 
     @Override
@@ -145,6 +131,20 @@ public final class AllFragment_
             @Override
             public void run() {
                 AllFragment_.super.showResult(tasks);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void dismissDialog() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                AllFragment_.super.dismissDialog();
             }
 
         }

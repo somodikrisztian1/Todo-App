@@ -92,21 +92,6 @@ public final class GroupedByUserFragment_
     }
 
     @Override
-    public void putsome(final SQLiteDatabase db) {
-        db.beginTransaction();
-        try {
-            GroupedByUserFragment_.super.putsome(db);
-            db.setTransactionSuccessful();
-            return ;
-        } catch (RuntimeException e) {
-            Log.e("GroupedByUserFragment_", "Error in transaction", e);
-            throw e;
-        } finally {
-            db.endTransaction();
-        }
-    }
-
-    @Override
     public void getLocalTasks(final SQLiteDatabase db) {
         db.beginTransaction();
         try {
@@ -122,13 +107,28 @@ public final class GroupedByUserFragment_
     }
 
     @Override
-    public void dismissDialog() {
+    public void putsome(final SQLiteDatabase db) {
+        db.beginTransaction();
+        try {
+            GroupedByUserFragment_.super.putsome(db);
+            db.setTransactionSuccessful();
+            return ;
+        } catch (RuntimeException e) {
+            Log.e("GroupedByUserFragment_", "Error in transaction", e);
+            throw e;
+        } finally {
+            db.endTransaction();
+        }
+    }
+
+    @Override
+    public void showDialog() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                GroupedByUserFragment_.super.dismissDialog();
+                GroupedByUserFragment_.super.showDialog();
             }
 
         }
@@ -150,13 +150,13 @@ public final class GroupedByUserFragment_
     }
 
     @Override
-    public void showDialog() {
+    public void dismissDialog() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                GroupedByUserFragment_.super.showDialog();
+                GroupedByUserFragment_.super.dismissDialog();
             }
 
         }

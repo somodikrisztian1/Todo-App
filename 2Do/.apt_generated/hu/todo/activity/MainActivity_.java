@@ -51,8 +51,8 @@ public final class MainActivity_
     private void init_(Bundle savedInstanceState) {
         OnViewChangedNotifier.registerOnViewChangedListener(this);
         taskManager = new RestInterface_();
-        myErrorHandler = MyErrorHandler_.getInstance_(this);
         adapter = TitleNavigationAdapter_.getInstance_(this);
+        myErrorHandler = MyErrorHandler_.getInstance_(this);
     }
 
     @Override
@@ -141,13 +141,13 @@ public final class MainActivity_
     }
 
     @Override
-    public void dismissDialog() {
+    public void onPreExecute() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                MainActivity_.super.dismissDialog();
+                MainActivity_.super.onPreExecute();
             }
 
         }
@@ -169,6 +169,20 @@ public final class MainActivity_
     }
 
     @Override
+    public void dismissDialog() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MainActivity_.super.dismissDialog();
+            }
+
+        }
+        );
+    }
+
+    @Override
     public void showDialog() {
         handler_.post(new Runnable() {
 
@@ -176,38 +190,6 @@ public final class MainActivity_
             @Override
             public void run() {
                 MainActivity_.super.showDialog();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onPreExecute() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MainActivity_.super.onPreExecute();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void addTask(final MultiValueMap<String, String> formFields, final String token) {
-        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
-
-
-            @Override
-            public void execute() {
-                try {
-                    MainActivity_.super.addTask(formFields, token);
-                } catch (Throwable e) {
-                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
-                }
             }
 
         }
@@ -223,6 +205,24 @@ public final class MainActivity_
             public void execute() {
                 try {
                     MainActivity_.super.refresh();
+                } catch (Throwable e) {
+                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+                }
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void addTask(final MultiValueMap<String, String> formFields, final String token) {
+        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
+
+
+            @Override
+            public void execute() {
+                try {
+                    MainActivity_.super.addTask(formFields, token);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }
