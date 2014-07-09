@@ -6,8 +6,8 @@
 
     <EditText
         android:id="@+id/email"
-        android:text="somodikrisztian1@gmail.com" 
-        android:layout_width="wrap_content" 
+        android:text="" 
+        android:layout_width="match_parent" 
         android:layout_height="wrap_content" 
         android:inputType="textEmailAddress"
         android:imeOptions="actionNext"
@@ -16,7 +16,7 @@
         android:layout_margin="10dp"/>
       
     <EditText
-        android:id="@+id/txt_your_name"
+        android:id="@+id/password"
         android:layout_width="match_parent"  android:layout_height="wrap_content" 
         android:inputType="textPassword"
         android:imeOptions="actionDone" 

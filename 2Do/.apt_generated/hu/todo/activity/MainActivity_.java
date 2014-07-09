@@ -129,12 +129,12 @@ public final class MainActivity_
             return true;
         }
         int itemId_ = item.getItemId();
-        if (itemId_ == hu.todo.R.id.action_new) {
-            menuAddTask(item);
-            return true;
-        }
         if (itemId_ == hu.todo.R.id.action_refresh) {
             menuRefresh(item);
+            return true;
+        }
+        if (itemId_ == hu.todo.R.id.action_new) {
+            menuAddTask(item);
             return true;
         }
         return false;

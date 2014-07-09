@@ -109,14 +109,7 @@ public class GroupedByUserFragment extends ListFragment implements
 		if (ApplicationFunctions.getInstance().getUserFunctions()
 				.getLoginStatus()) {
 			getItemsInBackground();
-		} else {
-			Toaster.loginWarning(getActivity()); // setretaininstance miatt a
-													// dialog sem fog
-													// ujraindulni
-			FragmentManager fm = getActivity().getSupportFragmentManager();
-			LoginDialogFragment_ editNameDialog = new LoginDialogFragment_();
-			editNameDialog.show(fm, "dialog_login");
-		}
+		} 
 	}
 
 	@AfterViews
@@ -143,31 +136,34 @@ public class GroupedByUserFragment extends ListFragment implements
 
 	@Background
 	void getItemsInBackground() {
-		showDialog();
-		String token = ApplicationFunctions.getInstance().getUserFunctions()
-				.getLoggedUser().getToken();
-		taskManager.setRestErrorHandler(myErrorHandler);
-		List<Task> tasks = null;
-		if (SystemFunctions.isOnline(getActivity())) {
-			tasks = taskManager.getAllTask(token);
-
-			// hiba történt
-			if (tasks.size() > 0 && tasks.get(0).getErrors() != null) {
-				AlertDialog.Builder b = new AlertDialog.Builder(getActivity())
-						.setTitle("Hiba történt!")
-						.setPositiveButton("OK", this)
-						.setNegativeButton("Cancel", this);
-
-				for (String s : tasks.get(0).getErrors()) {
-					b.setMessage(s + "\n");
+		if(ApplicationFunctions.getInstance().getUserFunctions()
+				.getLoggedUser().getToken() != null) {
+			showDialog();
+			String token = ApplicationFunctions.getInstance().getUserFunctions()
+					.getLoggedUser().getToken();
+			taskManager.setRestErrorHandler(myErrorHandler);
+			List<Task> tasks = null;
+			if (SystemFunctions.isOnline(getActivity())) {
+				tasks = taskManager.getAllTask(token);
+	
+				// hiba történt
+				if (tasks.size() > 0 && tasks.get(0).getErrors() != null) {
+					AlertDialog.Builder b = new AlertDialog.Builder(getActivity())
+							.setTitle("Hiba történt!")
+							.setPositiveButton("OK", this)
+							.setNegativeButton("Cancel", this);
+	
+					for (String s : tasks.get(0).getErrors()) {
+						b.setMessage(s + "\n");
+					}
+					b.show();
 				}
-				b.show();
 			}
+			if (tasks != null)
+				showResult(tasks);
+	
+			dismissDialog();
 		}
-		if (tasks != null)
-			showResult(tasks);
-
-		dismissDialog();
 	}
 
 	@UiThread

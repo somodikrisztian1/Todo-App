@@ -371,7 +371,7 @@ public class AddTaskActivity extends FragmentActivity implements
 			}
 			// ha nincs net akkor lokális adatbázisba
 			else {
-				Toast.makeText(this, "nincs net igy lokálba megy",
+				Toast.makeText(this, "Nincs intetrnet kapcsolat, ezért lokális adatbázisba történik a mentés.",
 						Toast.LENGTH_SHORT).show();
 				LocalDatabaseOpenHelper helper = new LocalDatabaseOpenHelper(
 						this);

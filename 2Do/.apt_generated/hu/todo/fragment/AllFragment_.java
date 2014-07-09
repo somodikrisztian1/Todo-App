@@ -19,6 +19,7 @@ import android.widget.AdapterView.OnItemClickListener;
 import hu.todo.adapter.TodoAdapter_;
 import hu.todo.rest.MyErrorHandler_;
 import hu.todo.rest.RestInterface_;
+import hu.todo.sharedprefs.MyPrefs_;
 import org.androidannotations.api.BackgroundExecutor;
 import org.androidannotations.api.view.HasViews;
 import org.androidannotations.api.view.OnViewChangedListener;
@@ -55,6 +56,7 @@ public final class AllFragment_
     }
 
     private void init_(Bundle savedInstanceState) {
+        myPref = new MyPrefs_(getActivity());
         OnViewChangedNotifier.registerOnViewChangedListener(this);
         taskManager = new RestInterface_();
         adapter = TodoAdapter_.getInstance_(getActivity());
@@ -122,20 +124,6 @@ public final class AllFragment_
     }
 
     @Override
-    public void dismissDialog() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                AllFragment_.super.dismissDialog();
-            }
-
-        }
-        );
-    }
-
-    @Override
     public void showResult(final List<hu.todo.entity.Task> tasks) {
         handler_.post(new Runnable() {
 
@@ -143,6 +131,20 @@ public final class AllFragment_
             @Override
             public void run() {
                 AllFragment_.super.showResult(tasks);
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void dismissDialog() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                AllFragment_.super.dismissDialog();
             }
 
         }

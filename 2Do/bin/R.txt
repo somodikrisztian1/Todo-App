@@ -323,6 +323,7 @@ int id never 0x7f050009
 int id none 0x7f050010
 int id normal 0x7f050000
 int id pager 0x7f050049
+int id password 0x7f05004d
 int id progressBar 0x7f05003c
 int id progress_circular 0x7f050018
 int id progress_horizontal 0x7f050019
@@ -357,7 +358,6 @@ int id txtDate2ndRow 0x7f050053
 int id txtListSize 0x7f05004f
 int id txtListTitle 0x7f05004e
 int id txtTitle 0x7f050050
-int id txt_your_name 0x7f05004d
 int id up 0x7f050021
 int id updated 0x7f050045
 int id updatedPicker 0x7f050046

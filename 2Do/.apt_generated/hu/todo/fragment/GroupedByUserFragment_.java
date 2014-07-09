@@ -57,8 +57,8 @@ public final class GroupedByUserFragment_
     private void init_(Bundle savedInstanceState) {
         OnViewChangedNotifier.registerOnViewChangedListener(this);
         taskManager = new RestInterface_();
-        myErrorHandler = MyErrorHandler_.getInstance_(getActivity());
         adapter = TodoAdapter_.getInstance_(getActivity());
+        myErrorHandler = MyErrorHandler_.getInstance_(getActivity());
     }
 
     @Override
@@ -92,21 +92,6 @@ public final class GroupedByUserFragment_
     }
 
     @Override
-    public void putsome(final SQLiteDatabase db) {
-        db.beginTransaction();
-        try {
-            GroupedByUserFragment_.super.putsome(db);
-            db.setTransactionSuccessful();
-            return ;
-        } catch (RuntimeException e) {
-            Log.e("GroupedByUserFragment_", "Error in transaction", e);
-            throw e;
-        } finally {
-            db.endTransaction();
-        }
-    }
-
-    @Override
     public void getLocalTasks(final SQLiteDatabase db) {
         db.beginTransaction();
         try {
@@ -122,13 +107,28 @@ public final class GroupedByUserFragment_
     }
 
     @Override
-    public void showDialog() {
+    public void putsome(final SQLiteDatabase db) {
+        db.beginTransaction();
+        try {
+            GroupedByUserFragment_.super.putsome(db);
+            db.setTransactionSuccessful();
+            return ;
+        } catch (RuntimeException e) {
+            Log.e("GroupedByUserFragment_", "Error in transaction", e);
+            throw e;
+        } finally {
+            db.endTransaction();
+        }
+    }
+
+    @Override
+    public void showResult(final List<hu.todo.entity.Task> tasks) {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                GroupedByUserFragment_.super.showDialog();
+                GroupedByUserFragment_.super.showResult(tasks);
             }
 
         }
@@ -150,13 +150,13 @@ public final class GroupedByUserFragment_
     }
 
     @Override
-    public void showResult(final List<hu.todo.entity.Task> tasks) {
+    public void showDialog() {
         handler_.post(new Runnable() {
 
 
             @Override
             public void run() {
-                GroupedByUserFragment_.super.showResult(tasks);
+                GroupedByUserFragment_.super.showDialog();
             }
 
         }

@@ -1161,6 +1161,7 @@ containing a value of this type.
         public static final int none=0x7f050010;
         public static final int normal=0x7f050000;
         public static final int pager=0x7f050049;
+        public static final int password=0x7f05004d;
         public static final int progressBar=0x7f05003c;
         public static final int progress_circular=0x7f050018;
         public static final int progress_horizontal=0x7f050019;
@@ -1195,7 +1196,6 @@ containing a value of this type.
         public static final int txtListSize=0x7f05004f;
         public static final int txtListTitle=0x7f05004e;
         public static final int txtTitle=0x7f050050;
-        public static final int txt_your_name=0x7f05004d;
         public static final int up=0x7f050021;
         public static final int updated=0x7f050045;
         public static final int updatedPicker=0x7f050046;

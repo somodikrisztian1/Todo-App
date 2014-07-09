@@ -9,10 +9,11 @@ public class UserFunctions {
 	// TODO kivenni
 	public UserFunctions() {
 		super();
+		loggedUser = new User();
 	}
 
 	public boolean getLoginStatus() {
-		return loggedUser == null ? false : true;
+		return loggedUser.getToken() == null ? false : true;
 	}
 
 	public void setLoggedUser(User loggedInUser) {
