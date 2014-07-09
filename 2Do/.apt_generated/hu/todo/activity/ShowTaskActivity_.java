@@ -99,16 +99,16 @@ public final class ShowTaskActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        createdPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.createdPicker));
-        datePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.datePicker));
         description = ((EditText) hasViews.findViewById(hu.todo.R.id.description));
         updatedPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.updatedPicker));
-        title = ((TextView) hasViews.findViewById(hu.todo.R.id.title));
-        user = ((AutoCompleteTextView) hasViews.findViewById(hu.todo.R.id.user));
-        created = ((TextView) hasViews.findViewById(hu.todo.R.id.created));
-        date = ((TextView) hasViews.findViewById(hu.todo.R.id.date));
         timePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.timePicker));
+        date = ((TextView) hasViews.findViewById(hu.todo.R.id.date));
+        datePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.datePicker));
         updated = ((TextView) hasViews.findViewById(hu.todo.R.id.updated));
+        created = ((TextView) hasViews.findViewById(hu.todo.R.id.created));
+        user = ((AutoCompleteTextView) hasViews.findViewById(hu.todo.R.id.user));
+        createdPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.createdPicker));
+        title = ((TextView) hasViews.findViewById(hu.todo.R.id.title));
         {
             View view = hasViews.findViewById(hu.todo.R.id.timePicker);
             if (view!= null) {
@@ -133,29 +133,6 @@ public final class ShowTaskActivity_
                     @Override
                     public void onClick(View view) {
                         ShowTaskActivity_.this.showDatePicker();
-                    }
-
-                }
-                );
-            }
-        }
-        {
-            final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.updatedPicker));
-            if (view!= null) {
-                view.addTextChangedListener(new TextWatcher() {
-
-
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        ShowTaskActivity_.this.updatedPChanged();
                     }
 
                 }
@@ -202,6 +179,29 @@ public final class ShowTaskActivity_
                     @Override
                     public void afterTextChanged(Editable s) {
                         ShowTaskActivity_.this.datePChanged();
+                    }
+
+                }
+                );
+            }
+        }
+        {
+            final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.updatedPicker));
+            if (view!= null) {
+                view.addTextChangedListener(new TextWatcher() {
+
+
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        ShowTaskActivity_.this.updatedPChanged();
                     }
 
                 }
@@ -288,12 +288,12 @@ public final class ShowTaskActivity_
             return true;
         }
         int itemId_ = item.getItemId();
-        if (itemId_ == hu.todo.R.id.save) {
-            saveTask();
-            return true;
-        }
         if (itemId_ == hu.todo.R.id.edit) {
             editTask();
+            return true;
+        }
+        if (itemId_ == hu.todo.R.id.save) {
+            saveTask();
             return true;
         }
         if (itemId_ == android.R.id.home) {
@@ -306,11 +306,11 @@ public final class ShowTaskActivity_
     @Override
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
-        bundle.putString("updatedP", updatedP);
-        bundle.putString("desc", desc);
-        bundle.putString("dateT", dateT);
-        bundle.putString("dateP", dateP);
         bundle.putString("createdP", createdP);
+        bundle.putString("desc", desc);
+        bundle.putString("dateP", dateP);
+        bundle.putString("dateT", dateT);
+        bundle.putString("updatedP", updatedP);
         bundle.putBoolean("isEdit", isEdit);
     }
 
@@ -318,26 +318,12 @@ public final class ShowTaskActivity_
         if (savedInstanceState == null) {
             return ;
         }
-        updatedP = savedInstanceState.getString("updatedP");
-        desc = savedInstanceState.getString("desc");
-        dateT = savedInstanceState.getString("dateT");
-        dateP = savedInstanceState.getString("dateP");
         createdP = savedInstanceState.getString("createdP");
+        desc = savedInstanceState.getString("desc");
+        dateP = savedInstanceState.getString("dateP");
+        dateT = savedInstanceState.getString("dateT");
+        updatedP = savedInstanceState.getString("updatedP");
         isEdit = savedInstanceState.getBoolean("isEdit");
-    }
-
-    @Override
-    public void showDialog() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                ShowTaskActivity_.super.showDialog();
-            }
-
-        }
-        );
     }
 
     @Override
@@ -369,17 +355,13 @@ public final class ShowTaskActivity_
     }
 
     @Override
-    public void getUsers(final String token) {
-        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
+    public void showDialog() {
+        handler_.post(new Runnable() {
 
 
             @Override
-            public void execute() {
-                try {
-                    ShowTaskActivity_.super.getUsers(token);
-                } catch (Throwable e) {
-                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
-                }
+            public void run() {
+                ShowTaskActivity_.super.showDialog();
             }
 
         }
@@ -395,6 +377,24 @@ public final class ShowTaskActivity_
             public void execute() {
                 try {
                     ShowTaskActivity_.super.updateTask(map, token);
+                } catch (Throwable e) {
+                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+                }
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void getUsers(final String token) {
+        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
+
+
+            @Override
+            public void execute() {
+                try {
+                    ShowTaskActivity_.super.getUsers(token);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

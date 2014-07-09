@@ -112,7 +112,7 @@ public class AllFragment extends ListFragment implements OnClickListener {
 
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
-			// TODO Auto-generated method stub
+			setRetainInstance(true);
 			super.onCreate(savedInstanceState);
 			shouldRe = false;
 		}

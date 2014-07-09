@@ -129,43 +129,15 @@ public final class MainActivity_
             return true;
         }
         int itemId_ = item.getItemId();
-        if (itemId_ == hu.todo.R.id.action_refresh) {
-            menuRefresh(item);
-            return true;
-        }
         if (itemId_ == hu.todo.R.id.action_new) {
             menuAddTask(item);
             return true;
         }
+        if (itemId_ == hu.todo.R.id.action_refresh) {
+            menuRefresh(item);
+            return true;
+        }
         return false;
-    }
-
-    @Override
-    public void onPreExecute() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MainActivity_.super.onPreExecute();
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void onPostExecute() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                MainActivity_.super.onPostExecute();
-            }
-
-        }
-        );
     }
 
     @Override
@@ -190,6 +162,34 @@ public final class MainActivity_
             @Override
             public void run() {
                 MainActivity_.super.showDialog();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void onPostExecute() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MainActivity_.super.onPostExecute();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void onPreExecute() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                MainActivity_.super.onPreExecute();
             }
 
         }

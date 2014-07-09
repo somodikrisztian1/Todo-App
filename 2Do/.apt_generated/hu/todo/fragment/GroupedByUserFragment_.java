@@ -57,8 +57,8 @@ public final class GroupedByUserFragment_
     private void init_(Bundle savedInstanceState) {
         OnViewChangedNotifier.registerOnViewChangedListener(this);
         taskManager = new RestInterface_();
-        adapter = TodoAdapter_.getInstance_(getActivity());
         myErrorHandler = MyErrorHandler_.getInstance_(getActivity());
+        adapter = TodoAdapter_.getInstance_(getActivity());
     }
 
     @Override
@@ -122,6 +122,20 @@ public final class GroupedByUserFragment_
     }
 
     @Override
+    public void dismissDialog() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                GroupedByUserFragment_.super.dismissDialog();
+            }
+
+        }
+        );
+    }
+
+    @Override
     public void showDialog() {
         handler_.post(new Runnable() {
 
@@ -143,20 +157,6 @@ public final class GroupedByUserFragment_
             @Override
             public void run() {
                 GroupedByUserFragment_.super.showResult(tasks);
-            }
-
-        }
-        );
-    }
-
-    @Override
-    public void dismissDialog() {
-        handler_.post(new Runnable() {
-
-
-            @Override
-            public void run() {
-                GroupedByUserFragment_.super.dismissDialog();
             }
 
         }
