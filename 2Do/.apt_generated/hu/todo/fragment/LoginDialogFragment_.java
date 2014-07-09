@@ -6,6 +6,8 @@
 package hu.todo.fragment;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +25,7 @@ public final class LoginDialogFragment_
 
     private final OnViewChangedNotifier onViewChangedNotifier_ = new OnViewChangedNotifier();
     private View contentView_;
+    private Handler handler_ = new Handler(Looper.getMainLooper());
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,34 @@ public final class LoginDialogFragment_
 
     public static LoginDialogFragment_.FragmentBuilder_ builder() {
         return new LoginDialogFragment_.FragmentBuilder_();
+    }
+
+    @Override
+    public void showDialog() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                LoginDialogFragment_.super.showDialog();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void dismissDialog() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                LoginDialogFragment_.super.dismissDialog();
+            }
+
+        }
+        );
     }
 
     @Override

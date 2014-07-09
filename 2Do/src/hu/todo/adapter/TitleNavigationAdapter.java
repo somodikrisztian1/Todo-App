@@ -27,7 +27,7 @@ public class TitleNavigationAdapter extends BaseAdapter{
     public TitleNavigationAdapter(Context context) {
         navSpinner = new ArrayList<SpinnerNavItem>();
         navSpinner.add(new SpinnerNavItem("All", "0"));
-        navSpinner.add(new SpinnerNavItem("Grouped by user", "0"));
+        navSpinner.add(new SpinnerNavItem("Groups", "0"));
     }
  
     @Override

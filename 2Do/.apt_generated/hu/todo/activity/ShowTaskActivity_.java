@@ -99,16 +99,16 @@ public final class ShowTaskActivity_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        updatedPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.updatedPicker));
-        date = ((TextView) hasViews.findViewById(hu.todo.R.id.date));
-        created = ((TextView) hasViews.findViewById(hu.todo.R.id.created));
-        description = ((EditText) hasViews.findViewById(hu.todo.R.id.description));
-        updated = ((TextView) hasViews.findViewById(hu.todo.R.id.updated));
-        createdPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.createdPicker));
         datePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.datePicker));
-        user = ((AutoCompleteTextView) hasViews.findViewById(hu.todo.R.id.user));
         title = ((TextView) hasViews.findViewById(hu.todo.R.id.title));
+        updatedPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.updatedPicker));
+        description = ((EditText) hasViews.findViewById(hu.todo.R.id.description));
         timePicker = ((EditText) hasViews.findViewById(hu.todo.R.id.timePicker));
+        created = ((TextView) hasViews.findViewById(hu.todo.R.id.created));
+        createdPicker = ((EditText) hasViews.findViewById(hu.todo.R.id.createdPicker));
+        updated = ((TextView) hasViews.findViewById(hu.todo.R.id.updated));
+        user = ((AutoCompleteTextView) hasViews.findViewById(hu.todo.R.id.user));
+        date = ((TextView) hasViews.findViewById(hu.todo.R.id.date));
         {
             View view = hasViews.findViewById(hu.todo.R.id.timePicker);
             if (view!= null) {
@@ -186,6 +186,29 @@ public final class ShowTaskActivity_
             }
         }
         {
+            final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.datePicker));
+            if (view!= null) {
+                view.addTextChangedListener(new TextWatcher() {
+
+
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        ShowTaskActivity_.this.datePChanged();
+                    }
+
+                }
+                );
+            }
+        }
+        {
             final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.description));
             if (view!= null) {
                 view.addTextChangedListener(new TextWatcher() {
@@ -231,29 +254,6 @@ public final class ShowTaskActivity_
                 );
             }
         }
-        {
-            final TextView view = ((TextView) hasViews.findViewById(hu.todo.R.id.datePicker));
-            if (view!= null) {
-                view.addTextChangedListener(new TextWatcher() {
-
-
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        ShowTaskActivity_.this.datePChanged();
-                    }
-
-                }
-                );
-            }
-        }
         afterViews();
     }
 
@@ -288,12 +288,12 @@ public final class ShowTaskActivity_
             return true;
         }
         int itemId_ = item.getItemId();
-        if (itemId_ == hu.todo.R.id.save) {
-            saveTask();
-            return true;
-        }
         if (itemId_ == android.R.id.home) {
             navigateBackOnHomePress();
+            return true;
+        }
+        if (itemId_ == hu.todo.R.id.save) {
+            saveTask();
             return true;
         }
         if (itemId_ == hu.todo.R.id.edit) {
@@ -306,24 +306,24 @@ public final class ShowTaskActivity_
     @Override
     public void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
-        bundle.putString("desc", desc);
-        bundle.putBoolean("isEdit", isEdit);
-        bundle.putString("updatedP", updatedP);
-        bundle.putString("dateT", dateT);
         bundle.putString("dateP", dateP);
+        bundle.putString("updatedP", updatedP);
         bundle.putString("createdP", createdP);
+        bundle.putBoolean("isEdit", isEdit);
+        bundle.putString("dateT", dateT);
+        bundle.putString("desc", desc);
     }
 
     private void restoreSavedInstanceState_(Bundle savedInstanceState) {
         if (savedInstanceState == null) {
             return ;
         }
-        desc = savedInstanceState.getString("desc");
-        isEdit = savedInstanceState.getBoolean("isEdit");
-        updatedP = savedInstanceState.getString("updatedP");
-        dateT = savedInstanceState.getString("dateT");
         dateP = savedInstanceState.getString("dateP");
+        updatedP = savedInstanceState.getString("updatedP");
         createdP = savedInstanceState.getString("createdP");
+        isEdit = savedInstanceState.getBoolean("isEdit");
+        dateT = savedInstanceState.getString("dateT");
+        desc = savedInstanceState.getString("desc");
     }
 
     @Override
@@ -341,17 +341,27 @@ public final class ShowTaskActivity_
     }
 
     @Override
-    public void updateTask(final MultiValueMap<String, String> map, final String token) {
-        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
+    public void showDialog() {
+        handler_.post(new Runnable() {
 
 
             @Override
-            public void execute() {
-                try {
-                    ShowTaskActivity_.super.updateTask(map, token);
-                } catch (Throwable e) {
-                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
-                }
+            public void run() {
+                ShowTaskActivity_.super.showDialog();
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void dismissDialog() {
+        handler_.post(new Runnable() {
+
+
+            @Override
+            public void run() {
+                ShowTaskActivity_.super.dismissDialog();
             }
 
         }
@@ -367,6 +377,24 @@ public final class ShowTaskActivity_
             public void execute() {
                 try {
                     ShowTaskActivity_.super.getUsers(token);
+                } catch (Throwable e) {
+                    Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
+                }
+            }
+
+        }
+        );
+    }
+
+    @Override
+    public void updateTask(final MultiValueMap<String, String> map, final String token) {
+        BackgroundExecutor.execute(new BackgroundExecutor.Task("", 0, "") {
+
+
+            @Override
+            public void execute() {
+                try {
+                    ShowTaskActivity_.super.updateTask(map, token);
                 } catch (Throwable e) {
                     Thread.getDefaultUncaughtExceptionHandler().uncaughtException(Thread.currentThread(), e);
                 }

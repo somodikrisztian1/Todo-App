@@ -67,11 +67,11 @@ public final class TodoItemView_
 
     @Override
     public void onViewChanged(HasViews hasViews) {
-        txtContent1stRow = ((TextView) hasViews.findViewById(id.txtContent1stRow));
-        txtDate2ndRow = ((TextView) hasViews.findViewById(id.txtDate2ndRow));
-        txtDate1stRow = ((TextView) hasViews.findViewById(id.txtDate1stRow));
         txtContent2ndRow = ((TextView) hasViews.findViewById(id.txtContent2ndRow));
         todoImage = ((ImageView) hasViews.findViewById(id.todoImage));
+        txtDate1stRow = ((TextView) hasViews.findViewById(id.txtDate1stRow));
+        txtDate2ndRow = ((TextView) hasViews.findViewById(id.txtDate2ndRow));
+        txtContent1stRow = ((TextView) hasViews.findViewById(id.txtContent1stRow));
     }
 
 }

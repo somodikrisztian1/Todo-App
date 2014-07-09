@@ -6,10 +6,12 @@ import hu.todo.adapter.TitleNavigationAdapter;
 import hu.todo.entity.Task;
 import hu.todo.fragment.AllFragment;
 import hu.todo.function.ApplicationFunctions;
+import hu.todo.function.SystemFunctions;
 import hu.todo.rest.MyErrorHandler;
 import hu.todo.rest.RestInterface;
 import hu.todo.utility.CalendarFormatter;
 import hu.todo.utility.LocalDatabaseOpenHelper;
+import hu.todo.utility.OrientationLocker;
 
 import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Background;
@@ -26,7 +28,11 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
 import android.app.ActionBar;
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.app.ActionBar.OnNavigationListener;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -36,7 +42,7 @@ import android.view.MenuItem;
 // a fő activity, amely egy viewpagert tartalmaz
 @EActivity(R.layout.activity_main)
 @OptionsMenu(R.menu.menu_activity_main)
-public class MainActivity extends FragmentActivity implements OnNavigationListener, OnPageChangeListener {
+public class MainActivity extends FragmentActivity implements OnNavigationListener, OnPageChangeListener, OnClickListener {
 	
 	@ViewById(R.id.pager)
 	public ViewPager viewPager;
@@ -90,6 +96,7 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
     	LocalDatabaseOpenHelper helper = new LocalDatabaseOpenHelper(this);
     	SQLiteDatabase writableDatabase = helper.getWritableDatabase();
     	taskManager.setRestErrorHandler(myErrorHandler);
+    	// visszaadja a viewpagerben az aktív fragmentet
     	frag = (AllFragment) getSupportFragmentManager().findFragmentByTag("android:switcher:"+R.id.pager+":"+viewPager.getCurrentItem()); 
     	for(Task task : frag.adapter.getItems()) {
     		if(task.isLocal()) {
@@ -116,10 +123,45 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
     	db.delete("tasks", "id=?", new String[]{"" + id});
     }
     
-    @UiThread
+	private ProgressDialog progressDialog;
+
+	@UiThread
+	void showDialog() {
+		OrientationLocker.lockScreenOrientation(this);
+		progressDialog = new ProgressDialog(this);
+		progressDialog.setMessage("Kérem várjon ... ");
+		progressDialog.setCancelable(false);
+		progressDialog.setCanceledOnTouchOutside(false);
+		progressDialog.show();
+	}
+    
+    @Background
     void addTask(MultiValueMap<String, String> formFields, String token) {
-    	taskManager.addTask(formFields, token);
+    	showDialog();
+    	if(SystemFunctions.isOnline(this)) {
+    		Task taskError = taskManager.addTask(formFields, token);
+    		// hiba történt
+			if(taskError.getErrors() != null) {
+				AlertDialog.Builder b =  new  AlertDialog.Builder(this)
+			    .setTitle("Hiba történt!")
+			    .setPositiveButton("OK", this)
+			    .setNegativeButton("Cancel",this);
+				
+				for(String s : taskError.getErrors()) {
+					b.setMessage(s + "\n");
+				}
+				b.show();
+			}
+    	}
+    	dismissDialog();
     }
+    
+    @UiThread
+	void dismissDialog() {
+		progressDialog.dismiss();
+		OrientationLocker.unlockScreenOrientation(this);
+	}
+
     
     @UiThread
     void onPreExecute() {
@@ -153,6 +195,12 @@ public class MainActivity extends FragmentActivity implements OnNavigationListen
 	@Override
 	public void onPageSelected(int position) {
 		actionBar.setSelectedNavigationItem(position);
+	}
+
+	@Override
+	public void onClick(DialogInterface dialog, int which) {
+		// TODO Auto-generated method stub
+		
 	}    
 	
 }

@@ -23,6 +23,14 @@ public class User implements Serializable{
 
 	
 	
+	public List<String> getErrors() {
+		return errors;
+	}
+
+	public void setErrors(List<String> errors) {
+		this.errors = errors;
+	}
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub

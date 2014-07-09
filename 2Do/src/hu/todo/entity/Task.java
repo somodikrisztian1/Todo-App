@@ -10,7 +10,7 @@ import android.os.Parcelable;
 
 
 //to convert the JSON _id property to our id bean property.
-public class Task implements Parcelable{
+public class Task implements Parcelable, Comparable<Task>{
 	
 	@JsonProperty("id")
 	private int id;
@@ -24,6 +24,20 @@ public class Task implements Parcelable{
 	// lokálisan van-e tárolva
 	private boolean isLocal = false; 
 	
+	@JsonProperty("errors")
+	List<String> errors;
+	
+	public List<String> getErrors() {
+		return errors;
+	}
+
+
+
+	public void setErrors(List<String> errors) {
+		this.errors = errors;
+	}
+
+
 
 	// kell a feldolgozashoz
 	public Task() {
@@ -48,8 +62,7 @@ public class Task implements Parcelable{
 
 
 
-	@JsonProperty("errors")
-	List<String> errors;
+	
 	
 	public int getId() {
 		return id;
@@ -171,6 +184,13 @@ public class Task implements Parcelable{
 	@Override
 	public int describeContents() {
 		return 0;
+	}
+
+
+
+	@Override
+	public int compareTo(Task another) {
+		return date.compareTo(another.date);
 	}
 	
 }

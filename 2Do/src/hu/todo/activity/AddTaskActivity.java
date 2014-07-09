@@ -9,6 +9,7 @@ import hu.todo.rest.MyErrorHandler;
 import hu.todo.rest.RestInterface;
 import hu.todo.utility.CalendarFormatter;
 import hu.todo.utility.LocalDatabaseOpenHelper;
+import hu.todo.utility.OrientationLocker;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -32,9 +33,13 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -59,7 +64,7 @@ import android.widget.Toast;
  */
 @EActivity(R.layout.activity_add_task)
 public class AddTaskActivity extends FragmentActivity implements
-		OnItemClickListener {
+		OnItemClickListener, OnClickListener {
 
 	private static Calendar dateCal;
 	private static Calendar timeCal;
@@ -227,12 +232,48 @@ public class AddTaskActivity extends FragmentActivity implements
 		t = updatedPicker.getText().toString();
 	}
 	
+	private ProgressDialog progressDialog;
+
+	@UiThread
+	void showDialog() {
+		OrientationLocker.lockScreenOrientation(this);
+		progressDialog = new ProgressDialog(this);
+		progressDialog.setMessage("Kérem várjon ... ");
+		progressDialog.setCancelable(false);
+		progressDialog.setCanceledOnTouchOutside(false);
+		progressDialog.show();
+	}
+	
 	@Background
 	void getUsers(String token) {
-		allUser = taskManager.getAllUser(token);
-		setAuCompleteUser();
+		showDialog();
+		if(SystemFunctions.isOnline(this)) {
+			allUser = taskManager.getAllUser(token);
+			// hiba történt
+			if(allUser.size() > 0 && allUser.get(0).getErrors() != null) {
+				AlertDialog.Builder b =  new  AlertDialog.Builder(this)
+			    .setTitle("Hiba történt!")
+			    .setPositiveButton("OK", this)
+			    .setNegativeButton("Cancel",this);
+				
+				for(String s : allUser.get(0).getErrors()) {
+					b.setMessage(s + "\n");
+				}
+				b.show();
+			}
+			else {
+				setAuCompleteUser();
+			}
+		}
+		dismissDialog();
 	}
 
+	@UiThread
+	void dismissDialog() {
+		progressDialog.dismiss();
+		OrientationLocker.unlockScreenOrientation(this);
+	}
+	
 	@UiThread
 	void setAuCompleteUser() {
 		if (allUser != null) {
@@ -343,9 +384,28 @@ public class AddTaskActivity extends FragmentActivity implements
 		}
 	}
 
+	
+	
 	@Background
 	void addTask(MultiValueMap<String, String> formFields, String token) {
-		taskManager.addTask(formFields, token);
+		showDialog();
+		if(SystemFunctions.isOnline(this)) {
+			Task taskError = taskManager.addTask(formFields, token);
+			
+			// hiba történt
+			if(taskError.getErrors() != null) {
+				AlertDialog.Builder b =  new  AlertDialog.Builder(this)
+			    .setTitle("Hiba történt!")
+			    .setPositiveButton("OK", this)
+			    .setNegativeButton("Cancel",this);
+				
+				for(String s : taskError.getErrors()) {
+					b.setMessage(s + "\n");
+				}
+				b.show();
+			}
+		}
+		dismissDialog();
 	}
 
 	@Transactional
@@ -365,6 +425,12 @@ public class AddTaskActivity extends FragmentActivity implements
 		Log.d("lol", task.getDate() == null ? "null dp" : "nem null dp");
 		Log.d("lol", task.getCreated_at() == null ? "null dp" : "nem null cre");
 		Log.d("lol", task.getUpdated_at() == null ? "null dp" : "nem null upd");
+	}
+
+	@Override
+	public void onClick(DialogInterface dialog, int which) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

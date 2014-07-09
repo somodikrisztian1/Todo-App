@@ -6,6 +6,9 @@ import android.content.pm.ActivityInfo;
 import android.view.Surface;
 import android.view.WindowManager;
 
+/**
+ * Letiltja a forgatást és engedélyezi
+ */
 public class OrientationLocker {
 
 	public static void lockScreenOrientation(Activity activity) {

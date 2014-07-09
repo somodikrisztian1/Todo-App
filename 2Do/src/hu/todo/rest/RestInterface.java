@@ -40,9 +40,9 @@ public interface RestInterface extends RestClientErrorHandling {
 	 List<User> getAllUser(String token);
 	 
 	 @Post("/tasks/?token={token}")
-	 void addTask(MultiValueMap<String, String> formFields, String token);
+	 Task addTask(MultiValueMap<String, String> formFields, String token);
 	 
 	 @Post("/tasks/{id}/?token={token}")
-	 void updateTask(MultiValueMap<String, String> formFields, int id, String token);
+	 Task updateTask(MultiValueMap<String, String> formFields, int id, String token);
 	 
 }

@@ -44,6 +44,10 @@ public class TodoItemView extends LinearLayout {
 		if(task.isLocal()) {
 			todoImage.setImageResource(R.drawable.local_mode_icon);
 		}
+		else
+		{
+			todoImage.setImageResource(R.drawable.web);
+		}
 		txtContent1stRow.setText(task.getTitle());
 		txtContent2ndRow.setText(task.getDescription());
 		txtDate1stRow.setText(task.getDate().getDisplayName(Calendar.DAY_OF_WEEK, Calendar.SHORT, Locale.getDefault()));

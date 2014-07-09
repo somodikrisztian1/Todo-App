@@ -4,8 +4,10 @@ import hu.todo.R;
 import hu.todo.entity.Task;
 import hu.todo.entity.User;
 import hu.todo.function.ApplicationFunctions;
+import hu.todo.function.SystemFunctions;
 import hu.todo.rest.MyErrorHandler;
 import hu.todo.rest.RestInterface;
+import hu.todo.utility.OrientationLocker;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -30,9 +32,13 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
@@ -57,7 +63,7 @@ import android.widget.TimePicker;
 @EActivity(R.layout.activity_show_task)
 @OptionsMenu(R.menu.menu_show_task)
 public class ShowTaskActivity extends FragmentActivity implements
-		OnItemClickListener {
+		OnItemClickListener, OnClickListener {
 
 	private static Calendar dateCal;
 	private static Calendar timeCal;
@@ -237,7 +243,23 @@ public class ShowTaskActivity extends FragmentActivity implements
 
 	@Background
 	void updateTask(MultiValueMap<String, String> map, String token) {
-		taskManager.updateTask(map, task.getId(), token); // TODO kf
+		showDialog();
+		if(SystemFunctions.isOnline(this)) {
+			Task taskError = taskManager.updateTask(map, task.getId(), token);
+			
+			if(taskError.getErrors() != null) {
+				AlertDialog.Builder b =  new  AlertDialog.Builder(this)
+			    .setTitle("Hiba történt!")
+			    .setPositiveButton("OK", this)
+			    .setNegativeButton("Cancel",this);
+				
+				for(String s : taskError.getErrors()) {
+					b.setMessage(s + "\n");
+				}
+				b.show();
+			}
+		}
+		dismissDialog();
 	}
 
 	@Override
@@ -362,11 +384,46 @@ public class ShowTaskActivity extends FragmentActivity implements
 		user.setEnabled(false);
 	}
 
-	// leszedi a usereket
+	private ProgressDialog progressDialog;
+
+	@UiThread
+	void showDialog() {
+		OrientationLocker.lockScreenOrientation(this);
+		progressDialog = new ProgressDialog(this);
+		progressDialog.setMessage("Kérem várjon ... ");
+		progressDialog.setCancelable(false);
+		progressDialog.setCanceledOnTouchOutside(false);
+		progressDialog.show();
+	}
+	
 	@Background
 	void getUsers(String token) {
-		allUser = taskManager.getAllUser(token);
-		setAuCompleteUser();
+		showDialog();
+		if(SystemFunctions.isOnline(this)) {
+			allUser = taskManager.getAllUser(token);
+			// hiba történt
+			if(allUser.size() > 0 && allUser.get(0).getErrors() != null) {
+				AlertDialog.Builder b =  new  AlertDialog.Builder(this)
+			    .setTitle("Hiba történt!")
+			    .setPositiveButton("OK", this)
+			    .setNegativeButton("Cancel",this);
+				
+				for(String s : allUser.get(0).getErrors()) {
+					b.setMessage(s + "\n");
+				}
+				b.show();
+			}
+			else {
+				setAuCompleteUser();
+			}
+		}
+		dismissDialog();
+	}
+
+	@UiThread
+	void dismissDialog() {
+		progressDialog.dismiss();
+		OrientationLocker.unlockScreenOrientation(this);
 	}
 
 	// beállítja a usereket az autocomplete textviewnak és beállítja a task
@@ -420,6 +477,12 @@ public class ShowTaskActivity extends FragmentActivity implements
 			long id) {
 		selectedUser = (User) parent.getItemAtPosition(position);
 		Log.d("lol", "" + selectedUser.getId());
+	}
+
+	@Override
+	public void onClick(DialogInterface dialog, int which) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -4,19 +4,23 @@ import hu.todo.R;
 import hu.todo.activity.MainActivity;
 import hu.todo.entity.User;
 import hu.todo.function.ApplicationFunctions;
+import hu.todo.function.SystemFunctions;
 import hu.todo.rest.MyErrorHandler;
 import hu.todo.rest.RestInterface;
 import hu.todo.sharedprefs.MyPrefs_;
+import hu.todo.utility.OrientationLocker;
 
 import org.androidannotations.annotations.Background;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.rest.RestService;
 import org.androidannotations.annotations.sharedpreferences.Pref;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -117,13 +121,28 @@ public class LoginDialogFragment extends DialogFragment implements DialogInterfa
 		super.onPause();
 	}
 	
+	private ProgressDialog progressDialog;
+	
+	@UiThread
+	void showDialog() {
+		OrientationLocker.lockScreenOrientation(getActivity());
+		progressDialog = new ProgressDialog(getActivity());
+		progressDialog.setMessage("Kérem várjon ... ");
+		progressDialog.setCancelable(false);
+		progressDialog.setCanceledOnTouchOutside(false);
+		progressDialog.show();
+	}
+	
 	@Background
     void login() {
+		showDialog();
 		User loggedUser = null;
 	
 		try {
+			
 			taskManager.setRestErrorHandler(myErrorHandler);
-			loggedUser = taskManager.login("somodikrisztian1@gmail.com", "letmein");
+			if(SystemFunctions.isOnline(getActivity()))
+				loggedUser = taskManager.login("somodikrisztian1@gmail.com", "letmein");
 		}catch (Exception e) {
 			e.printStackTrace();
 			Log.d("lol", "itt hiba");
@@ -134,11 +153,31 @@ public class LoginDialogFragment extends DialogFragment implements DialogInterfa
 			show(activity.getSupportFragmentManager(), "dialog_login");
 		}
 		if(loggedUser != null) {
-			ApplicationFunctions.getInstance().getUserFunctions().setLoggedUser(loggedUser);
-			String token = ApplicationFunctions.getInstance().getUserFunctions().getLoggedUser().getToken();
-			myPrefs.token().put(token);
-			fragment.getItemsInBackground();
-		} // TODO sikertelen a login
+			if(loggedUser.getErrors() != null) {
+				AlertDialog.Builder b =  new  AlertDialog.Builder(getActivity())
+			    .setTitle("Hiba történt!")
+			    .setPositiveButton("OK", this)
+			    .setNegativeButton("Cancel",this);
+				
+				for(String s : loggedUser.getErrors()) {
+					b.setMessage(s + "\n");
+				}
+				b.show();
+				shouldRe = true;
+			}
+			else {
+				ApplicationFunctions.getInstance().getUserFunctions().setLoggedUser(loggedUser);
+				String token = ApplicationFunctions.getInstance().getUserFunctions().getLoggedUser().getToken();
+				myPrefs.token().put(token);
+				fragment.getItemsInBackground();
+			} // TODO sikertelen a login
+		}
+		dismissDialog();
     }
 	
+	@UiThread
+	void dismissDialog() {
+		progressDialog.dismiss();
+		OrientationLocker.unlockScreenOrientation(getActivity());
+	}
 }

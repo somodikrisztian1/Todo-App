@@ -4,13 +4,16 @@ import hu.todo.activity.ShowTaskActivity_;
 import hu.todo.adapter.TodoAdapter;
 import hu.todo.entity.Task;
 import hu.todo.function.ApplicationFunctions;
+import hu.todo.function.SystemFunctions;
 import hu.todo.rest.MyErrorHandler;
 import hu.todo.rest.RestInterface;
 import hu.todo.toast.Toaster;
 import hu.todo.utility.CalendarFormatter;
 import hu.todo.utility.LocalDatabaseOpenHelper;
+import hu.todo.utility.OrientationLocker;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.androidannotations.annotations.AfterViews;
@@ -21,7 +24,12 @@ import org.androidannotations.annotations.ItemClick;
 import org.androidannotations.annotations.Transactional;
 import org.androidannotations.annotations.UiThread;
 import org.androidannotations.annotations.rest.RestService;
+import org.androidannotations.annotations.sharedpreferences.Pref;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -29,10 +37,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.ListFragment;
 import android.util.Log;
 
-// megjeleníti az összes teendőt időrendben
+/**
+ * Megjeleníti az összes teendőt időrendben.
+ */
 @EFragment
-public class AllFragment extends ListFragment {
-
+public class AllFragment extends ListFragment implements OnClickListener {
+	
 	@Bean
 	public TodoAdapter adapter;
 
@@ -118,27 +128,71 @@ public class AllFragment extends ListFragment {
 		ShowTaskActivity_.intent(this).task(task).start();
 	}
 
+	private ProgressDialog progressDialog;
+
+	@UiThread
+	void showDialog() {
+		OrientationLocker.lockScreenOrientation(getActivity());
+		progressDialog = new ProgressDialog(getActivity());
+		progressDialog.setMessage("Kérem várjon ... ");
+		progressDialog.setCancelable(false);
+		progressDialog.setCanceledOnTouchOutside(false);
+		progressDialog.show();
+	}
+
 	@Background
 	void getItemsInBackground() {
+		showDialog();
 		String token = ApplicationFunctions.getInstance().getUserFunctions()
 				.getLoggedUser().getToken();
 		taskManager.setRestErrorHandler(myErrorHandler);
-		List<Task> tasks = taskManager.getAllTask(token); // itt is kell majd
-															// ellenőrizni pl
-															// mivan ha elavult
-															// a session id
-		showResult(tasks);
+		List<Task> tasks = null;
+		if(SystemFunctions.isOnline(getActivity())) {
+			tasks = taskManager.getAllTask(token);
+			
+			// hiba történt
+			if(tasks.size() > 0 && tasks.get(0).getErrors() != null) {
+				AlertDialog.Builder b =  new  AlertDialog.Builder(getActivity())
+			    .setTitle("Hiba történt!")
+			    .setPositiveButton("OK", this)
+			    .setNegativeButton("Cancel",this);
+				
+				for(String s : tasks.get(0).getErrors()) {
+					b.setMessage(s + "\n");
+				}
+				b.show();
+			}
+		}
+		
+		if(tasks != null)
+			showResult(tasks);
+		
+		dismissDialog();
+	}
+
+	@UiThread
+	void dismissDialog() {
+		progressDialog.dismiss();
+		OrientationLocker.unlockScreenOrientation(getActivity());
 	}
 
 	@UiThread
 	void showResult(List<Task> tasks) {
 		if (tasks != null) {
 			ArrayList<Task> items = adapter.getItems();
+			items.clear();
 			for (Task task : tasks) {
 				items.add(task);
 			}
+			Collections.sort(items);
 			adapter.notifyDataSetChanged();
 		} // TODO vmi üzenet
+	}
+
+	@Override
+	public void onClick(DialogInterface dialog, int which) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
